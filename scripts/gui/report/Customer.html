@@ -1,0 +1,49 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <div id="userReport" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    {fi_provider}
+    <div class="formItem">
+      <label for="fi_name">{__label.report_user_name}:</label>
+      <input class="longText" id="fi_name" type="text" name="name" value="{name}"/>
+    </div>
+    {fi_type}
+    <div class="formItem">
+        <label for="fi_registrationFrom">{__label.report_user_registrationFrom}:</label>
+        <input class="mediumText" id="fi_registrationFrom" type="text" name="registrationFrom" value="{registrationFrom}"/>
+    </div>
+    <div class="formItem">
+        <label for="fi_registrationTo">{__label.report_user_registrationTo}:</label>
+        <input class="mediumText" id="fi_registrationTo" type="text" name="registrationTo" value="{registrationTo}"/>
+    </div>
+    <div class="formItem">
+        <label>&nbsp;</label>
+        <a href="#" id="fi_additionalHref">{__label.report_additional}</a>
+        <input type="hidden" id="fi_showAdditional" name="showAdditional" value="{showAdditional}" />
+    </div>
+    <div id="fi_additionalDiv" {additionalVisible}>
+      <div class="title">
+        <div class="first">{__label.report_visibleColumn}</div>
+        <div class="second">{__label.report_groupColumn}</div>
+        <div class="third">&nbsp;&nbsp;{__label.report_groupValue}</div>
+        <div id="fi_additionalCloser">x</div>
+      </div>
+      <div class="add">
+        <input type="hidden" name="visibleColumn" value="" />
+        <input type="hidden" name="groupColumn" value="" />
+        <input type="hidden" name="groupValue" value="" />
+        <ul id="fi_column">
+          {fi_column}
+        </ul>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eClear" type="button" onclick="$('#form').attr('target','_self'); document.getElementById('fb_eClearHidden').click();" name="action_eReportClear" value="{__button.report_clear}" />
+      <input class="fb_eSave" id="fb_eReport" type="submit" onclick="$('#form').attr('target','_self');" name="action_eReportSearchUser" value="{__button.report_search}" />
+      {fb_export}
+      <input class="fb_eHidden" id="fb_eClearHidden" type="submit" name="action_eReportClear?section=user" value="{__button.report_clear}" />
+    </div>
+  </div>
+</form>
+{fi_resultSummary}
+{fi_result}

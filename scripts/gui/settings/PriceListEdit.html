@@ -1,0 +1,110 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editPriceList" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editPriceList_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    {fi_provider}
+    <div class="formItem">
+      <label class="bold" style="height: 40px;">{__label.editPriceList_season}:</label>
+      <div id="fi_term" style="float: left;">
+        <div class="gridTable">
+        <table id="fi_seasonTable">
+          <tbody>{fi_season}</tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input id="fi_addSeason" type="button" value="{__button.editPriceList_addSeason}" />
+      <input class="fb_eSave" type="submit" name="action_ePriceListSave" value="{__button.editPriceList_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newSeason_form" class="ajaxForm" title="{__label.editPriceList_seasonTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <div style="float: left; width: 200px;">
+        <input type="hidden" id="editSeason_id" name="id" value="" />
+        <input type="hidden" id="editSeason_index" name="index" value="" />
+        <div class="item" id="name">
+          <label>{__label.editPriceList_seasonName}</label>
+          <input type="text" name="seasonName" id="editSeason_name" class="text ui-widget-content ui-corner-all" />
+        </div>
+        <div class="item" id="dateRange">
+          <label>{__label.editPriceList_seasonFrom}</label>
+          <input type="text" name="seasonStart" id="editSeason_start" class="text ui-widget-content ui-corner-all" />
+          <label>{__label.editPriceList_seasonTo}</label>
+          <input type="text" name="seasonEnd" id="editSeason_end" class="text ui-widget-content ui-corner-all" />
+        </div>
+        <div class="item" id="name">
+          <label>{__label.editPriceList_seasonBasePrice}</label>
+          <input type="text" name="seasonBasePrice" id="editSeason_basePrice" class="text ui-widget-content ui-corner-all" />
+          {__label.currency_CZK}
+        </div>
+      </div>
+      <div style="float: left; width: 600px; border: 1px solid black;">
+        <table class="dayTable">
+          <tr><th>&nbsp;</th><th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th><th>07</th><th>08</th><th>09</th><th>10</th><th>11</th><th>12</th>
+              <th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th><th>&nbsp;</th>
+          </tr>
+          <tr id="editSeason_mon"><td class="label">{__label.day_mon}</td></tr>
+          <tr id="editSeason_tue"><td class="label">{__label.day_tue}</td></tr>
+          <tr id="editSeason_wed"><td class="label">{__label.day_wed}</td></tr>
+          <tr id="editSeason_thu"><td class="label">{__label.day_thu}</td></tr>
+          <tr id="editSeason_fri"><td class="label">{__label.day_fri}</td></tr>
+          <tr id="editSeason_sat"><td class="label">{__label.day_sat}</td></tr>
+          <tr id="editSeason_sun"><td class="label">{__label.day_sun}</td></tr>
+        </table>
+        <input type="hidden" id="editSeason_monPrice" value="" />
+        <input type="hidden" id="editSeason_tuePrice" value="" />
+        <input type="hidden" id="editSeason_wedPrice" value="" />
+        <input type="hidden" id="editSeason_thuPrice" value="" />
+        <input type="hidden" id="editSeason_friPrice" value="" />
+        <input type="hidden" id="editSeason_satPrice" value="" />
+        <input type="hidden" id="editSeason_sunPrice" value="" />
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div id="fi_dayPrice_form" class="ajaxForm" title="{__label.editPriceList_dayTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <div class="item" id="name">
+        <label class="normal">{__label.editPriceList_day}:</label>
+        <table class="dayHourTable">
+          <tr>
+            <td><input type="checkbox" class="inputCheckbox" id="editDayPrice_mon"/></td><td class="dayLabel">{__label.day_mon}</td>
+            <td><input type="checkbox" class="inputCheckbox" id="editDayPrice_tue"/></td><td class="dayLabel">{__label.day_tue}</td>
+            <td><input type="checkbox" class="inputCheckbox" id="editDayPrice_wed"/></td><td class="dayLabel">{__label.day_wed}</td>
+            <td><input type="checkbox" class="inputCheckbox" id="editDayPrice_thu"/></td><td class="dayLabel">{__label.day_thu}</td>
+            <td><input type="checkbox" class="inputCheckbox" id="editDayPrice_fri"/></td><td class="dayLabel">{__label.day_fri}</td>
+          </tr><tr>
+            <td>&nbsp;</td><td>&nbsp;</td>
+            <td>&nbsp;</td><td>&nbsp;</td>
+            <td>&nbsp;</td><td>&nbsp;</td>
+            <td><input type="checkbox" class="inputCheckbox" id="editDayPrice_sat"/></td><td class="dayLabel bold">{__label.day_sat}</td>
+            <td><input type="checkbox" class="inputCheckbox" id="editDayPrice_sun"/></td><td class="dayLabel bold">{__label.day_sun}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="item" id="name">
+        <label class="normal">{__label.editPriceList_dayHour}:</label>
+        <input type="text" name="dayHour" id="editDayPrice_hour" class="asLabel" readonly="yes"/>
+        <div id="slider"></div>
+      </div>
+      <div class="item" id="name">
+        <label>{__label.editPriceList_dayPrice}</label>
+        <input type="text" name="dayPrice" id="editDayPrice_price" class="text ui-widget-content ui-corner-all" />
+        {__label.currency_CZK}
+      </div>
+    </fieldset>
+  </form>
+</div>

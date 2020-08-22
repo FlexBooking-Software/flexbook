@@ -1,0 +1,98 @@
+<br/>
+<b>{name}</b>
+<div>{description}</div>
+<div><b>{__label.inpage_resource_price}:</b> {price} {__label.currency_CZK}</div>
+<form action="{%basefile%}" method="post">
+  <div id="resourceCalendar">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <br/>
+    <div id="fi_calendar">
+    </div>
+    <br/>
+    <div class="formButton">
+      <input class="fb_eHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="editEvent_form" class="ajaxForm" title="{__label.calendar_editEvent_title}">
+  <form>
+    <fieldset>
+      <input type="hidden" id="editEvent_id" name="id" />
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_name}: </span>
+        <span id="editEvent_name"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_description}: </span>
+        <span id="editEvent_description"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_organiser}: </span>
+        <span id="editEvent_organiserName"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_start}: </span>
+        <span id="editEvent_visualStart"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_end}: </span>
+        <span id="editEvent_visualEnd"></span>
+      </div>
+      <div class="line" id="editEvent_line_price">
+        <span class="bold">{__label.calendar_editEvent_price}: </span>
+        <span id="editEvent_price"></span>
+        <span id="editEvent_currency"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_maxAttendees}: </span>
+        <input type="hidden" name="maxAttendees" id="editEvent_maxAttendees" />
+        <input type="hidden" name="free" id="editEvent_free" />
+        <span id="editEvent_visualMaxAttendees"></span>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div id="editReservationResource_form" class="ajaxForm" title="{__label.calendar_editReservation_title}">
+  <form>
+    <fieldset>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_from}: </span>
+        <span id="editReservationResource_visualFrom"></span>
+        <input type="hidden" name="from" id="editReservationResource_from" />
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_to}: </span>
+        <span id="editReservationResource_visualTo"></span>
+        <input type="hidden" name="to" id="editReservationResource_to" />
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_userName}: </span>
+        <span id="editReservationResource_visualUser"></span>
+        <input type="hidden" name="userId" id="editReservationResource_userId" />
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div id="editReservationEvent_form" class="ajaxForm" title="{__label.calendar_editReservation_title}">
+  <form>
+    <fieldset>
+      <input type="hidden" id="editReservationEvent_id" name="id" />
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_event}: </span>
+        <span id="editReservationEvent_visualEvent"></span>
+        <input type="hidden" name="event" id="editReservationEvent_event" />
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_userName}: </span>
+        <span id="editReservationEvent_visualUser"></span>
+        <input type="hidden" name="userId" id="editReservationEvent_userId" />
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_places}: </span>
+        <input type="text" name="places" id="editReservationEvent_places" />
+      </div>
+    </fieldset>
+  </form>
+</div>
+<br/>

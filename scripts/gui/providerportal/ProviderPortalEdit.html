@@ -1,0 +1,72 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" enctype="multipart/form-data">
+  <div id="editProviderPortal" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div id="tab">
+      <ul>
+        <li><a href="#tab-1">{__label.editProviderPortal_general}</a></li>
+        <li><a href="#tab-2">{__label.editProviderPortal_content}</a></li>
+        <li><a href="#tab-3">{__label.editProviderPortal_pages}</a></li>
+      </ul>
+      <div id="tab-1">
+        {fi_provider}
+        <div class="formItem">
+          <label for="fi_urlName" class="bold">{__label.editProviderPortal_urlName}:</label>
+          <input class="extraLongText" id="fi_urlName" type="text" name="urlName" value="{urlName}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_name" class="bold">{__label.editProviderPortal_name}:</label>
+          <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}"/>
+        </div>
+        <br />
+        {fi_active}
+        <br />
+        <div class="formItem">
+          <label class="bold">{__label.editProviderPortal_homePage}:</label>
+          {fi_homePage}
+        </div>
+        <br />
+        <div class="formItem">
+          <label class="bold">{__label.editProviderPortal_menu}:</label>
+          <div id="menuItemTemplate">{menuItemTemplate}</div>
+          <div class="portalMenu">[<a id="fi_newMenuItem" href="#">{__label.editProviderPortal_newMenu}</a>]{menu}</div>
+        </div>
+      </div>
+      <div id="tab-2">
+        <div class="formItem">
+          <label for="fi_css">{__label.editProviderPortal_css}: <a class="fi_help" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="css" name="css">{css}</textarea>
+        </div>
+        <div class="formItem">
+          <label for="fi_javascript">{__label.editProviderPortal_javascript}: <a class="fi_help" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="javascript" name="javascript">{javascript}</textarea>
+        </div>
+        <div class="formItem">
+          <label for="fi_content">{__label.editProviderPortal_content}: <a class="fi_help" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="content" name="content">{content}</textarea>
+        </div>
+      </div>
+      <div id="tab-3">
+        <div class="formItem">
+          <div class="pageList">[<a id="fi_newPageTemplate" href="index.php?action=eProviderPortalPagePrepare&{%sessname%}={%sessid%}">{__label.editProviderPortal_newPage}</a>]{pageList}</div>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_eProviderPortalSave" type="submit" name="action_eProviderPortalSave" value="{__button.editProviderPortal_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+  <div id="fi_helpDiv" class="helpDiv">
+    <table>
+      <tr><td class="bold" colspan="2">Seznam speciálních tagů, které lze vložit do HTML kódu:</td></tr>
+      <tr><td class="bold">@@MENU()</td><td class="text">bude nahrazen MENU definovaným pro daný portál</td></tr>
+      <tr><td class="bold">@@CONTENT()</td><td class="text">bude nahrazen obsahem aktuální stránky daného portálu</td></tr>
+      <tr><td class="bold">@@PAGE(id,nazev)</td><td class="text">bude nahrazen odkazem na stránku portálu s daným ID, parametr "nazev" je volitelný a pokud není uveden, použije se jako název odkazu název odkazované stránky; např. @@PAGE(TEST,Další) zobrazí odkaz na stránku portálu s ID "TEST" a odkaz se bude jmenovat "Další"</td></tr>
+      <tr><td class="bold">@@FILE(id)</td><td class="text">bude nahrazen odkazem se souborem poskytovatele s daným ID; např: &lt;img src="@@FILE(TEST)"/&gt; zobrazí obrázek poskytovatele s ID "TEST"</td></tr>
+      <tr><td class="bold">@@PROVIDER_ID()</td><td class="text">bude nahrazen interním ID poskytovatele; lze využít například při vkládání JS komponent Flexbooku</td></tr>
+    </table>
+  </div>
+</form>

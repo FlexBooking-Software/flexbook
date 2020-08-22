@@ -1,0 +1,18 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editAvailProfile" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editAvailProfile_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    {fi_provider}
+    {fi_weekday}
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" type="submit" name="action_eAvailProfileSave" value="{__button.editAvailProfile_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>

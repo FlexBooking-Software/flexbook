@@ -1,0 +1,93 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <div id="editReservation" class="inputForm ajaxForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" id="fi_nextAction" name="nextAction" value="eReservationSave" />
+    <input type="hidden" id="fi_id" name="id" value="{id}" />
+    <input type="hidden" id="fi_payed" name="payed" value="{payed}" />
+    <input type="hidden" name="editReservation" value="1" />
+    {fi_number}
+    <div class="formItem">
+      <label for="fi_user" class="bold">{__label.editReservation_user}:</label>
+      <input type="hidden" id="fi_userId" name="userId" value="{userId}" />
+      <input type="hidden" id="fi_userName" name="userNameSelected" value="{userNameSelected}" />
+      <input class="extraLongText" id="fi_user" type="text" name="userName" value="{userName}" {readonlyState}/>
+      {fb_newUser}
+    </div>
+    {fi_mandatory}
+    <!--{fi_customer}-->
+    <br />
+    <div class="formItem" {commoditySelectStyle}>
+      <label class="bold">{__label.editReservation_commodity}:</label>
+      <input id="fi_resourceRadio" type="radio" class="inputRadio" name="commodity" value="resource" {resourceChecked}/>{__label.editReservation_commodityResource}
+      <input type="radio" class="inputRadio" name="commodity" value="event" {eventChecked}/>{__label.editReservation_commodityEvent}
+    </div>
+    <div class="commodity">
+      <div id="fi_resourceDiv">
+        {fi_resource}
+        <div class="formItem description">
+          <label>{__label.editReservation_commodityDescription}:</label>
+          <label id="fi_resourceDescription" class="description"></label>
+        </div>
+        <div class="formItem description">
+          <label>{__label.editReservation_commodityPrice}:</label>
+          <label id="fi_resourcePrice" class="description"></label>
+        </div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_resourceFrom" class="bold">{__label.editReservation_resourceFrom}:</label>
+          <input class="mediumText" id="fi_resourceFrom" type="text" name="resourceFrom" value="{resourceFrom}" {readonlyState}/>
+        </div>
+        <div class="formItem">
+          <label for="fi_resourceTo" class="bold">{__label.editReservation_resourceTo}:</label>
+          <input class="mediumText" id="fi_resourceTo" type="text" name="resourceTo" value="{resourceTo}" {readonlyState}/>
+        </div>
+      </div>
+      <div id="fi_eventDiv">
+        {fi_event}
+        <input type="hidden" id="fi_eventCoAttendees" name="eventCoAttendees" value="{eventCoAttendees}"/>
+        <div class="formItem description">
+          <label>{__label.editReservation_commodityDescription}:</label>
+          <label id="fi_eventDescription" class="description"></label>
+        </div>
+        <div class="formItem description">
+          <label>{__label.editReservation_commodityPrice}:</label>
+          <label id="fi_eventPrice" class="description"></label>
+        </div>
+        <br/>
+        <div class="formItem" {eventPackStyle}>
+          <label class="bold">{__label.editReservation_eventPack}:</label>
+          <div class="eventPack">{eventPackHtml}</div>
+          <input type="hidden" id="fi_eventPack" name="eventPack" value="{eventPack}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_eventPlaces" class="bold">{__label.editReservation_eventPlaces}:</label>
+          <input class="shortText" id="fi_eventPlaces" type="text" name="eventPlaces" value="{eventPlaces}" {readonlyState}/>
+        </div>
+        <div class="formItem">
+          <label for="fi_eventAttendee" class="bold">{__label.editReservation_eventAttendee}:</label>
+          {eventAttendeeTable}
+        </div>
+      </div>
+    </div>
+    <div id="fi_attribute"></div>
+    <div class="formItem">
+      <label>{__label.editReservation_note}:</label>
+      <textarea name="note">{note}</textarea>
+    </div>
+    {fi_price}
+    {fi_state}
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_backHidden').click();" name="action_eBack" value="{__button.back}" />
+      {fb_save}
+      {fb_savePay}
+      {fb_fail}
+      {fb_cancel}
+      <input class="fb_eHidden" id="fb_backHidden" type="submit" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eHidden" id="fb_newUserHidden" type="submit" name="action_eReservationNewUser" onclick="return mySubmit('fb_eReservationSave','fi_nextAction','newUser');" value="button" />
+      <input class="fb_eHidden" id="fb_eReservationSaveSingle" type="submit" name="action_eReservationSave?eventPack=N" value="single" />
+      <input class="fb_eHidden" id="fb_eReservationSavePack" type="submit" name="action_eReservationSave?eventPack=Y" value="pack" />
+      <input class="fb_eHidden" id="fb_eReservationSaveSkipCondition" type="submit" name="action_eReservationSave?skipCondition=all" value="pack" />
+    </div>
+  </div>
+</form>

@@ -1,0 +1,146 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form" autocomplete="off">
+  <div id="editUser" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div id="tab">
+      <ul>
+        <li><a href="#tab-1">{__label.editUser_general}</a></li>
+        <li><a href="#tab-2">{__label.editUser_registration}</a></li>
+        <li><a href="#tab-3">{__label.editUser_attribute}</a></li>
+        {fi_subaccountTab}
+        <li><a href="#tab-4">{__label.editUser_reservation}</a></li>
+        <li><a href="#tab-5">{__label.editUser_document}</a></li>
+        <!--{fi_customerTab}-->
+      </ul>
+      <div id="tab-1">
+        <div class="formItem">
+          <label for="fi_email" class="bold">{__label.editUser_email}:</label>
+          <input class="longText" id="fi_email" type="text" name="email" value="{email}" {emailReadonly}/>
+        </div>
+        <br />
+        <div class="formItem">
+          <label for="fi_firstname" class="bold">{__label.editUser_firstname}:</label>
+          <input class="longText" id="fi_firstname" type="text" name="firstname" value="{firstname}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_lastname" class="bold">{__label.editUser_lastname}:</label>
+          <input class="longText" id="fi_lastname" type="text" name="lastname" value="{lastname}"/>
+        </div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_phone" class="bold">{__label.editUser_phone}:</label>
+          <input class="longText" id="fi_phone" type="text" name="phone" value="{phone}"/>
+        </div>
+        {fi_subaccount}
+        <br/>
+        {fi_reservationCondition}
+        <div class="formItem">
+          <label class="bold">{__label.editUser_address}:</label>
+        </div>
+        <div class="formItem">
+          <label for="fi_street">{__label.editUser_street}:</label>
+          <input class="longText" id="fi_street" type="text" name="street" value="{street}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_city">{__label.editUser_city}:</label>
+          <input class="longText" id="fi_city" type="text" name="city" value="{city}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_postalCode">{__label.editUser_postalCode}:</label>
+          <input id="fi_postalCode" type="text" name="postalCode" value="{postalCode}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_state">{__label.editUser_state}:</label>
+          {fi_state}
+        </div>
+        <br/>
+        {fi_admin}
+        {fi_validationUrl}
+      </div>
+      <div id="tab-2">
+        <div id="fi_registrationList">
+          {fi_registration}
+        </div>
+      </div>
+      <div id="tab-3">
+        <div id="fi_attributeList">
+          {fi_attribute}
+        </div>
+      </div>
+      {fi_subaccountContent}
+      <div id="tab-4">
+        <div id="fi_reservationList">
+          <b>{__label.editEvent_reservation}:</b>
+          {fi_reservation}
+          {fi_substitute}
+        </div>
+      </div>
+      <div id="tab-5">
+        {fi_document}
+      </div>
+      <!--{fi_customerContent}-->
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_eUserSave" type="submit" name="action_eUserSave" value="{saveLabel}" />
+      {fb_password}
+      {fb_subaccount}
+      {fb_validate}
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newRegistration_form" class="ajaxForm" title="{__label.editCustomerRegistration_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editRegistration_id" name="id" value="" />
+      <input type="hidden" id="editRegistration_index" name="index" value="" />
+      <input type="hidden" id="editRegistration_providerName" name="providerName" value="" />
+      <input type="hidden" id="editRegistration_timestamp" name="timestamp" value="" />
+      <input type="hidden" id="editRegistration_credit" name="credit" value="" />
+      <input type="hidden" id="editRegistration_role" name="role" value="" />
+      <label for="provider">{__label.editCustomerRegistration_provider}</label>
+      {fi_provider}
+      <label for="advertising">{__label.editCustomerRegistration_advertising}</label>
+      <input type="checkbox" name="advertising" id="editRegistration_advertising" class="inputCheckbox text ui-widget-content ui-corner-all">
+    </fieldset>
+  </form>
+</div>
+<div id="fi_newAttribute_form" class="ajaxForm" title="{__label.editUserAttribute_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <div id="editAttribute_header">
+        <label>{__label.editUserAttribute_new}</label>
+        <select id="editAttribute_id_select">
+        </select>
+        <br/><br/>
+      </div>
+      <div id="editAttribute_data">
+        <input type="hidden" id="editAttribute_id" name="id" value="" />
+        <input type="hidden" id="editAttribute_provider" name="provider" value="" />
+        <input type="hidden" id="editAttribute_providerName" name="providerName" value="" />
+        <input type="hidden" id="editAttribute_name" name="name" value="" />
+        <input type="hidden" id="editAttribute_category" name="category" value="" />
+        <input type="hidden" id="editAttribute_mandatory" name="mandatory" value="" />
+        <input type="hidden" id="editAttribute_type" name="type" value="" />
+        <input type="hidden" id="editAttribute_allowedValues" name="allowedValues" value="" />
+        <input type="hidden" id="editAttribute_disabled" name="disabled" value="" />
+        <label id="editAttribute_nameHtml" class="bold"></label>
+        <br/>
+        <label>{__label.editUserAttribute_type}:&nbsp <span class="bold" id="editAttribute_typeHtml"></span></label>
+        <label>{__label.editUserAttribute_value}:</label>
+        <input type="text" id="editAttribute_value_input" name="value" value="" />
+        <textarea id="editAttribute_value_textarea" name="value"></textarea>
+        <select id="editAttribute_value_select" name="value"></select>
+        <div id="editAttribute_value_file">
+          <input type="hidden" id="editAttribute_value_filename"/>
+          <input type="hidden" id="editAttribute_value_fileid"/>
+          <div id="editAttribute_file"></div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

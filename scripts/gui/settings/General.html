@@ -1,0 +1,320 @@
+<div class="contentTitle">{__label.settingsGeneral_title}</div>
+<div id="tab">
+  <ul>
+    <li><a href="#tab-1">{__label.settingsGeneral_general}</a></li>
+    <li><a href="#tab-2">{__label.settingsGeneral_badge}</a></li>
+    <li><a href="#tab-3">{__label.settingsGeneral_ticket}</a></li>
+    <li><a href="#tab-4">{__label.settingsGeneral_accounting}</a></li>
+    <li><a href="#tab-5">{__label.listProviderAccountType_title}</a></li>
+    <li><a href="#tab-6">{__label.editProviderUserUnique_title}</a></li>
+    <li><a href="#tab-7">{__label.listProviderTextStorage_title}</a></li>
+  </ul>
+  <div id="tab-1">
+    <form action="{%basefile%}" method="post">
+      <div id="settingsGeneral" class="inputForm ui-widget-content">
+        <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+        <input type="hidden" name="id" value="{id}" />
+        <div class="formItem">
+          <label>{__label.settingsGeneral_userConfirm}:</label>
+          <input type="hidden" name="userConfirm" value="Y"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_userConfirm" name="userConfirm" value="N" {userConfirmChecked} />
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_userSubaccount}:</label>
+          <input type="hidden" name="userSubaccount" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_userSubaccount" name="userSubaccount" value="Y" {userSubaccountChecked} />
+        </div>
+        <br/>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_showCompany}:</label>
+          <input type="hidden" name="showCompany" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_showCompany" name="showCompany" value="Y" {showCompanyChecked} />
+        </div>
+        <br/>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_reservationCancelMessage}:</label>
+          <input type="text" id="fi_reservationCancelMessage" name="reservationCancelMessage" value="{reservationCancelMessage}"/>
+        </div>
+        <br/>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_allowSkipReservationCondition}:</label>
+          <input type="hidden" name="allowSkipReservationCondition" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_allowSkipReservationCondition" name="allowSkipReservationCondition" value="Y" {allowSkipReservationConditionChecked} />
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_userReservationCondition}:</label>
+          {fi_userReservationCondition}
+        </div>
+        <br/>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_documenttemplate}:</label>
+          {fi_documenttemplate}
+        </div>
+        <br/>
+        <div class="formItem bold">
+          <label>{__label.settingsGeneral_mandatoryReservation}:</label>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_allowMandatoryReservation}:</label>
+          <input type="hidden" name="allowMandatoryReservation" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_allowMandatoryReservation" name="allowMandatoryReservation" value="Y" {allowMandatoryReservationChecked} />
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_organiserMandatoryReservation}:</label>
+          <input type="hidden" name="organiserMandatoryReservation" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_organiserMandatoryReservation" name="organiserMandatoryReservation" value="Y" {organiserMandatoryReservationChecked} />
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_organiserMandatorySubstitute}:</label>
+          <input type="hidden" name="organiserMandatorySubstitute" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_organiserMandatorySubstitute" name="organiserMandatorySubstitute" value="Y" {organiserMandatorySubstituteChecked} />
+        </div>
+        <br />
+        <div class="formItem">
+          <label>{__label.settingsGeneral_allowOnlinePaymentOnly}:</label>
+          <input type="hidden" name="allowOnlinePaymentOnly" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_allowOnlinePaymentOnly" name="allowOnlinePaymentOnly" value="Y" {allowOnlinePaymentOnlyChecked} />
+        </div>
+        <br />
+        <div class="formButton">
+          {backButton}
+          <input class="fb_eSave" id="fb_eSave" type="submit" name="action_eSettingsGeneralSave" value="{__button.settingsGeneral_save}" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="tab-2">
+    <form action="{%basefile%}" method="post">
+      <div id="settingsTemplate" class="inputForm ui-widget-content">
+        <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+        <input type="hidden" name="id" value="{id}" />
+        {fi_badgePhoto}
+        <div class="formItem">
+          <label>{__label.settingsGeneral_badgeTemplate}:<a id="fi_badgeHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="template" name="badgeTemplate">{badgeTemplate}</textarea>
+        </div>
+        <br />
+        <div class="formButton">
+          {backButton}
+          <input class="fb_eSave" id="fb_eSave" type="submit" name="action_eSettingsGeneralSave" value="{__button.settingsGeneral_save}" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="tab-3">
+    <form action="{%basefile%}" method="post">
+      <div id="settingsTemplate" class="inputForm ui-widget-content">
+        <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+        <input type="hidden" name="id" value="{id}" />
+        <div class="formItem">
+          <label>{__label.settingsGeneral_ticketTemplate}:<a id="fi_ticketHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="template" name="ticketTemplate">{ticketTemplate}</textarea>
+        </div>
+        <br />
+        <div class="formButton">
+          {backButton}
+          <input class="fb_eSave" id="fb_eSave" type="submit" name="action_eSettingsGeneralSave" value="{__button.settingsGeneral_save}" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="tab-4">
+    <form action="{%basefile%}" method="post">
+      <div id="settingsTemplate" class="inputForm ui-widget-content">
+        <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+        <input type="hidden" name="id" value="{id}" />
+        <div class="formItem">
+          <label>{__label.settingsGeneral_generateAccounting}:</label>
+          <input type="hidden" name="generateAccounting" value="N"/>
+          <input type="checkbox"  class="inputCheckbox" id="fi_generateAccounting" name="generateAccounting" value="Y" {generateAccountingChecked} />
+        </div>
+        <br/>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_prepaymentInvoiceNumber}:<a class="fi_numberHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <input class="longText" id="fi_prepaymentInvoiceNumber" type="text" name="prepaymentInvoiceNumber" value="{prepaymentInvoiceNumber}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_prepaymentInvoiceTemplate}:<a class="fi_accountingHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="template" name="prepaymentInvoiceTemplate">{prepaymentInvoiceTemplate}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_receiptNumber}:<a class="fi_numberHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <input class="longText" id="fi_receiptNumber" type="text" name="receiptNumber" value="{receiptNumber}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_receiptTemplate}:<a class="fi_accountingHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="template" name="receiptTemplate">{receiptTemplate}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_invoiceNumber}:<a class="fi_numberHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <input class="longText" id="fi_invoiceNumber" type="text" name="invoiceNumber" value="{invoiceNumber}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_invoiceTemplate}:<a class="fi_accountingHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="template" name="invoiceTemplate">{invoiceTemplate}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_creditnoteNumber}:<a class="fi_numberHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <input class="longText" id="fi_creditnoteNumber" type="text" name="creditnoteNumber" value="{creditnoteNumber}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.settingsGeneral_creditnoteTemplate}:<a class="fi_accountingHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+          <textarea class="template" name="creditnoteTemplate">{creditnoteTemplate}</textarea>
+        </div>
+        <br />
+        <div class="formButton">
+          {backButton}
+          <input class="fb_eSave" id="fb_eSave" type="submit" name="action_eSettingsGeneralSave" value="{__button.settingsGeneral_save}" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="tab-5">
+    <div class="providerAccountType">
+      <div class="listProviderAccountType">
+        <form action="{%basefile%}" method="post">
+          <div>
+            <input type="hidden" name="sessid" value="{%sessid%}" />
+            {newProviderAccountType}
+          </div>
+        </form>
+        {providerAccountTypeList}
+      </div>
+    </div>
+  </div>
+  <div id="tab-6">
+    <form action="{%basefile%}" method="post">
+      <div id="providerUserUnique" class="inputForm ui-widget-content">
+        <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+        <input type="hidden" name="id" value="{id}" />
+        {__label.editProviderUserUnique_info}
+        <br/><br/>
+        <div class="formItem" style="overflow:hidden;">
+          <label>{__label.editProviderUserUnique_additional}:</label>
+          <div style="float:left;">
+            {fi_userUniqueElements}
+          </div>
+        </div>
+        <br/>
+        <div class="formButton">
+          {backButton}
+          <input class="fb_eSave" id="fb_eSave" type="submit" name="action_eSettingsGeneralSave" value="{__button.settingsGeneral_save}" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div id="tab-7">
+    <div class="listProviderTextStorage">
+      <form action="{%basefile%}" method="post">
+        <div>
+          <input type="hidden" name="sessid" value="{%sessid%}" />
+          <input type="submit" class="inputSubmit" name="action_eProviderTextStorageInit" value="{__button.listProviderTextStorage_init}" onclick="return confirm('{__label.listProviderTextStorage_initConfirm}');" />
+          <input type="submit" class="inputSubmit" name="action_eProviderTextStorageAdd" value="{__button.listProviderTextStorage_add}" />
+          <input type="submit" class="inputSubmit" name="action_eProviderTextStorageDelete" value="{__button.listProviderTextStorage_delete}" onclick="return confirm('{__label.listProviderTextStorage_deleteConfirm}');" />
+        </div>
+      </form>
+      {providerTextStorageList}
+    </div>
+  </div>
+</div>
+<div id="fi_badgeHelpDiv" class="helpDiv">
+  <table>
+    <tr><td class="bold" colspan="2">{__label.settingsTemplate_tag_badgeTitle}:</td></tr>
+    <tr><td class="bold">@@USER_ID</td><td class="left">{__label.settingsTemplate_tag_event_user_id}</td></tr>
+    <tr><td class="bold">@@USER_NAME</td><td class="left">{__label.settingsTemplate_tag_event_user_name}</td></tr>
+    <tr><td class="bold">@@USER_EMAIL</td><td class="left">{__label.settingsTemplate_tag_event_user_email}</td></tr>
+    <tr><td class="bold">@@USER_COUNTRY</td><td class="left">{__label.settingsTemplate_tag_event_user_country}</td></tr>
+    <tr><td class="bold">@@USER_PHOTO</td><td class="left">{__label.settingsTemplate_tag_event_user_photo}</td></tr>
+    <tr><td class="bold">@@USER_ATTRIBUTE(ID)</td><td class="left">{__label.settingsTemplate_tag_event_user_attribute}</td></tr>
+    <tr><td class="bold">@@PROVIDER_NAME</td><td class="left">{__label.settingsTemplate_tag_provider_name}</td></tr>
+    <tr><td class="bold">@@CENTER_NAME</td><td class="left">{__label.settingsTemplate_tag_center_name}</td></tr>
+    <tr><td class="bold">@@CENTER_STREET</td><td class="left">{__label.settingsTemplate_tag_center_street}</td></tr>
+    <tr><td class="bold">@@CENTER_CITY</td><td class="left">{__label.settingsTemplate_tag_center_city}</td></tr>
+    <tr><td class="bold">@@CENTER_POSTAL_CODE</td><td class="left">{__label.settingsTemplate_tag_center_postal_code}</td></tr>
+    <tr><td class="bold">@@EVENT_NAME</td><td class="left">{__label.settingsTemplate_tag_event_name}</td></tr>
+    <tr><td class="bold">@@DATE_FROM</td><td class="left">{__label.settingsTemplate_tag_event_date_from}</td></tr>
+    <tr><td class="bold">@@TIME_FROM</td><td class="left">{__label.settingsTemplate_tag_event_time_from}</td></tr>
+    <tr><td class="bold">@@DATE_TO</td><td class="left">{__label.settingsTemplate_tag_event_date_to}</td></tr>
+    <tr><td class="bold">@@TIME_TO</td><td class="left">{__label.settingsTemplate_tag_event_time_to}</td></tr>
+    <tr><td class="bold">@@FILE(ID)</td><td class="left">{__label.settingsTemplate_tag_file}</td></tr>
+  </table>
+</div>
+<div id="fi_ticketHelpDiv" class="helpDiv">
+  <table>
+    <tr><td class="bold" colspan="2">{__label.settingsTemplate_tag_ticketTitle}:</td></tr>
+    <tr><td class="bold">@@RESERVATION_ID</td><td class="left">{__label.settingsTemplate_tag_reservation_id}</td></tr>
+    <tr><td class="bold">@@RESERVATION_NUMBER</td><td class="left">{__label.settingsTemplate_tag_reservation_number}</td></tr>
+    <tr><td class="bold">@@PRICE</td><td class="left">{__label.settingsTemplate_tag_reservation_price}</td></tr>
+    <tr><td class="bold">@@COMMODITY_NAME</td><td class="left">{__label.settingsTemplate_tag_reservation_commodity}</td></tr>
+    <tr><td class="bold">@@DATE_FROM</td><td class="left">{__label.settingsTemplate_tag_reservation_date_from}</td></tr>
+    <tr><td class="bold">@@TIME_FROM</td><td class="left">{__label.settingsTemplate_tag_reservation_time_from}</td></tr>
+    <tr><td class="bold">@@DATE_TO</td><td class="left">{__label.settingsTemplate_tag_reservation_date_to}</td></tr>
+    <tr><td class="bold">@@TIME_TO</td><td class="left">{__label.settingsTemplate_tag_reservation_time_to}</td></tr>
+    <tr><td class="bold">@@USER_ID</td><td class="left">{__label.settingsTemplate_tag_reservation_user_id}</td></tr>
+    <tr><td class="bold">@@USER_NAME</td><td class="left">{__label.settingsTemplate_tag_reservation_user_name}</td></tr>
+    <tr><td class="bold">@@USER_EMAIL</td><td class="left">{__label.settingsTemplate_tag_reservation_user_email}</td></tr>
+    <tr><td class="bold">@@PROVIDER_NAME</td><td class="left">{__label.settingsTemplate_tag_provider_name}</td></tr>
+    <tr><td class="bold">@@CENTER_NAME</td><td class="left">{__label.settingsTemplate_tag_center_name}</td></tr>
+    <tr><td class="bold">@@CENTER_STREET</td><td class="left">{__label.settingsTemplate_tag_center_street}</td></tr>
+    <tr><td class="bold">@@CENTER_CITY</td><td class="left">{__label.settingsTemplate_tag_center_city}</td></tr>
+    <tr><td class="bold">@@CENTER_POSTAL_CODE</td><td class="left">{__label.settingsTemplate_tag_center_postal_code}</td></tr>
+    <tr><td class="bold">@@QR_CODE(code)</td><td class="left">{__label.settingsTemplate_tag_qr_code}</td></tr>
+  </table>
+</div>
+<div id="fi_accountingHelpDiv" class="helpDiv">
+  <table>
+    <tr><td class="bold" colspan="2">{__label.settingsTemplate_tag_receiptTitle}:</td></tr>
+    <tr><td class="bold">@@RESERVATION_ID</td><td class="text">{__label.settingsTemplate_tag_reservation_id}</td></tr>
+    <tr><td class="bold">@@RESERVATION_NUMBER</td><td class="text">{__label.settingsTemplate_tag_reservation_number}</td></tr>
+    <tr><td class="bold">@@PREPAYMENT_INVOICE_NUMBER</td><td class="text">{__label.settingsTemplate_tag_prepayment_invoice_number}</td></tr>
+    <tr><td class="bold">@@RECEIPT_NUMBER</td><td class="text">{__label.settingsTemplate_tag_receipt_number}</td></tr>
+    <tr><td class="bold">@@INVOICE_NUMBER</td><td class="text">{__label.settingsTemplate_tag_invoice_number}</td></tr>
+    <tr><td class="bold">@@CREDITNOTE_NUMBER</td><td class="text">{__label.settingsTemplate_tag_creditnote_number}</td></tr>
+    <tr><td class="bold">@@USER_ID</td><td class="text">{__label.settingsTemplate_tag_reservation_user_id}</td></tr>
+    <tr><td class="bold">@@USER_NAME</td><td class="text">{__label.settingsTemplate_tag_reservation_user_name}</td></tr>
+    <tr><td class="bold">@@USER_EMAIL</td><td class="text">{__label.settingsTemplate_tag_reservation_user_email}</td></tr>
+    <tr><td class="bold">@@USER_STREET</td><td class="text">{__label.settingsTemplate_tag_user_street}</td></tr>
+    <tr><td class="bold">@@USER_CITY</td><td class="text">{__label.settingsTemplate_tag_user_city}</td></tr>
+    <tr><td class="bold">@@USER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_user_postal_code}</td></tr>
+    <tr><td class="bold">@@PROVIDER_NAME</td><td class="text">{__label.settingsTemplate_tag_provider_name}</td></tr>
+    <tr><td class="bold">@@PROVIDER_STREET</td><td class="text">{__label.settingsTemplate_tag_provider_street}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CITY</td><td class="text">{__label.settingsTemplate_tag_provider_city}</td></tr>
+    <tr><td class="bold">@@PROVIDER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_provider_postal_code}</td></tr>
+    <tr><td class="bold">@@PROVIDER_IC</td><td class="text">{__label.settingsTemplate_tag_provider_ic}</td></tr>
+    <tr><td class="bold">@@PROVIDER_DIC</td><td class="text">{__label.settingsTemplate_tag_provider_dic}</td></tr>
+    <tr><td class="bold">@@PROVIDER_VAT_RATE</td><td class="text">{__label.settingsTemplate_tag_provider_vat_rate}</td></tr>
+    <tr><td class="bold">@@PROVIDER_EMAIL</td><td class="text">{__label.settingsTemplate_tag_provider_email}</td></tr>
+    <tr><td class="bold">@@PROVIDER_WWW</td><td class="text">{__label.settingsTemplate_tag_provider_www}</td></tr>
+    <tr><td class="bold">@@PROVIDER_PHONE</td><td class="text">{__label.settingsTemplate_tag_provider_phone}</td></tr>
+    <tr><td class="bold">@@PROVIDER_PHONE_1</td><td class="text">{__label.settingsTemplate_tag_provider_phone_1}</td></tr>
+    <tr><td class="bold">@@PROVIDER_PHONE_2</td><td class="text">{__label.settingsTemplate_tag_provider_phone_2}</td></tr>
+    <tr><td class="bold">@@PROVIDER_BANK_ACCOUNT_NUMBER</td><td class="text">{__label.settingsTemplate_tag_provider_bank_number}</td></tr>
+    <tr><td class="bold">@@PROVIDER_BANK_ACCOUNT_SUFFIX</td><td class="text">{__label.settingsTemplate_tag_provider_bank_suffix}</td></tr>
+    <tr><td class="bold">@@CENTER_NAME</td><td class="text">{__label.settingsTemplate_tag_center_name}</td></tr>
+    <tr><td class="bold">@@CENTER_STREET</td><td class="text">{__label.settingsTemplate_tag_center_street}</td></tr>
+    <tr><td class="bold">@@CENTER_CITY</td><td class="text">{__label.settingsTemplate_tag_center_city}</td></tr>
+    <tr><td class="bold">@@CENTER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_center_postal_code}</td></tr>
+    <tr><td class="bold">@@COMMODITY_NAME</td><td class="text">{__label.settingsTemplate_tag_reservation_commodity}</td></tr>
+    <tr><td class="bold">@@COMMODITY_QUANTITY</td><td class="text">{__label.settingsTemplate_tag_reservation_commodity_quantity}</td></tr>
+    <tr><td class="bold">@@COMMODITY_BASE_PRICE</td><td class="text">{__label.settingsTemplate_tag_reservation_commodity_base_price}</td></tr>
+    <tr><td class="bold">@@COMMODITY_PRICE</td><td class="text">{__label.settingsTemplate_tag_reservation_commodity_price}</td></tr>
+    <tr><td class="bold">@@DATE_FROM</td><td class="text">{__label.settingsTemplate_tag_reservation_date_from}</td></tr>
+    <tr><td class="bold">@@TIME_FROM</td><td class="text">{__label.settingsTemplate_tag_reservation_time_from}</td></tr>
+    <tr><td class="bold">@@DATE_TO</td><td class="text">{__label.settingsTemplate_tag_reservation_date_to}</td></tr>
+    <tr><td class="bold">@@TIME_TO</td><td class="text">{__label.settingsTemplate_tag_reservation_time_to}</td></tr>
+    <tr><td class="bold">@@PAY_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_date}</td></tr>
+    <tr><td class="bold">@@PAY_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_time}</td></tr>
+    <tr><td class="bold">@@PAY_TYPE</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_type}</td></tr>
+    <tr><td class="bold">@@DPH_BASE</td><td class="text">{__label.settingsTemplate_tag_reservation_dph_base}</td></tr>
+    <tr><td class="bold">@@DPH_AMOUNT</td><td class="text">{__label.settingsTemplate_tag_reservation_dph_amount}</td></tr>
+    <tr><td class="bold">@@PRICE</td><td class="text">{__label.settingsTemplate_tag_reservation_price}</td></tr>
+    <tr><td class="bold">@@QR_CODE(code)</td><td class="text">{__label.settingsTemplate_tag_qr_code}</td></tr>
+  </table>
+</div>
+<div id="fi_numberHelpDiv" class="helpDiv">
+  <table>
+    <tr><td class="bold" colspan="2">{__label.settingsTemplate_tag_accountingNumberTitle}:</td></tr>
+    <tr><td class="bold">[YYYY]</td><td class="text">{__label.settingsTemplate_tag_receipt_number_year}</td></tr>
+    <tr><td class="bold">[CCCC]</td><td class="text">{__label.settingsTemplate_tag_receipt_number_counter}</td></tr>
+  </table>
+</div>

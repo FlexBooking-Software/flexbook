@@ -1,0 +1,23 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" enctype="multipart/form-data">
+  <div id="createProviderPortalPage" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <div class="formItem">
+      <label for="fi_pageShortName" class="bold">{__label.editProviderPortal_pageShortName}:</label>
+      <input class="extraLongText" id="fi_pageShortName" type="text" name="pageShortName" value="{pageShortName}"/>
+    </div>
+    <div class="formItem">
+      <label for="fi_pageNme" class="bold">{__label.editProviderPortal_pageName}:</label>
+      <input class="extraLongText" id="fi_pageName" type="text" name="pageName" value="{pageName}"/>
+    </div>
+    <div class="formItem">
+      <label for="fi_pageTemplate class="bold">{__label.editProviderPortal_pageTemplate}:</label>
+      {fi_template}
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_eProviderPortalPageCreate" type="submit" name="action_eProviderPortalPageCreate" value="{__button.editProviderPortalPage_create}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>

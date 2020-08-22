@@ -1,0 +1,29 @@
+<style>
+  div.badge { width: 365px; height: 160px; }
+  div.badge div.data { width: 200px; float: left; text-align: left; }
+  div.badge div.data div { margin-left: 10px; }
+  div.badge div.data div.name { font-size: 1.2em; font-weight: bold; margin-top: 10px; }
+  div.badge div.data div.event { font-weight: bold; margin-top: 10px; }
+  div.badge div.data div.time { font-size: 0.9em; font-style: italic; margin-left: 20px; }
+  div.badge div.data div.providerName { margin-top: 10px; font-size: 0.8em; font-weight: bold; }
+  div.badge div.data div.providerAddress { margin-left: 20px; font-size: 0.6em; font-style: italic; }
+  div.badge div.photo { width: 100px; float: right; }
+  div.badge div.photo div.img { border: 1px solid black; margin: 5px; width: 90px; height: 90px; }
+  div.badge div.photo div.img img { height: auto; width: auto; max-width: 90px; max-height: 90px; }
+  div.badge div.photo div.id { font-size: 0.6em; font-weight: bold; }
+  div.badge div.signature { clear: left; font-size: 0.6em; font-style: italic; }
+</style>
+<div class="photo">
+  <div class="img">@@USER_PHOTO</div>
+  <div class="id">@@USER_ID</div>
+</div>
+<div class="data">
+  <div class="name">@@USER_NAME (@@USER_EMAIL)</div>
+  <div class="event">@@EVENT_NAME</div>
+  <div class="time">@@DATE_FROM: @@TIME_FROM - @@TIME_TO</div>
+  <div class="providerName">@@CENTER_NAME</div>
+  <div class="providerAddress">@@CENTER_STREET, @@CENTER_CITY</div>
+</div>
+<div class="signature">
+  flexbook (c) 2018
+</div>

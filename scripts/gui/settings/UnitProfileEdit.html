@@ -1,0 +1,63 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editUnitProfile" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editUnitProfile_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    {fi_provider}
+    <br />
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editUnitProfile_unit}:</label>
+      <input class="shortText" id="fi_unitMultiplier" type="text" name="unitMultiplier" value="{unitMultiplier}" />
+      <select name="unitBase">
+        <option value="min" {minCheckedUnit}>{__label.editUnitProfile_unitMin}</option>
+        <option value="hour" {hourCheckedUnit}>{__label.editUnitProfile_unitHour}</option>
+        <option value="day" {dayCheckedUnit}>{__label.editUnitProfile_unitDay}</option>
+        <option value="night" {nightCheckedUnit}>{__label.editUnitProfile_unitNight}</option>
+      </select>
+    </div>
+    <div class="formItem">
+      <label for="fi_minimumUnit" class="bold">{__label.editUnitProfile_minimumUnit}:</label>
+      <input class="shortText" id="fi_minimumUnit" type="text" name="minimumUnit" value="{minimumUnit}" />
+      {__label.editUnitProfile_minimumUnit2}
+    </div>
+    <div class="formItem">
+      <label for="fi_maximumUnit">{__label.editUnitProfile_maximumUnit}:</label>
+      <input class="shortText" id="fi_maximumUnit" type="text" name="maximumUnit" value="{maximumUnit}" />
+      {__label.editUnitProfile_minimumUnit2}
+    </div>
+    <br />
+    <div class="formItem">
+      <label for="fi_alignmentTimeFrom">{__label.editUnitProfile_alignmentTime1}:</label>
+      <input class="shortText" id="fi_alignmentTimeFrom" type="text" name="alignmentTimeFrom" value="{alignmentTimeFrom}" />
+      {__label.editUnitProfile_alignmentTime2}
+      <input class="shortText" id="fi_alignmentTimeTo" type="text" name="alignmentTimeTo" value="{alignmentTimeTo}" />
+      {__label.editUnitProfile_alignmentTime3}
+    </div>
+    <div class="formItem">
+      <label for="fi_alignmentTimeGrid">{__label.editUnitProfile_alignmentTimeGrid}:</label>
+      <input class="shortText" id="fi_alignmentTimeGridMultiplier" type="text" name="alignmentTimeGridMultiplier" value="{alignmentTimeGridMultiplier}" />
+      <select name="alignmentTimeGridBase">
+        <option value="">{__label.select_choose}</option>
+        <option value="min" {minCheckedAlignment}>{__label.editUnitProfile_unitMin}</option>
+        <option value="hour" {hourCheckedAlignment}>{__label.editUnitProfile_unitHour}</option>
+        <!--<option value="day" {dayCheckedAlignment}>{__label.editUnitProfile_unitDay}</option>-->
+      </select>
+    </div>
+    <div class="formItem">
+      <label for="fi_endTimeFrom">{__label.editUnitProfile_endTime1}:</label>
+      <input class="shortText" id="fi_endTimeFrom" type="text" name="endTimeFrom" value="{endTimeFrom}" />
+      {__label.editUnitProfile_endTime2}
+      <input class="shortText" id="fi_endTimeTo" type="text" name="endTimeTo" value="{endTimeTo}" />
+      {__label.editUnitProfile_endTime3}
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" type="submit" name="action_eUnitProfileSave" value="{__button.editUnitProfile_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>

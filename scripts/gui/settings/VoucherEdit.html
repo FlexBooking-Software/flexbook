@@ -1,0 +1,55 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editVoucher" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editVoucher_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    <div class="formItem">
+      <label for="fi_code" class="bold">{__label.editVoucher_code}:</label>
+      <input class="longText" id="fi_code" type="text" name="code" value="{code}" />
+    </div>
+    {fi_provider}
+    <div class="formItem">
+      <label>{__label.editVoucher_validity}:</label>
+      {__label.editVoucher_validity_from}
+      <input id="fi_from" class="shortText" type="text" name="validityFrom" value="{validityFrom}" />
+      {__label.editVoucher_validity_to}
+      <input id="fi_to" class="shortText" type="text" name="validityTo" value="{validityTo}" />
+    </div>
+    {fi_center}
+    <div class="formItem">
+      <label>{__label.editVoucher_tag}:</label>
+      <input type="text" id="fi_tag" name="subjectTag" />
+    </div>
+    <div class="formItem">
+      <label for="fi_applicationTotal">{__label.editVoucher_applicationTotal}:</label>
+      <input class="shortText" id="fi_applicationTotal" type="text" name="applicationTotal" value="{applicationTotal}" />
+    </div>
+    <div class="formItem">
+      <label for="fi_applicationUser">{__label.editVoucher_applicationUser}:</label>
+      <input class="shortText" id="fi_applicationUser" type="text" name="applicationUser" value="{applicationUser}" />
+    </div>
+    <br/>
+    <div class="formItem discount">
+      <label class="bold" for="fi_discountAmount">{__label.editVoucher_discount}:</label>
+      <input type="radio" name="discountType" value="AMOUNT" {amountChecked}/>{__label.editVoucher_discount_amount}
+      <input id="fi_discountAmount" class="shortText" type="text" name="discountAmount" value="{discountAmount}" />&nbsp;{__label.currency_CZK}
+      <br/>
+      <input type="radio" name="discountType" value="PROPORTION" {proportionChecked}/>{__label.editVoucher_discount_proportion}
+      <input id="fi_discountProportion" class="shortText" type="text" name="discountProportion" value="{discountProportion}" />&nbsp;%
+    </div>
+    <br/>
+    <div class="formItem">
+      <label>{__label.editVoucher_active}:</label>
+      {fi_active}
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" type="submit" name="action_eVoucherSave" value="{__button.editVoucher_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>

@@ -1,0 +1,7 @@
+# administratorsky ucet
+insert into address (address_id) values (null);
+select @address_id:=last_insert_id();
+insert into user (firstname,lastname,admin,disabled,address,username,password,validated) values ('Flexbook','Admin account','Y','N',@address_id,'admin',MD5('admin'),now());
+
+# jazyk pro multilang atributy
+insert into language values ('en','English');

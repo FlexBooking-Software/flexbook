@@ -1,0 +1,72 @@
+<div class="loginPage">
+  <div>&nbsp;</div>
+  <div class="loginForm">
+    {messageList}
+    <div class="top">&nbsp;</div>
+    <div class="middle">
+      <div class="logo"><img class="logo" src="img/logo_login.png" /></div>
+      {children}
+      <!--<div class="static">
+        <div class="item"><a href="#" onclick="return showStatic('staticAboutInfo');" id="staticAbout">{__label.login_static_about}</a></div>
+        <div class="separator">|</div>
+        <div class="item"><a href="#" onclick="return showStatic('staticContactInfo');" id="staticContact">{__label.login_static_contact}</a></div>
+        <div class="separator">|</div>
+        <div class="item"><a href="#" onclick="return showStatic('staticReferenceInfo');" id="staticReference">{__label.login_static_reference}</a></div>
+        <div class="separator">|</div>
+        <div class="item"><a target="_blank" href="doc/Navrh_smlouvy.pdf">{__label.login_static_contract}</a></div>
+      </div>-->
+    </div>
+    <div class="bottom">&nbsp;</div>
+  </div>
+</div>
+<div class="staticText" id="staticAboutInfo">
+<div class="title">O systému FlexBook<img src="img/button_jq_close.png" onclick="closeStatic('staticAboutInfo');"/></div>
+<div class="content">
+<p>
+FlexBook je multitenantní internetový rezervační systém pro rezervace zdrojů (resources) a akcí (events). Zdroje mohou být například sportovní kurty, hřiště, hotelové pokoje, konferenční místnosti, apod. Příkladem akcí jsou konference, workshopy, školení, tréninky, turnaje, apod.
+</p>
+<p>
+Systém flexbook je velmi univerzální rezervační systém a tudíž je použitelný v mnoha segmentech. Aktuálně je FlexBook úspěšně používán:
+<ul>
+<li>pro rezervace konferencí, firemních eventů a workshopů</li>
+<li>jako rezervační systém pro půjčovny</li>
+<li>jako rezervační systém pro sportovní centra</li>
+</ul>
+</p>
+<p>
+Nic však nebrání použití pro rezervace i v jiných oblastech, a proto nás neváhejte kontaktovat a společně se můžeme zamyslet nad použitím ve vašem specifickém segmentu.   
+</p>
+<p>
+Technicky se FlexBook skládá ze dvou částí:
+<ul>
+<li>Back-officové webové aplikace pro správu uživatelů, zdrojů, akcí, rezervací, plateb a reportování, kterou používá personál klienta pro běžnou správu a agendu spojenou s provozem.</li>
+<li>Integračních front-endových komponent, které použije klientův webmaster</li>
+<ul><li>Sady předpřipravených JavaScriptových komponent pro jednoduchou integraci do existujících webových stránek.</li>
+<li>RESTAPI pro komplexnější integrace (připravuje se)</li></ul>
+</ul>
+</p>
+</div>
+</div>
+<div class="staticText" id="staticReferenceInfo">
+<div class="title">Reference<img src="img/button_jq_close.png" onclick="closeStatic('staticReferenceInfo');"/></div>
+<div class="content">
+<table>
+<tr><th>Zákazník</th><th>Segment</th><th>Použití systému Flexbook</th></tr>
+<tr><td rowspan="2"><img src="img/reference_ct.png"/></td><td>Konference</td><td>Rezervace na konference a eventy. <a target="_blank" href="http://www.czechtourism.cz">http://www.czechtourism.cz</a>/</td></tr>
+<tr><td>Půjčovna</td><td>Interní rezervace marketingových promo materiálů v rámci firemní půjčovny.</td></tr>
+<tr><td rowspan="2"><img src="img/reference_kbb.png"/></td><td>Sportovní areál</td><td rowspan=2">Půjčovna kajaků, rezervace kurtu, rezervace na sportovní a volnočasové akce.  
+<a target="_blank" href="http://www.kayakbeachbar.cz">http://www.kayakbeachbar.cz</a>/</td></tr>
+<tr><td>Půjčovna</td></tr>
+</table>
+</div>
+</div>
+<div class="staticText" id="staticContactInfo">
+<div class="title">Kontakty<img src="img/button_jq_close.png" onclick="closeStatic('staticContactInfo');"/></div>
+<div class="content">
+<br/>FLEXBOOK, s.r.o.
+<br/>Praha 3, Krásova 1027/9, PSČ 13000
+<br/>IČ: 62907603
+<br/>
+<br/>E-mail: <a href="mailto:info@flexbook.cz">info@flexbook.cz</a>
+</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" enctype="multipart/form-data">
+  <div id="editProviderPortalPage" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div class="formItem">
+      <label for="fi_pageShortName" class="bold">{__label.editProviderPortal_pageShortName}:</label>
+      <input class="extraLongText" id="fi_pageShortName" type="text" name="pageShortName" value="{pageShortName}"/>
+    </div>
+    <div class="formItem">
+      <label for="fi_pageName" class="bold">{__label.editProviderPortal_pageName}:</label>
+      <input class="extraLongText" id="fi_pageName" type="text" name="pageName" value="{pageName}"/>
+      <a class="fi_help" href="#"><img class="inline" src="img/button_grid_help.png"/></a>
+      <input type="button" id="toggle" value="{__button.editProviderPortal_editorToggle}" />
+      <input type="hidden" id="toggleValue" value="on" />
+    </div>
+    <br/>
+    <textarea id="fi_content" class="content" name="pageContent">{pageContent}</textarea>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_eProviderPortalPageSave" type="submit" name="action_eProviderPortalPageSave" value="{__button.editProviderPortalPage_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+  <div id="fi_helpDiv" class="helpDiv">
+    <table>
+      <tr><td class="bold" colspan="2">Seznam speciálních tagů, které lze vložit do HTML kódu:</td></tr>
+      <tr><td class="bold">@@PAGE(id,nazev)</td><td class="text">bude nahrazen odkazem na stránku portálu s daným ID, parametr "nazev" je volitelný a pokud není uveden, použije se jako název odkazu název odkazované stránky; např. @@PAGE(TEST,Další) zobrazí odkaz na stránku portálu s ID "TEST" a odkaz se bude jmenovat "Další"</td></tr>
+      <tr><td class="bold">@@FILE(id)</td><td class="text">bude nahrazen odkazem se souborem poskytovatele s daným ID; např: &lt;img src="@@FILE(TEST)"/&gt; zobrazí obrázek poskytovatele s ID "TEST"</td></tr>
+      <tr><td class="bold">@@PROVIDER_ID()</td><td class="text">bude nahrazen interním ID poskytovatele; lze využít například při vkládání JS komponent Flexbooku</td></tr>
+    </table>
+  </div>
+</form>

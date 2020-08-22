@@ -1,0 +1,47 @@
+<style>
+  div.reservationCreditnote { border: 1px solid black; clear: left; margin: 5px; width: 400px; overflow: hidden; text-align: center; }
+  div.reservationCreditnote hr { clear: left; }
+  div.reservationCreditnote div.bold { font-weight: bold; }
+  div.reservationCreditnote div.header div { margin: 0 auto; }
+  div.reservationCreditnote div.header div.number { margin-bottom: 5px; font-weight: bold; }
+  div.reservationCreditnote div.subject { margin-top: 10px; border-top: 1px solid black; padding-top: 10px; }
+  div.reservationCreditnote div.subject div.commodity { margin-top: 20px; font-weight: bold; }
+  div.reservationCreditnote div.payment { margin-top: 10px; border-top: 1px solid black; padding: 3px; overflow: hidden; }
+  div.reservationCreditnote div.payment div.total { font-weight: bold; margin: 10px 0; }
+  div.reservationCreditnote div.payment div.label { clear: both; float: left; width: 50%; text-align: left; }
+  div.reservationCreditnote div.payment div.value { float: right; width: 50%; text-align: right; }
+  div.reservationCreditnote div.summary { border-top: 1px solid black; padding: 3px; overflow: hidden; }
+  div.reservationCreditnote div.summary div.label { clear: both; float: left; width: 50%; text-align: left; }
+  div.reservationCreditnote div.summary div.total { font-weight: bold; }
+  div.reservationCreditnote div.summary div.value { float: right; width: 50%; text-align: right; }
+</style>
+<div class="header">
+  <div class="number">Dobropis: @@CREDITNOTE_NUMBER</div>
+  <div class="number">k daň. dokladu: @@INVOICE_NUMBER</div>
+  <div class="bold">Dodavatel:</div>
+  <div>@@PROVIDER_NAME</div>
+  <div>@@PROVIDER_STREET, @@PROVIDER_POSTAL_CODE, @@PROVIDER_CITY</div>
+  <div>IČ: @@PROVIDER_IC, DIČ: @@PROVIDER_DIC</div>
+  <hr/>
+  <div class="bold">Odběratel:</div>
+  <div>@@USER_NAME</div>
+  <div>@@USER_STREET, @@USER_POSTAL_CODE, @@USER_CITY</div>
+</div>
+<div class="subject">
+  <div>@@CENTER_NAME</div>
+  <div>@@CENTER_STREET</div>
+  <div>@@CENTER_POSTAL_CODE @@CENTER_CITY</div>
+  <div class="commodity">@@COMMODITY_NAME @@COMMODITY_QUANTITY @@COMMODITY_BASE_PRICE Kč</div>
+</div>
+<div class="payment">
+  <div class="label">Vystaveno:</div><div class="value">@@CANCEL_DATE</div>
+  <div class="label">Datum zdanit. plnění:</div><div class="value">@@CANCEL_DATE</div>
+</div>
+<div class="summary">
+  <div class="label bold">Cena:</div><div class="value bold">@@PRICE Kč</div>
+  <div class="label bold">Sleva @@DISCOUNT_TEXT:</div><div class="value bold">-@@DISCOUNT_PRICE Kč</div>
+  <hr/>
+  <div class="label">Základ DPH:</div><div class="value">@@DPH_BASE Kč</div>
+  <div class="label">DPH @@PROVIDER_VAT_RATE%:</div><div class="value">@@DPH_AMOUNT Kč</div>
+  <div class="label total">Celkem:</div><div class="value total">@@TOTAL_PRICE Kč</div>
+</div>

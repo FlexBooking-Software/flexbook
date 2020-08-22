@@ -1,0 +1,105 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editAvailExProfile" class="inputForm  ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    {fi_provider}
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editAvailExProfile_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    <div class="formItem">
+      <label class="bold" style="height: 40px;">{__label.editAvailExProfile_term}:</label>
+      <div id="fi_term" style="float: left;">
+        <div class="gridTable">
+        <table id="fi_termTable">
+          <tbody>{fi_term}</tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input id="fi_addTerm" type="button" value="{__button.editAvailExProfile_addTerm}" />
+      <input class="fb_eSave" type="submit" name="action_eAvailExProfileSave" value="{__button.editAvailExProfile_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newTerm_form" class="ajaxForm" title="{__label.editAvailExProfile_termTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editTerm_id" name="id" value="" />
+      <input type="hidden" id="editTerm_index" name="index" value="" />
+      <table>
+        <tr><td colspan="2">
+          <label class="left">{__label.editAvailExProfile_termName}:</label>
+          <input type="text" name="termName" id="editTerm_name" class="left text ui-widget-content ui-corner-all">
+        </td></tr>
+        <tr><td class="first">
+          <label>{__label.editAvailExProfile_termType}:</label>
+          <input type="radio" class="inputRadio" name="termType" id="editTerm_typeDate" class="text ui-widget-content ui-corner-all"> <label class="normal">{__label.editAvailExProfile_termType_DATE}</label>
+          <br /><input type="radio" class="inputRadio" name="termType" id="editTerm_typeDateRange" class="text ui-widget-content ui-corner-all"> <label class="normal">{__label.editAvailExProfile_termType_DATE_RANGE}</label>
+          <br /><input type="radio" class="inputRadio" name="termType" id="editTerm_typeTimeRange" class="text ui-widget-content ui-corner-all"> <label class="normal">{__label.editAvailExProfile_termType_TIME_RANGE}</label>
+        </td><td>
+          <div class="item" id="date">
+            <label>{__label.editAvailExProfile_termDate}:</label>
+            <input type="text" name="termDate" id="editTerm_date" class="text ui-widget-content ui-corner-all">
+          </div>
+          <div class="item" id="dateRange">
+            <label>{__label.editAvailExProfile_termDateFrom}:</label>
+            <input type="text" name="termDateFrom" id="editTerm_dateFrom" class="text ui-widget-content ui-corner-all">
+            <label>{__label.editAvailExProfile_termDateTo}:</label>
+            <input type="text" name="termDateTo" id="editTerm_dateTo" class="text ui-widget-content ui-corner-all">
+          </div>
+          <div class="item" id="timeRange">
+            <label>{__label.editAvailExProfile_termTimeFrom}:</label>
+            <input type="text" name="termTimeFrom" id="editTerm_timeFrom" class="text ui-widget-content ui-corner-all">
+            <label>{__label.editAvailExProfile_termTimeTo}:</label>
+            <input type="text" name="termTimeTo" id="editTerm_timeTo" class="text ui-widget-content ui-corner-all">
+          </div>
+        </td></tr>
+        <tr><td colspan="2">
+          <br />
+          <label class="left">{__label.editAvailExProfile_repeat}:</label>
+          <input type="hidden" name="repeat" value="" />
+          <input type="checkbox" id="editTerm_repeated" name="repeated" value="1" class="left checkbox text ui-widget-content ui-corner-all"/>
+          <div id="repeatDiv" class="clear left">
+            <label class="left">{__label.editAvailExProfile_repeatCycle}:</label>
+            <select class="left" id="editTerm_repeatCycle" name="repeatCycle">
+              <option value="">{__label.select_choose}</option>
+              <option value="DAY_1">{__label.editAvailExProfile_repeatCycle_DAY_1}</option>
+              <option value="WEEK_1">{__label.editAvailExProfile_repeatCycle_WEEK_1}</option>
+              <option value="WEEK_2">{__label.editAvailExProfile_repeatCycle_WEEK_2}</option>
+              <option value="WEEK_3">{__label.editAvailExProfile_repeatCycle_WEEK_3}</option>
+              <option value="MONTH_1">{__label.editAvailExProfile_repeatCycle_MONTH_1}</option>
+              <option value="MONTH_2">{__label.editAvailExProfile_repeatCycle_MONTH_2}</option>
+              <option value="YEAR_1">{__label.editAvailExProfile_repeatCycle_YEAR_1}</option>
+            </select>
+            <div id="repeatWeekdayDiv">
+              <label>{__label.editAvailExProfile_repeatWeekday}:</label>
+              <table class="dayTable">
+                <tr>
+                  <td><input type="checkbox" id="editTerm_repeatWeekday_mon" class="inputCheckbox" name="repeatWeekday_mon" value="1"/></td><td class="dayLabel">{__label.day_mon}</td>
+                  <td><input type="checkbox" id="editTerm_repeatWeekday_tue" class="inputCheckbox" name="repeatWeekday_tue" value="1"/></td><td class="dayLabel">{__label.day_tue}</td>
+                  <td><input type="checkbox" id="editTerm_repeatWeekday_wed" class="inputCheckbox" name="repeatWeekday_wed" value="1"/></td><td class="dayLabel">{__label.day_wed}</td>
+                  <td><input type="checkbox" id="editTerm_repeatWeekday_thu" class="inputCheckbox" name="repeatWeekday_thu" value="1"/></td><td class="dayLabel">{__label.day_thu}</td>
+                  <td><input type="checkbox" id="editTerm_repeatWeekday_fri" class="inputCheckbox" name="repeatWeekday_fri" value="1"/></td><td class="dayLabel">{__label.day_fri}</td>
+                </tr><tr>
+                  <td>&nbsp;</td><td>&nbsp;</td>
+                  <td>&nbsp;</td><td>&nbsp;</td>
+                  <td>&nbsp;</td><td>&nbsp;</td>
+                  <td><input type="checkbox" id="editTerm_repeatWeekday_sat" class="inputCheckbox" name="repeatWeekday_sat" value="1"/></td><td class="dayLabel">{__label.day_sat}</td>
+                  <td><input type="checkbox" id="editTerm_repeatWeekday_sun" class="inputCheckbox" name="repeatWeekday_sun" value="1"/></td><td class="dayLabel">{__label.day_sun}</td>
+                </tr>
+              </table>
+            </div>    
+            <label class="left">{__label.editAvailExProfile_repeatUntil}:</label>
+            <input class="left text ui-widget-content ui-corner-all" type="text" id="editTerm_repeatUntil" name="repeatUntil"/>
+          </div>
+        </td></tr>
+      </table>
+    </fieldset>
+  </form>
+</div>

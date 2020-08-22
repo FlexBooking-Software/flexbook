@@ -1,0 +1,14 @@
+<form action="{%basefile%}" method="post" id="form">
+  <div id="loginForm">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="action" value="eLogin" />
+    <input type="hidden" name="login_username" value="{login_username}" id="fi_username"/>
+    <input type="hidden" name="login_provider" value="" id="fi_provider"/>
+    <input type="submit" name="action_eReLogin" id="fi_relogin" style="display: none;" />
+    <div class="input">
+      <div class="label">{__label.login_accounts}</div>
+    </div>
+    <div class="accounts">{accounts}</div>
+    <div class="logout">[<a href="index.php?action=eLogout&sessid={%sessid%}">{__button.loginForm_logout}</a>]</div>
+  </div>
+</form>

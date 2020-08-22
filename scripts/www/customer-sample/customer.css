@@ -1,0 +1,105 @@
+ body {
+  font-size: 0.8em; 
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  background-color: gray;
+}
+
+div#flexbook_1 {
+  width: 1270px;
+  height: 440px;
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  background-color: white;
+  overflow: scroll;
+}
+
+div#flexbook_2 {
+  width: 480px;
+  height: 200px;
+  position: absolute;
+  left: 20px;
+  top: 510px;
+  background-color: white;
+  overflow: scroll;
+}
+
+div#flexbook_3 {
+  width: 750px;
+  height: 425px;
+  position: absolute;
+  left: 540px;
+  top: 510px;
+  background-color: white;
+  overflow: scroll;
+}
+
+div#flexbook_4 {
+  width: 480px;
+  height: 135px;
+  position: absolute;
+  left: 20px;
+  top: 730px;
+  background-color: white;
+  overflow: scroll;
+}
+
+div#flexbook_5 {
+  width: 1270px;
+  height: 685px;
+  position: absolute;
+  left: 20px;
+  top: 2500px;
+  background-color: white;
+  overflow: scroll;
+}
+
+div#flexbook_6 {
+  width: 480px;
+  height: 50px;
+  position: absolute;
+  left: 20px;
+  top: 885px;
+  background-color: white;
+  overflow: scroll;
+}
+
+div#flexbook_7 {
+  width: 1270px;
+  height: 400px;
+  position: absolute;
+  left: 20px;
+  top: 955px;
+  background-color: white;
+  overflow: scroll;
+}
+
+ div#flexbook_9 {
+   width: 1270px;
+   height: 800px;
+   position: absolute;
+   left: 20px;
+   top: 1375px;
+   background-color: white;
+   overflow: scroll;
+ }
+
+ div#flexbook_8 {
+   width: 1270px;
+   height: 270px;
+   position: absolute;
+   left: 20px;
+   top: 2200px;
+   background-color: white;
+   overflow: scroll;
+ }
+
+div.flb_output { margin: 5px; xfont-weight: bold; }
+input.flb_inputTime { width: 40px; }
+div.ajaxForm { display: none; }
+
+div.flb_output div.value { font-weight: bold; }
+
+div.flb_output .fc-bgevent { background-color: #aeaeae; }

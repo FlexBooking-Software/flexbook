@@ -1,0 +1,165 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <b>{__label.editEvent_groupSpecification}:</b>
+  <div class="inputForm ui-widget-content">
+    <div class="formItem">
+      <label for="fi_start" class="bold">{__label.editEvent_groupStart}:</label>
+      <input class="mediumText" id="fi_start" type="text" name="groupStart" value="{groupStart}"/>
+    </div>
+    <div class="formItem">
+      <label for="fi_end" class="bold">{__label.editEvent_groupEnd}:</label>
+      <input class="mediumText" id="fi_end" type="text" name="groupEnd" value="{groupEnd}"/>
+    </div>
+    <div class="formItem">
+      <label>{__label.editEvent_groupException}:</label>
+      <div>
+        <input type="button" class="button" id="fi_newException" value="{__button.editEvent_groupExceptionNew}" />
+        <div class="gridTable">
+          <table id="fi_eventGroup_exception">
+            <thead><tr><th>{__label.editEvent_groupExceptionFrom}</th><th>{__label.editEvent_groupExceptionTo}</th><th>&nbsp;</th></tr></thead>
+            <tbody>{fi_eventGroup_exceptionData}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="formItem">
+      <label for="fi_count">{__label.editEvent_groupCount}:</label>
+      <input id="fi_count" type="text" name="groupCount" value="{groupCount}"/>
+    </div>
+    <br/>
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editEvent_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}"/>
+      {__label.editEvent_fromResource} {fi_resourceSelect}
+    </div>
+    <div class="formItem">
+      <label for="fi_externalId">{__label.editEvent_externalId}:</label>
+      <input class="extraLongText" id="fi_externalId" type="text" name="externalId" value="{externalId}"/>
+    </div>
+    <div class="formItem">
+      <label for="fi_length" class="bold">{__label.editEvent_groupLength}:</label>
+      <input id="fi_length" type="text" name="groupLength" value="{groupLength}"/>
+    </div>
+    <div class="formItem">
+      <label for="fi_pause">{__label.editEvent_groupPause}:</label>
+      <input id="fi_pause" type="text" name="groupPause" value="{groupPause}"/>
+    </div>
+  </div>
+  <br/>
+  <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+  <input type="hidden" name="id" value="{id}" />
+  <input type="hidden" id="fi_nextAction" name="nextAction" value="eEventSave" />
+  <div id="editEvent" class="inputForm ui-widget-content">
+    <b>{__label.editEvent_groupShared}:</b>
+    <div id="tab">
+      <ul>
+        <li><a href="#tab-1">{__label.editEvent_general}</a></li>
+        <li><a href="#tab-2">{__label.editEvent_additional}</a></li>
+        <li><a href="#tab-3">{__label.editEvent_wwwInfo}</a></li>
+      </ul>
+      <div id="tab-1">
+        {fi_provider}
+        {fi_center}
+        <div class="formItem">
+          <label class="bold">{__label.editEvent_organiser}:</label>
+          {fi_organiser}
+        </div>
+        <div class="formItem">
+          <label class="bold">{__label.editEvent_description}:</label>
+          <textarea id="fi_description" name="description">{description}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_tag}:</label>
+          <input type="text" id="fi_tag" name="tag" />
+        </div>
+        <div class="formItem">
+          <label for="fi_maxAttendees" class="bold">{__label.editEvent_maxAttendees}:</label>
+          <input id="fi_maxAttendees" type="text" name="maxAttendees" value="{maxAttendees}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_maxSubstitutes">{__label.editEvent_maxSubstitutes}:</label>
+          <input id="fi_maxSubstitutes" type="text" name="maxSubstitutes" value="{maxSubstitutes}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_price">{__label.editEvent_price}:</label>
+          <input id="fi_price" type="text" name="price" value="{price}" {readonlyAttendee}/>&nbsp;{__label.currency_CZK}
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_active}:</label>
+          {fi_active}
+        </div>
+        <div class="formItem">
+          <label for="fi_portal">{__label.editEvent_portal}:</label>
+          <input type="hidden" name="portal" value="" />
+          {fi_portal}
+        </div>
+      </div>
+      <div id="tab-2">
+        <div class="formItem">
+          <label class="bold">{__label.editEvent_resource}:</label>
+          <input type="hidden" name="resource" value="" />
+          <div id="fi_resource" style="float: left;">{fi_resource}</div>
+        </div>
+        <div class="cleaner">&nbsp;</div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_maxCoAttendees">{__label.editEvent_maxCoAttendees}:</label>
+          <input id="fi_maxCoAttendees" type="text" name="maxCoAttendees" value="{maxCoAttendees}"/>
+        </div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_reservationMaxAttendees">{__label.editEvent_reservationMaxAttendees}:</label>
+          <input id="fi_reservationMaxAttendees" type="text" name="reservationMaxAttendees" value="{reservationMaxAttendees}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_reservationCondition}:</label>
+          {fi_reservationCondition}
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_notification}:</label>
+          {fi_notificationTemplate}
+        </div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_badge">{__label.editEvent_badge}:</label>
+          {fi_badge}
+        </div>
+      </div>
+      <div id="tab-3">      
+        <div class="formItem">
+          <label>{__label.editEvent_urlDescription}:</label>
+          <textarea name="urlDescription">{urlDescription}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_urlPrice}:</label>
+          <textarea name="urlPrice">{urlPrice}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_urlOpening}:</label>
+          <textarea name="urlOpening">{urlOpening}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_urlPhoto}:</label>
+          <textarea id="fi_urlPhoto" name="urlPhoto">{urlPhoto}</textarea>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="$('#form').attr('target','_self'); document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_eEventGroupSave" type="submit" onclick="$('#form').attr('target','_self');" name="action_eEventGroupSave" value="{__button.editEvent_saveGroup}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newException_form" class="ajaxForm" title="{__label.editEvent_groupExceptiontitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editException_index" name="index" value="" />
+      <label for="from">{__label.editEvent_groupExceptionFrom}</label>
+      <input type="text" name="from" id="editException_from" class="text ui-widget-content ui-corner-all">
+      <label for="to">{__label.editEvent_groupExceptionTo}</label>
+      <input type="text" name="from" id="editException_to" class="text ui-widget-content ui-corner-all">
+    </fieldset>
+  </form>
+</div>

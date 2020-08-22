@@ -1,0 +1,55 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" enctype="multipart/form-data">
+  <div id="editPortalTemplate" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div id="tab">
+      <ul>
+        <li><a href="#tab-1">{__label.editPortalTemplate_general}</a></li>
+        <li><a href="#tab-2">{__label.editPortalTemplate_html}</a></li>
+      </ul>
+      <div id="tab-1">
+        <div class="formItem">
+          <label for="fi_name" class="bold">{__label.editPortalTemplate_name}:</label>
+          <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_preview">{__label.editPortalTemplate_preview}:</label>
+          {fi_preview}
+        </div>
+        <div class="formItem">
+          <label for="fi_previewFile">{__label.editPortalTemplate_previewNew}:</label>
+          <input id="fi_previewFile" type="file" name="previewFile"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_content">{__label.editPortalTemplate_page}:</label>
+          <div class="pageList">[<a id="fi_newPageTemplate" href="#">{__label.editPortalTemplate_newPage}</a>]{page}</div>
+        </div>
+      </div>
+      <div id="tab-2">
+        <div class="formItem">
+          <label for="fi_css">{__label.editPortalTemplate_css}:</label>
+          <textarea class="css" name="css">{css}</textarea>
+        </div>
+        <div class="formItem">
+          <label for="fi_content">{__label.editPortalTemplate_content}:</label>
+          <textarea class="content" name="content">{content}</textarea>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_ePortalTemplateSave" type="submit" name="action_ePortalTemplateSave" value="{__button.editPortalTemplate_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newPageTemplate_form" class="ajaxForm" title="{__label.editPortalTemplate_pageTemplateTitle}">
+  <form>
+    <fieldset>
+      <label class="left">{__label.editPortalTemplate_newPageTemplate}:</label>
+      {fi_pageTemplateSelect}
+    </fieldset>
+  </form>
+</div>
+

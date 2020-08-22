@@ -1,0 +1,28 @@
+<style>
+  div.reservationTicket { border: 1px solid black; clear: left; margin: 5px; width: 500px; overflow: hidden; text-align: center; }
+  div.reservationTicket div.data { width: 390px; float: left; text-align: left; }
+  div.reservationTicket div.data div { margin-left: 20px; }
+  div.reservationTicket div.data div.providerName { margin-top: 10px; font-size: 0.9em; font-weight: bold; }
+  div.reservationTicket div.data div.providerAddress { margin-left: 30px; font-size: 0.7em; font-style: italic; }
+  div.reservationTicket div.data div.commodityDesc { font-size: 1.2em; font-weight: bold; margin-top: 10px; }
+  div.reservationTicket div.data div.time { margin-left: 30px; }
+  div.reservationTicket div.data div.price { font-size: 1.2em; font-weight: bold; margin-top: 5px; }
+  div.reservationTicket div.barcode { width: 100px; float: left; }
+  div.reservationTicket div.barcode img { border: 1px solid black; margin: 5px 5px 0 5px; width: 90px; height: 90px; }
+  div.reservationTicket div.barcode div.number { font-size: 0.6em; font-weight: bold; }
+  div.reservationTicket div.signature { clear: left; font-size: 0.6em; font-style: italic; }
+</style>
+<div class="data">
+  <div class="commodityDesc">@@COMMODITY_NAME</div>
+  <div class="time">@@DATE_FROM @@TIME_FROM - @@TIME_TO</div>
+  <div class="price">Cena: @@PRICE Kč</div>
+  <div class="providerName">@@CENTER_NAME</div>
+  <div class="providerAddress">@@CENTER_STREET, @@CENTER_CITY</div>
+</div>
+<div class="barcode">
+  @@QR_CODE(@@NUMBER)
+  <div class="number">@@NUMBER</div>
+</div>
+<div class="signature">
+  flexbook (c) 2018
+</div>

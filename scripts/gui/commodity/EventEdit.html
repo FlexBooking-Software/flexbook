@@ -1,0 +1,309 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <div id="editEvent" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" id="fi_id" name="id" value="{id}" />
+    <input type="hidden" id="fi_nextAction" name="nextAction" value="eEventSave" />
+    <div id="tab">
+      <ul>
+        <li><a href="#tab-1">{__label.editEvent_general}</a></li>
+        <li><a href="#tab-2" id="a-tab-2">{__label.editEvent_cycles}</a></li>
+        <li><a href="#tab-3">{__label.editEvent_additional}</a></li>
+        <li><a href="#tab-4">{__label.editEvent_attribute}</a></li>
+        <li><a href="#tab-5">{__label.editEvent_wwwInfo}</a></li>
+        <li><a href="#tab-6">{__label.editEvent_fe}</a></li>
+        <li><a href="#tab-7" id="a-tab-7">{__label.editEvent_reservation}</a></li>
+      </ul>
+      <div id="tab-1">
+        {fi_provider}
+        {fi_center}
+        <div class="formItem">
+          <label for="fi_name" class="bold">{__label.editEvent_name}:</label>
+          <input type="hidden" name="groupSaveItem[name]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[name]" value="1" {groupSave_name_checked}/>
+          <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}"/>
+        </div>
+        <div class="formItem formItemSingle">
+          <label for="fi_start" class="bold">{__label.editEvent_start}:</label>
+          <input class="mediumText" id="fi_start" type="text" name="start" value="{start}"/>
+        </div>
+        <div class="formItem formItemSingle">
+          <label for="fi_end" class="bold">{__label.editEvent_end}:</label>
+          <input class="mediumText" id="fi_end" type="text" name="end" value="{end}"/>
+        </div>
+        <div class="formItem">
+          <label class="bold">{__label.editEvent_organiser}:</label>
+          <input type="hidden" name="groupSaveItem[organiserId]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[organiserId]" value="1" {groupSave_organiserId_checked}/>
+          {fi_organiser}
+        </div>
+        <div class="formItem">
+          <label class="bold">{__label.editEvent_description}:</label>
+          <input type="hidden" name="groupSaveItem[description]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[description]" value="1" {groupSave_description_checked}/>
+          <textarea name="description">{description}</textarea>
+        </div>
+        <div class="formItem formItemSingle">
+          <label for="fi_externalId">{__label.editEvent_externalId}:</label>
+          <input class="extraLongText" id="fi_externalId" type="text" name="externalId" value="{externalId}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_tag}:</label>
+          <div style="float:left;">
+            {fi_tagEditSelect}
+            <input type="text" id="fi_tag" name="tag" />
+          </div>
+        </div>
+        <div class="formItem">
+          <label for="fi_maxAttendees" class="bold">{__label.editEvent_maxAttendees}:</label>
+          <input type="hidden" name="groupSaveItem[maxAttendees]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[maxAttendees]" value="1" {groupSave_maxAttendees_checked}/>
+          <input id="fi_maxAttendees" class="shortText" type="text" name="maxAttendees" value="{maxAttendees}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_maxSubstitutes">{__label.editEvent_maxSubstitutes}:</label>
+          <input type="hidden" name="groupSaveItem[maxSubstitutes]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[maxSubstitutes]" value="1" {groupSave_maxSubstitutes_checked}/>
+          <input id="fi_maxSubstitutes" class="shortText" type="text" name="maxSubstitutes" value="{maxSubstitutes}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_reservationCondition}:</label>
+          <input type="hidden" name="groupSaveItem[reservationConditionId]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[reservationConditionId]" value="1" {groupSave_reservationConditionId_checked}/>
+          {fi_reservationCondition}
+          {fb_newReservationCondition}
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_notification}:</label>
+          <input type="hidden" name="groupSaveItem[notificationTemplateId]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[notificationTemplateId]" value="1" {groupSave_notificationTemplateId_checked}/>
+          {fi_notificationTemplate}
+          {fb_newNotificationTemplate}
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_document}:</label>
+          <input type="hidden" name="groupSaveItem[documentTemplateId]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[documentTemplateId]" value="1" {groupSave_documentTemplateId_checked}/>
+          {fi_documentTemplate}
+        </div>
+        <div class="formItem">
+          <label for="fi_price">{__label.editEvent_price}:</label>
+          <input type="hidden" name="groupSaveItem[price]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[price]" value="1" {groupSave_price_checked}/>
+          <input id="fi_price" class="shortText" type="text" name="price" value="{price}" />&nbsp;{__label.currency_CZK}
+        </div>
+        <div class="formItem">
+          <label for="fi_accountType">{__label.editEvent_accountType}:</label>
+          <input type="hidden" name="groupSaveItem[accountTypeId]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[accountTypeId]" value="1" {groupSave_accountType_checked}/>
+          {fi_accountType}
+          {fb_newAccountType}
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_active}:</label>
+          <input type="hidden" name="groupSaveItem[active]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[active]" value="1" {groupSave_active_checked}/>
+          {fi_active}
+        </div>
+        <div class="formItem">
+          <label for="fi_portal">{__label.editEvent_portal}:</label>
+          <input type="hidden" name="groupSaveItem[portal]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[portal]" value="1" {groupSave_portal_checked}/>
+          <input type="hidden" name="portal" value="" />
+          {fi_portal}
+        </div>
+      </div>
+      <div id="tab-2">
+        <div class="formItem formItemSingle">
+          <label for="fi_repeat">{__label.editEvent_repeat}:</label>
+          <input type="hidden" name="repeat" value="" />
+          <input type="checkbox" class="inputCheckbox" id="fi_repeat" name="repeat" value="1" {repeatChecked}/>
+        </div>
+        <div id="fi_repeatDiv1" class="formItemSingle">
+          <div class="formItem">
+            <label for="fi_repeatCycle" class="bold">{__label.editEvent_repeatCycle}:</label>
+            {fi_repeatCycle}
+          </div>
+          <div id="fi_repeatIndividualDiv" class="formItem">
+            <div id="fi_repeatIndividual" style="display: none;"></div>
+            <label class="bold">{__label.editEvent_repeatIndividual}:</label>
+            <textarea id="fi_repeatIndividual_input" name="repeatIndividual" readonly="yes"></textarea>
+          </div>
+          <div id="fi_repeatWeekdayDiv">
+            <div class="formItem">
+              <label>{__label.editEvent_repeatWeekday}:</label>
+              <div style="float: left;">
+                {fi_repeatWeekdayOrder}
+                <table id="fi_dayTable" class="dayTable">
+                  <tr>
+                    <td><input type="hidden" name="repeatWeekday[mon]" value="" /><input type="checkbox" class="inputCheckbox" name="repeatWeekday[mon]" value="1" {repeatWeekday_mon_checked}/></td><td class="dayLabel">{__label.day_mon}</td>
+                    <td><input type="hidden" name="repeatWeekday[tue]" value="" /><input type="checkbox" class="inputCheckbox" name="repeatWeekday[tue]" value="1" {repeatWeekday_tue_checked}/></td><td class="dayLabel">{__label.day_tue}</td>
+                    <td><input type="hidden" name="repeatWeekday[wed]" value="" /><input type="checkbox" class="inputCheckbox" name="repeatWeekday[wed]" value="1" {repeatWeekday_wed_checked}/></td><td class="dayLabel">{__label.day_wed}</td>
+                    <td><input type="hidden" name="repeatWeekday[thu]" value="" /><input type="checkbox" class="inputCheckbox" name="repeatWeekday[thu]" value="1" {repeatWeekday_thu_checked}/></td><td class="dayLabel">{__label.day_thu}</td>
+                    <td><input type="hidden" name="repeatWeekday[fri]" value="" /><input type="checkbox" class="inputCheckbox" name="repeatWeekday[fri]" value="1" {repeatWeekday_fri_checked}/></td><td class="dayLabel">{__label.day_fri}</td>
+                  </tr><tr>
+                    <td>&nbsp;</td><td>&nbsp;</td>
+                    <td>&nbsp;</td><td>&nbsp;</td>
+                    <td>&nbsp;</td><td>&nbsp;</td>
+                    <td><input type="hidden" name="repeatWeekday[sat]" value="" /><input type="checkbox" class="inputCheckbox" name="repeatWeekday[sat]" value="1" {repeatWeekday_sat_checked}/></td><td class="dayLabel bold">{__label.day_sat}</td>
+                    <td><input type="hidden" name="repeatWeekday[sun]" value="" /><input type="checkbox" class="inputCheckbox" name="repeatWeekday[sun]" value="1" {repeatWeekday_sun_checked}/></td><td class="dayLabel bold">{__label.day_sun}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="formItem">
+            <label for="fi_repeatUntil" class="bold">{__label.editEvent_repeatUntil}:</label>
+            <input class="mediumText" id="fi_repeatUntil" type="text" name="repeatUntil" value="{repeatUntil}"/>
+          </div>
+          <div class="formItem">&nbsp;</div>
+          <div class="formItem">
+            <label class="bold">{__label.editEvent_repeatReservation}:</label>
+            {fi_repeatReservation}
+          </div>
+          <div id="fi_repeatDiv2" class="formItemSingle">
+            <div class="formItem">
+              <label for="fi_repeatPrice">{__label.editEvent_repeatPrice}:</label>
+              <input id="fi_repeatPrice" class="shortText" type="text" name="repeatPrice" value="{repeatPrice}" />&nbsp;{__label.currency_CZK}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-3">
+        <div class="formItem">
+          <label class="bold">{__label.editEvent_resource}:</label>
+          <input type="hidden" name="groupSaveItem[resource]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[resource]" value="1" {groupSave_resource_checked}/>
+          <input type="hidden" name="resource" value="" />
+          <div id="fi_resource">{fi_resource}</div>
+        </div>
+        <div class="formItem">&nbsp;</div>    
+        <div class="formItem">
+          <label for="fi_maxCoAttendees">{__label.editEvent_maxCoAttendees}:</label>
+          <input type="hidden" name="groupSaveItem[maxCoAttendees]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[maxCoAttendees]" value="1" {groupSave_maxCoAttendees_checked}/>
+          <input id="fi_maxCoAttendees" type="text" name="maxCoAttendees" value="{maxCoAttendees}"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_reservationMaxAttendees">{__label.editEvent_reservationMaxAttendees}:</label>
+          <input type="hidden" name="groupSaveItem[reservationMaxAttendees]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[reservationMaxAttendees]" value="1" {groupSave_reservationMaxAttendees_checked}/>
+          <input id="fi_reservationMaxAttendees" type="text" name="reservationMaxAttendees" value="{reservationMaxAttendees}"/>
+        </div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_badge">{__label.editEvent_badge}:</label>
+          <input type="hidden" name="groupSaveItem[badge]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[badge]" value="1" {groupSave_badge_checked}/>
+          {fi_badge}
+        </div>
+      </div>
+      <div id="tab-4">
+        <div id="fi_attributeList">
+          {fi_attribute}
+        </div>
+      </div>
+      <div id="tab-5">
+        <div class="formItem">
+          <label>{__label.editEvent_urlDescription}:</label>
+          <input type="hidden" name="groupSaveItem[urlDescription]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[urlDescription]" value="1" {groupSave_urlDescription_checked}/>
+          <textarea name="urlDescription">{urlDescription}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_urlPrice}:</label>
+          <input type="hidden" name="groupSaveItem[urlPrice]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[urlPrice]" value="1" {groupSave_urlPrice_checked}/>
+          <textarea name="urlPrice">{urlPrice}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_urlOpening}:</label>
+          <input type="hidden" name="groupSaveItem[urlOpening]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[urlOpening]" value="1" {groupSave_urlOpening_checked}/>
+          <textarea name="urlOpening">{urlOpening}</textarea>
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_urlPhoto}:</label>
+          <input type="hidden" name="groupSaveItem[urlPhoto]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[urlPhoto]" value="1" {groupSave_urlPhoto_checked}/>
+          <textarea id="fi_urlPhoto" name="urlPhoto">{urlPhoto}</textarea>
+        </div>
+      </div>
+      <div id="tab-6">
+        <div class="formItem">
+          <label>{__label.editEvent_feAttendeeVisible}:</label>
+          <input type="hidden" name="groupSaveItem[feAttendeeVisible]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[feAttendeeVisible]" value="1" {groupSave_feAttendeeVisible_checked}/>
+          {fi_feAttendeeVisible}
+        </div>
+        <div class="formItem">
+          <label>{__label.editEvent_feQuickReservation}:</label>
+          <input type="hidden" name="groupSaveItem[feQuickReservation]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[feQuickReservation]" value="1" {groupSave_feQuickReservation_checked}/>
+          {fi_feQuickReservation}
+        </div>
+        <div class="formItem" style="overflow: hidden;">
+          <label>{__label.editEvent_feAllowedPayment}:</label>
+          <input type="hidden" name="groupSaveItem[feAllowedPayment]" value="0" />
+          <input type="checkbox" class="inputCheckbox groupSaveCheck" name="groupSaveItem[feAllowedPayment]" value="1" {groupSave_feAllowedPayment_checked}/>
+          <div style="float: left;">
+            <input type="checkbox" class="inputCheckbox" name="feAllowedPayment[]" value="credit" {feAllowedPayment_credit_checked}/>{__label.editEvent_feAllowedPayment_credit}<br/>
+            <input type="checkbox" class="inputCheckbox" name="feAllowedPayment[]" value="ticket" {feAllowedPayment_ticket_checked}/>{__label.editEvent_feAllowedPayment_ticket}<br/>
+            <input type="checkbox" class="inputCheckbox" name="feAllowedPayment[]" value="online" {feAllowedPayment_online_checked}/>{__label.editEvent_feAllowedPayment_online}
+          </div>
+        </div>
+      </div>
+      <div id="tab-7">
+        <div id="fi_reservationList">
+          <b>{__label.editEvent_reservation}:</b>
+          {fi_reservation}
+          {fi_substitute}
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="$('#form').attr('target','_self'); document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      {fb_saveEvent}
+      {fb_newReservation}
+      {fb_attendeeEmail}
+      {fb_userExport}
+      <input class="fb_eHidden" id="fb_eEventSaveWithCancel" type="submit" onclick="$('#form').attr('target','_self');" name="action_eEventSave?cancelReservation=1" value="{__button.editEvent_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newAttribute_form" class="ajaxForm" title="{__label.editEventAttribute_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <div id="editAttribute_header">
+        <label>{__label.editEventAttribute_new}</label>
+        <input type="hidden" id="editAttribute_applicable" name="applicable" value="" />
+        <select id="editAttribute_id_select">
+        </select>
+        <br/><br/>
+      </div>
+      <div id="editAttribute_data">
+        <input type="hidden" id="editAttribute_id" name="id" value="" />
+        <input type="hidden" id="editAttribute_name" name="name" value="" />
+        <input type="hidden" id="editAttribute_category" name="category" value="" />
+        <input type="hidden" id="editAttribute_mandatory" name="mandatory" value="" />
+        <input type="hidden" id="editAttribute_type" name="type" value="" />
+        <input type="hidden" id="editAttribute_allowedValues" name="allowedValues" value="" />
+        <input type="hidden" id="editAttribute_disabled" name="disabled" value="" />
+        <label id="editAttribute_nameHtml" class="bold"></label>
+        <br/>
+        <label>{__label.editEventAttribute_type}:&nbsp <span class="bold" id="editAttribute_typeHtml"></span></label>
+        <label>{__label.editEventAttribute_value}:</label>
+        <input type="text" id="editAttribute_value_input" name="value" value="" />
+        <textarea id="editAttribute_value_textarea" name="value"></textarea>
+        <select id="editAttribute_value_select" name="value"></select>
+        <div id="editAttribute_value_file">
+          <input type="hidden" id="editAttribute_value_filename"/>
+          <input type="hidden" id="editAttribute_value_fileid"/>
+          <div id="editAttribute_file"></div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

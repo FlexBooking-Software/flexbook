@@ -1,0 +1,17 @@
+div#errorsList { position: absolute; width: 300px; left: 250px; top: 120px; text-align: center; background-color: #ff8a8a; border: 1px solid red; padding: 10px; }
+div#errorsList div.button { margin: 10px 0 0 0; }
+div#infosList { background-color: #aaffaa; border: solid green 1px; padding-left: 10px; margin: 0 10px 10px 0; }
+
+div.registrationFill label { width: 250px; float: left; }
+div.registrationFill input.text { width: 180px; }
+
+div.gridTable { clear: both; }
+div.gridTable div.gridNoData { text-align: left; font-size: 0.8em; font-weight: bold; }
+div.gridTable table th { border: 1px solid black; background: #7b7b7b; color: white; font-weight: normal; }
+div.gridTable table tr.cancelled td { color: gray; font-style: italic; }
+div.gridTable table tr.realised td { color: green; }
+div.gridTable table tr td.tdAction { color: black; font-style: normal; font-weight: normal; }
+div.gridTable table td { padding-right: 5px; padding-left: 3px; vertical-align: top; }
+div.gridTable table td.tdLeft { text-align: left; }
+div.gridTable table td.tdRight { text-align: right; }
+div.gridTable table td.tdCenter { text-align: center; }

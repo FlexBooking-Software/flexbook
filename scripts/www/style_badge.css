@@ -1,0 +1,4 @@
+div.badgePage { margin-top: 0; width: 21cm; height: 29.7cm; }
+div.badge { border: 1px solid black; float: left; margin: 5px; overflow: hidden; text-align: center; }
+hr { clear: left; }
+div.pageBreak { page-break-before: always; }

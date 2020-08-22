@@ -1,0 +1,124 @@
+<div class="contentTitle">{title}</div>
+{backButtonStart}
+    <div id="fi_calendar">
+    </div>
+{backButtonEnd}
+<div id="editReservation_form" class="ajaxForm" title="{__label.calendar_editReservation_title}">
+  <form>
+    <fieldset>
+      <input type="hidden" id="editReservation_id" name="id" />
+      <input type="hidden" id="editReservation_payed" name="payed" />
+      <div class="line" id="editReservation_line_number"><span class="bold">{__label.calendar_editReservation_number}: </span><span id="editReservation_number"></span></div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_from}: </span>
+        <span id="editReservation_visualFrom"></span>
+        <input type="hidden" name="from" id="editReservation_from" />
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_to}: </span>
+        <span id="editReservation_visualTo"></span>
+        <input type="hidden" name="to" id="editReservation_to" />
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editReservation_userName}: </label>
+        <input type="text" name="userName" id="editReservation_userName" class="text ui-widget-content ui-corner-all"/>
+        <input type="hidden" name="userId" id="editReservation_userId" />
+        <!--<input type="button" name="userNew" value="{__button.calendar_editReservation_editUser}" id="editReservation_userEdit" />-->
+        <input type="button" class="inputSubmit ui-button" name="userNew" value="{__button.calendar_editReservation_newUser}" id="editReservation_userNew" />
+      </div>
+      <div class="line" id="editReservation_line_price"><span class="bold">{__label.calendar_editReservation_price}: </span><span id="editReservation_price"></span> <span id="editReservation_currency"></span></div>
+    </fieldset>
+  </form>
+</div>
+<div id="editUser_form" class="ajaxForm" title="{__label.calendar_editUser_title}">
+  <form>
+    <fieldset>
+      <input type="hidden" id="editUser_id" name="id" />
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_firstname}: </span>
+        <input type="text" name="firstname" id="editUser_firstname" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_lastname}: </span>
+        <input type="text" name="lastname" id="editUser_lastname" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_address}: </span>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_street}: </span>
+        <input type="text" name="street" id="editUser_street" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_city}: </span>
+        <input type="text" name="city" id="editUser_city" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_postalCode}: </span>
+        <input type="text" name="postalCode" id="editUser_postalCode" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_state}: </span>
+        <select name="state" id="editUser_state" class="text ui-widget-content ui-corner-all">
+          <option value="">{__label.select_choose}</option>
+          <option value="CZ">{__label.state_CZ}</option>
+          <option value="SK">{__label.state_SK}</option>
+        </select>
+      </div>
+      <div class="line">
+        <span class="label">{__label.calendar_editUser_ic}: </span>
+        <input type="text" name="ic" id="editUser_ic" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label">{__label.calendar_editUser_dic}: </span>
+        <input type="text" name="dic" id="editUser_dic" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_email}: </span>
+        <input type="text" name="email" id="editUser_email" class="text ui-widget-content ui-corner-all"/>
+      </div>
+      <div class="line">
+        <span class="label bold">{__label.calendar_editUser_phone}: </span>
+        <input type="text" name="phone" id="editUser_phone" class="text ui-widget-content ui-corner-all"/>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div id="editEvent_form" class="ajaxForm" title="{__label.calendar_editEvent_title}">
+  <form>
+    <fieldset>
+      <input type="hidden" id="editEvent_id" name="id" />
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_name}: </span>
+        <span id="editEvent_name"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_description}: </span>
+        <span id="editEvent_description"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_organiser}: </span>
+        <span id="editEvent_organiserName"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_start}: </span>
+        <span id="editEvent_visualStart"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_end}: </span>
+        <span id="editEvent_visualEnd"></span>
+      </div>
+      <div class="line" id="editEvent_line_price">
+        <span class="bold">{__label.calendar_editEvent_price}: </span>
+        <span id="editEvent_price"></span>
+        <span id="editEvent_currency"></span>
+      </div>
+      <div class="line">
+        <span class="bold">{__label.calendar_editEvent_maxAttendees}: </span>
+        <input type="hidden" name="maxAttendees" id="editEvent_maxAttendees" />
+        <input type="hidden" name="free" id="editEvent_free" />
+        <span id="editEvent_visualMaxAttendees"></span>
+      </div>
+    </fieldset>
+  </form>
+</div>

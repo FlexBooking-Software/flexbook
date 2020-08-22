@@ -1,0 +1,519 @@
+@font-face{
+  font-family: "Flexbook-Bold";
+  src: url('img/JosefinSans-Bold.ttf'),
+  url('JosefinSans-Bold.eot'); /* IE */
+}
+
+body {
+  font-family: "Arial CE", Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  min-width: 1316px;
+  text-align: center;
+  background-color: #dedede;
+}
+
+table { font-size: 100%; }
+form { margin: 0px; }
+
+img { border: none; }
+input { border: 1px solid #b4b4b4; width: 280px; }
+input.shortText { width: 60px; }
+input.inputSubmit { width: auto; }
+input.inputCheckbox { width: auto; border: none; }
+input.inputRadio { width: 1em; border: none; }
+select { width: 280px; }
+a { color: black; }
+hr { clear: left; }
+textarea { width: 280px; height: 60px; }
+textarea.big { width: 500px; height: 80px; }
+
+.bold { font-weight: bold; }
+.red { color: red; }
+.pointerHand { cursor: pointer; }
+.hidden { display: none; }
+
+.ui-sortable-helper td { width: 120px; border: 1px solid black; }
+.ui-sortable-helper .tdAction { display: none; }    
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; font-size: 0.9em; text-align: left; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+
+div.flb_calendar .fc-bgevent { border: 1px solid black; background-color: darkgray; display: flex; align-items: center; }
+div.flb_calendar .fc-bgevent div { text-align: center; width: 100%; }
+div.flb_calendar .event_reservation { border: 1px solid #000099; background-color: #aaaaee; color: #000099; }
+div.flb_calendar .event_reservation_payed { Xborder: 1px solid green; color: green; Xfont-weight: bold; }
+div.flb_calendar .event_reservation_failed { border: 1px solid darkgrey; background-color: lightgrey; color: darkgrey; }
+div.flb_calendar .event_reservation_pool { border: 1px dashed; }
+div.flb_calendar .event_providerEvent { border: 1px solid green; background-color: #aaeeaa; color: green; }
+div.flb_calendar .event_providerEvent_occupied { border: 1px solid red; background-color: #eeaaaa; color: red; }
+div.flb_calendar .event_providerEvent_inactive { border-style: dashed; font-style: italic; }
+div.flb_calendar .event_detail { margin-left: 50px; }
+div.flb_calendar .fc-left input { font-size: 22px; width: 130px; }
+div.flb_calendar_pool .fc-widget-content { background-color: lightgray; }
+div.flb_calendar_pool .fc-axis { background-color: white; }
+div.flb_calendar .poolCapacity { background-color : white; opacity: 1 !important; border: 1px solid black; }
+div.flb_calendar td.poolCapacity { height: 99%; }
+div.flb_calendar .poolCapacity div.title { display: block; top: 50%; width: 100%; text-align: center; font-weight: bold; font-size: 1.2em; }
+div.flb_calendar div.poolCapacity div.title { position: absolute; margin-top: -10px; }
+
+textarea.note { width: 400px; height: 30px; }
+table.attendee th { font-size: 0.8em; }
+table.attendee input { width: 135px; }
+table.attendee input.email { width: 180px; }
+input.flb_inputTime { width: 45px; }
+
+div#confirmDialog { text-align: left; xfont-size: 0.9em; }
+div#confirmDialog div.message { margin-bottom: 20px; }
+div#confirmDialog div.button input { margin: 0 5px 5px 0; }
+div#confirmDialog div.price { font-weight: bold; margin-top: 10px; }
+
+div.gridFilterForm ul.token-input-list-facebook { width: 250px; border: 1px solid #b4b4b4; }
+div.gridFilterForm li.token-input-token-facebook { margin: 1px; }
+div.gridFilterForm li.token-input-input-token-facebook { height: 20px !important; }
+div.gridFilterForm div.formItem li.token-input-input-token-facebook input { margin: 0; border: none; }
+div.token-input-dropdown-facebook { width: 250px !important; }
+
+div.cleaner { clear: left; width: 0px; height: 0px; }
+div#noClear { clear: none; }
+
+div.debug { clear: both; text-align: left; }
+
+div#myTitleDiv { position: absolute; z-index: 10; background-color: white; border: 1px solid black; padding: 3px; font-size: 0.8em; }
+
+div.loginPage { margin: 0px auto; width: 1050px; Xheight: 820px; Xbackground: url('img/bg_login_simple.gif'); }
+div.loginForm { width: 703px; margin-left: 180px; margin-top: 80px; }
+div.loginForm div.top { background: url('img/bg_formlogin_top.png'); height: 55px; }
+div.loginForm div.middle { background: url('img/bg_formlogin_middle.png') repeat-y; min-height: 300px; }
+div.loginForm div.bottom { background: url('img/bg_formlogin_bottom.png'); height: 55px; }
+div.loginForm div.logo { margin: 0 20px; background-color: #291156; }
+div.loginForm img.logo { Xmargin-bottom: 20px; }
+div.loginForm div.input { overflow: hidden; margin: 30px 102px 10px 102px; }
+div.loginForm div.label { clear: left; float: left; width: 240px; margin-top: 10px; text-align: left; font-family: Flexbook-Bold; }
+div.loginForm input.text { float: left; border: 1px solid #bebebe; font-size: 1.2em; width: 250px; height: 30px; margin-bottom: 10px; }
+div.loginForm input.button { font-size: 1.6em; font-family: Flexbook-Bold; padding-top: 8px; background: none; background-color: #291d56; width: 500px; height: 45px; border: none; border-radius: 4px; cursor: pointer; }
+div.loginForm .accounts { padding-left: 30px; overflow: hidden; }
+div.loginForm .buttonAccount { font-size: 0.9em; font-family: Flexbook-Bold; margin: 5px 10px; padding-top: 8px; width: 295px; height: 42px; border-radius: 4px; cursor: pointer; float: left; }
+div.loginForm .buttonAuthenticatedAccount { border: 2px solid green; }
+div.loginForm .buttonNotAuthenticatedAccount { border: 2px solid red; }
+div.loginForm .buttonAdminAccount { color: red; }
+div.loginForm .buttonAccount:hover { background-color: lightgrey; font-size: 1em; }
+div.loginForm .buttonAccount .shortName { margin-top: 3px; }
+div.loginForm .buttonAccount .name { font-size: 0.9em; margin-top: 5px; color: #6d6c6c; }
+div.loginForm #fi_provider_remove { float: left; margin-left: -15px; margin-top: -5px; border: 1px solid black; cursor: pointer; }
+div.loginForm div.lineSpace { height: 20px; }
+div.loginForm div.static { margin: 20px 40px 40px 40px; border-top: 1px solid black; color: #aeaeae; font-style: italic; }
+div.loginForm div.static div.separator { float: left; font-style: normal; margin-top: 5px; }
+div.loginForm div.static div.item { float: left; margin:5px 13px 0 13px; }
+div.loginForm div.static div.item a { text-decoration: none; color: #aeaeae; }
+div.loginForm div.thirdParty { margin-top: 20px; margin-left: 102px; overflow: hidden; }
+div.loginForm div.thirdParty img { float: left; margin-right: 25px; border-radius: 4px; }
+div.loginForm div.logout { margin-right: 40px; margin-top: 10px; float: right; }
+
+div.staticText { display: none; }
+div.staticText { text-align: justify; font-size: 0.9em; font-style: italic; position: absolute; top: 140px; left: 435px; background-color: white; }
+div.staticText div.title { font-weight: bold; font-size: 1.1em; color: #b4b4b4; padding: 10px; }
+div.staticText div.title img { float: right; cursor: pointer; }
+div.staticText div.content { width: 550px; height: 380px; padding: 10px; overflow-y: scroll; }
+div.staticText div.content table th { padding: 10px; vertical-align: top; }
+div.staticText div.content table td { padding: 10px; vertical-align: top; }
+
+div.page { margin: 0px auto; width: 95%; min-height: 1000px; Xbackground: url('img/bg_page.gif') top center no-repeat; text-align: left; }
+div.flag { margin-top: 10px; width: 100%; overflow: hidden; padding-right: 100px; }
+div.flag div { float: right; width: 50px; height: 17px; }
+div.flag img { float: right; margin-left: 2px; border: 1px solid #291156; border-bottom: none; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+div.page div.top { margin: 0 auto 0 auto; width: 100%; height: 88px; }
+div.page div.top div { float: left; }
+div.page div.top div.left { background: url('img/bg_top_left.png') no-repeat; width: 42px; height: 88px; }
+div.page div.top div.middle { background: url('img/bg_top_middle.png') repeat-x; width: -webkit-calc(100% - 85px); width: -moz-calc(100% - 85px); width: calc(100% - 85px); height: 88px; }
+div.page div.top div.right { background: url('img/bg_top_right.png') no-repeat; width: 43px; height: 88px; }
+
+div.page div.top img.logo { float: left; margin-top: 5px; width: 80px; }
+div.page div.top div.after { float: left; margin-top: 10px; width: -webkit-calc(100% - 80px); width: -moz-calc(100% - 80px); width: calc(100% - 80px); }
+div.page div.top ul.userInfo { float: right; list-style-type: none; Xwidth: 700px; height: 50px; padding: 0; margin: 0; }
+div.page div.top ul.userInfo li { float: right; margin-right: 5px; line-height: 25px; height: 25px; vertical-align: middle; text-align: center; font-weight: bold; }
+div.page div.top ul.userInfo li a { color: #929292; text-decoration: none; }
+div.page div.top ul.userInfo li.highlighted { color: yellow; }
+div.page div.top ul.userInfo li.highlighted a { color: yellow; }
+div.page div.top ul.userInfo li.highlighted .provider a { color: white; font-size: 0.9em; clear: left; }
+div.page div.top ul.userInfo li.highlighted input { width: auto; }
+div.page div.top ul.userInfo li.highlighted select { width: auto; }
+div.page div.top ul.userInfo li.separator { width: 30px; margin-left: 5px; margin-right: 5px; color: #575757; }
+div.page div.top ul.userInfo li.provider { clear: right; }
+div.page div.top ul.userInfo li.center { clear: right; }
+div.page div.top ul.userInfo li.center select { max-width: 200px; }
+div.page div.top ul.userInfo input#fi_centerChange { display: none; }
+div.page div.top ul.menu { margin: 20px 0 0 15px; clear: left; float: left; list-style-type: none; font-size: 1.1em; padding-left:0; }
+div.page div.top ul.menu li { float: left; margin-right: 5px; line-height: 25px; height: 25px; vertical-align: middle; text-align: center; font-weight: bold; }
+div.page div.top ul.menu li.separator { width: 25px; margin-left: 5px; margin-right: 5px; color: #575757; }
+div.page div.top ul.menu li a { text-decoration: none; color: white; }
+div.page div.top ul.menu li.selected a { color: yellow; }
+div.page div.top ul.submenu { font-size: 0.8em; margin: 0 0 0 5px; clear: left; float: left; list-style-type: none; padding-left: 5px; }
+div.page div.top ul.submenu li { float: left; margin-right: 5px; line-height: 25px; height: 25px; vertical-align: middle; text-align: center; font-weight: bold; }
+div.page div.top ul.submenu li.separator { width: 15px; color: #575757; }
+div.page div.top ul.submenu li a { text-decoration: none; color: white; }
+div.page div.top ul.submenu li.selected a { color: yellow; }
+
+div.page div.main { margin: 0 auto; font-size: 0.9em; background-image: url('img/bg_main_left.png'),url('img/bg_main_right.png'); background-position: left,right; background-repeat: repeat-y; }
+div.page div.main div.middle { width: -webkit-calc(100% - 24px); width: -moz-calc(100% - 24px); width: calc(100% - 24px); margin: 0 12px; background: white; overflow: hidden; }
+div.page div.main div.content { margin-left: 20px; margin-right: 20px; }
+div.page div.main div.content div.contentTitle { font-weight: bold; font-size: 1.3em; margin-left: 5px; margin-bottom: 10px; color: #009fe3; }
+div.page div.main div.content div.contentTitle span.button { margin-left: 50px; }
+
+div.page div.bottom { height: 46px; background-image: url('img/bg_main_bottom_left.png'),url('img/bg_main_bottom_right.png'); background-position: left,right; background-repeat: no-repeat;}
+
+div.subMenu ul { margin: 10px 0 0 10px; padding: 0px; height: 200px; list-style-type: none; overflow: hidden; background: url('img/submenu_bg.png'); }
+div.subMenu ul li { margin: 1px 15px 0 20px; width: 200px; line-height: 25px; height: 25px; vertical-align: middle; text-align: left; }
+div.subMenu ul li.first { margin-top: 20px; }
+div.subMenu ul li a { text-decoration: none; color: white; }
+div.subMenu ul li.selected a { color: white; }
+
+div#errorsList { z-index: 10; position: absolute; width: 300px; left: 50%; top: 50%; margin-left: -150px; margin-top: -50px; text-align: center; background-color: #ff8a8a; border: 1px solid red; padding: 10px; }
+div#errorsList div.button { margin: 10px 0 0 0; }
+div#errorsList input { width: auto; }
+div#infosList { background-color: #aaffaa; border: solid green 1px; padding-left: 10px; margin: 0 10px 10px 0; }
+
+div.inputForm { padding: 10px 0 20px 0; }
+
+div.formItem { clear: both; margin-bottom: 1px; }
+div.formItem label { float: left; width: 200px; text-align: right; padding-right: 10px; color: #5b5b5b; }
+div.formItem label.bold { font-weight: bold; }
+div.formItem label.asInput { font-weight: bold; text-align: left; width: auto; }
+_div.formItem input.extraExtraExtraLongText { width: 480px; }
+_div.formItem input.extraExtraLongText { width: 380px; }
+_div.formItem input.extraLongText { width: 280px; }
+_div.formItem input.longText { width: 200px; }
+_div.formItem input.mediumText { width: 120px; }
+_div.formItem input.shortText { width: 60px; }
+div.formItem input.button { width: auto; }
+div.formItem textarea { border: 1px solid #b4b4b4; }
+div.formItem div.left { clear: left; }
+div.formInfo { clear: left; margin: 20px 0 10px 0; font-style: italic; }
+div.formButton { clear: both; margin-left: 210px; margin-top: 5px; }
+div.formButton input { width: auto; background: url('img/bg_button.png'); color: white; font-weight: bold; border: 1px solid #008ac6; }
+input.button { background: url('img/bg_button.png'); color: white; font-weight: bold; border: 1px solid #008ac6; }
+div.formButton input.fb_eHidden { display: none; }
+_div.backButton { margin-top: 10px; margin-bottom: 10px; }
+_div.newButton { margin-bottom: 10px; }
+
+/* GRID */
+div.gridFilterForm { clear: both; font-size: 90%; margin-top: 10px; overflow: hidden; }
+div.gridFilterForm div { overflow: hidden; }
+div.gridFilterForm div.formItem { clear: none; float: left; margin-right: 2px; Xheight: 22px; overflow: hidden; }
+div.gridFilterForm div.formItem label { width: auto; padding: 0 2px; color: #5b5b5b; }
+div.gridFilterForm div.formItem input { border: 1px solid #b4b4b4; width: 120px; }
+div.gridFilterForm div.formItem input.shortText { width: 60px; }
+div.gridFilterForm div.formItem input.longText { width: 240px; }
+div.gridFilterForm div.formButton { clear: none; float: left; margin-left: 0px; margin-right: 0px; margin-top: 0px; }
+div.gridFilterForm div.formButton input { margin: 1px; border: none; background: url('img/bg_grid_button.png'); color: white; font-weight: bold; }
+div.gridFilterForm input { font-size: 92%; }
+div.gridFilterForm select { font-size: 92%; width: auto; }
+div.gridMultiactionForm { clear: both; }
+div.gridMultiactionForm input { margin: 1px; border: none; background: url('img/bg_grid_button.png'); color: white; font-weight: bold; }
+div.gridTable { clear: both; }
+div.gridTable div.gridNoData { text-align: left; font-size: 0.8em; font-weight: bold; }
+div.gridTable table { width: 100%; text-align: center; border-collapse: separate; border-spacing: 1px 4px; }
+div.gridTable table th { border: 1px solid black; background: #3a3a3a; color: white; font-weight: normal; }
+div.gridTable table tr.Odd td { background: #dddddd; }
+div.gridTable table tr.Even td { background: #f4f4f4; }
+div.gridTable table tr.hOver td { background-color: #cecece; }
+div.gridTable table tr.payed td { background-color: #ccffcc; }
+div.gridTable table tr.cancelled td { background-color: #ffcccc; }
+div.gridTable table tr.failed td { color: red; text-decoration: line-through; }
+div.gridTable table tr.disabled td { color: #aaaaaa; font-style: italic; }
+div.gridTable table tr.realised td { font-style: italic; color: #8b8b8b; }
+div.gridTable table tr.mandatory td { font-weight: bold; }
+div.gridTable table tr td.tdAction { color: black; font-style: normal; font-weight: normal; text-align: left; }
+div.gridTable table tr td.tdAction img { margin-left: 7px; }
+div.gridTable table td { padding-right: 5px; padding-left: 3px; vertical-align: top; }
+div.gridTable table td.tdLeft { text-align: left; }
+div.gridTable table td.tdRight { text-align: right; }
+div.gridTable table td.tdCenter { text-align: center; }
+div.gridPagerForm { clear: both; width: 93%; margin: 0; padding-top: 5px; font-size: 90%; }
+div.gridPagerForm div { float: left; margin-right: 5px; color: #5b5b5b; }
+div.gridPagerForm form { float: left; margin-right: 5px; padding: 0; }
+div.gridPagerForm input { font-size: 92%; }
+div.gridPagerForm input.inputText { width: 30px; border: 1px solid #b4b4b4; }
+div.gridPagerForm input.inputSubmit { border: none; background: url('img/bg_grid_button.png'); color: white; font-weight: bold; }
+
+div#home div.left { float: left; margin-top: -10px; margin-left: 15px; width: 200px; max-height: 1580px; }
+div#home span.title { font-size: 0.8em; border: 1px solid black; padding: 2px 10px 0 10px; }
+div#home span.selected { font-size: 0.9em; font-weight: bold; }
+div#home span.title:hover { cursor: pointer; }
+div#home div.left div.resource { margin: 0 0 4px 0; width: 200px; Xheight: 580px; border: 2px solid black; overflow: hidden; }
+div#home div.left div.resourcePool { width: 200px; Xheight: 580px; border: 2px solid black; overflow: hidden; }
+div#home div.left div.event { width: 200px; Xheight: 580px; border: 2px solid black; overflow: hidden; }
+div#home div.all { font-size: 0.6em; font-weight: bold; text-align: right; margin-right: 2px; }
+div#home div.all a { text-decoration: none; }
+div#home div.panel { overflow-y: scroll; min-height: 550px; max-height: 1500px; width: 218px; }
+div#home div.right { float: left; margin-top: 6px; margin-left: 15px; width: -webkit-calc(100% - 240px); width: -moz-calc(100% - 240px); width: calc(100% - 240px); min-height: 580px; max-height: 1580px; border: 2px solid black; overflow: scroll; }
+div#home div.line { margin: 3px 0 0 5px; width: 190px; overflow: hidden; }
+div#home div.line a { text-decoration: none; }
+div#home div.line a.add_remove { float: right; }
+div#home div.line span { font-size: 0.8em; }
+div#home div.flb_calendar { margin: 5px; }
+div#home div.flb_resource_name_label { display: none; }
+div#home div.flb_resource_name { font-size: 1.2em; font-weight: bold; margin:5px; }
+
+div#home ul.token-input-list-facebook { margin: 2px; width: 194px; border: 1px solid #b4b4b4; }
+div#home li.token-input-token-facebook { margin: 1px; }
+div#home li.token-input-input-token-facebook { height: 20px !important; }
+div#home input#token-input-tag { margin: 0; }
+xdiv.token-input-dropdown-facebook { width: 250px !important; }
+div#home div#fi_eventList ul.token-input-list-facebook { margin-bottom: 0; }
+div#home div#fi_eventList input.filterDate { float: left; margin: 0 2px; width: 89px; }
+div#home div#fi_eventList .filterDateSeparator { float: left; width: 6px; text-align: center; }
+
+div#fi_newSeason_form table.dayTable td.priceSlot { border: 1px solid black; font-size: 0.9em; text-align: center; }
+div#fi_newSeason_form input { width: 160px; }
+div#fi_dayPrice_form div#slider { margin: 5px 0; }
+div#fi_newTerm_form table tr { vertical-align: top; }
+div#fi_newTerm_form table td.first { width: 200px; }
+div#fi_newTerm_form .checkbox { width: 20px; }
+div#fi_newTerm_form .left { float: left; }
+div#fi_newTerm_form label.left { width: 200px; }
+div#fi_newTerm_form .clear { clear: left; }
+
+div#fi_newCondition_form .left { float: left;  margin-top: 5px; }
+div#fi_newCondition_form label.aligned { width: 380px; }
+div#fi_newCondition_form .clear { clear: left; }
+div#fi_newCondition_form div.separator { clear: left; width: auto; height: 15px; }
+div#fi_newCondition_form div.cond { Xborder: 1px solid black; overflow: hidden; }
+div#fi_newCondition_form ul.token-input-list-facebook { width: auto; }
+div#fi_newCondition_form img.messageIcon { margin-top: 5px; float: right; clear: right; Xborder: 1px solid black; }
+div#fi_newCondition_form #editCondition_from { width: 100px; }
+div#fi_newCondition_form #editCondition_to_label { margin-left: 20px; width: 50px; }
+div#fi_newCondition_form #editCondition_to { width: 100px; }
+div#fi_newCondition_form #editCondition_quantity { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_firstTimeBeforeCount { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_lastTimeBeforeCount { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_advancePaymentCount { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_cancelBeforeCount { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_cancelPayedBeforeCount { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_anonymousBeforeCount { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_totalQuantity { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_overlapQuantity { margin-left: 5px; margin-right: 5px; width: 40px; }
+div#fi_newCondition_form #editCondition_otherScope { margin-top: 1px; }
+div#fi_newCondition_form select.middle { margin-left: 5px; margin-right: 5px; width: auto; }
+div#fi_newConditionMessage_form #editConditionMessage_text { width: 400px; height: 35px; }
+
+div#fi_newItem_form .left { float: left;  margin-top: 5px; }
+div#fi_newItem_form label.aligned { width: 170px; }
+div#fi_newItem_form .clear { clear: left; }
+div#fi_newItem_form .separator { clear: left; width: auto; height: 15px; }
+div#fi_newItem_form .indent { margin-right: 10px; } 
+div#fi_newItem_form .help { float: right; margin-right: 5px; }
+div#fi_newItem_form input { width: 420px; }
+div#fi_newItem_form textarea { width: 660px; height: 280px; }
+div#fi_newItem_form .checkbox { width: 20px; margin: 7px 10px 0 170px; }
+div#fi_newItem_form #editItem_type { width: 420px; }
+div#fi_newItem_form #editItem_offsetCount { width: 40px; }
+div#fi_newItem_form #editItem_offsetUnit { width: 80px; }
+div#fi_newItem_form .tox-tinymce { clear: left; }
+div#fi_newItem_form .mce-tinymce { clear: left; }
+
+div#fi_editProviderTS_form #editProviderTS_newValue { width: 400px; }
+
+div#fi_newCoworker_form input.inputCheckbox { float: left; clear: left; margin-right: 10px; margin-top: -1px; }
+
+div#fi_newAttribute_form input { width: 560px; }
+div#fi_newAttribute_form select { width: 560px; }
+div#fi_newAttribute_form textarea { width: 560px; }
+
+div#editPortalTemplate div#tab { overflow: hidden; }
+div#editPortalTemplate div.pageList { float: left; }
+div#editPortalTemplate div.pageList div.pageTemplate { margin: 3px; border: 1px solid black; width: 300px; padding: 2px 2px 2px 10px; cursor: pointer; }
+div#editPortalTemplate div.pageList div.pageTemplate div.removePageTemplate { float: right; }
+div#editPortalTemplate img.preview { max-height: 200px; }
+div#editPortalTemplate .css { width: 600px; height: 120px; }
+div#editPortalTemplate .content { width: 600px; height: 250px; }
+div#editPageTemplate .content { width: 600px; height: 250px; }
+
+div#createProviderPortal div.templateList { float: left; margin-top: 5px; }
+div#createProviderPortal div.template { xborder: 1px solid black; margin-bottom: 30px; clear: left; overflow: hidden; }
+div#createProviderPortal div.template input { width: auto; margin: 0 20px; float: left; }
+div#createProviderPortal div.template div.detail { float: left; }
+div#createProviderPortal div.template div.detail img { max-height: 100px;  }
+
+div#editProviderPortal div#tab { overflow: hidden; }
+div#editProviderPortal div.portalMenu { float: left; }
+div#editProviderPortal div.portalMenu div.menuItem { margin: 3px; border: 1px solid black; width: 350px; padding: 2px 2px 2px 10px; cursor: pointer; }
+div#editProviderPortal div.portalMenu div.menuItem div.removeMenuItem { float: right; }
+div#editProviderPortal div#menuItemTemplate { display: none; }
+div#editProviderPortal .css { width: 600px; height: 80px; }
+div#editProviderPortal .javascript { width: 600px; height: 80px; }
+div#editProviderPortal .content { width: 600px; height: 250px; }
+div#editProviderPortalPage .content { width: 980px; height: 400px; }
+div#editProviderPortalPage input#toggle { width: 100px; }
+
+div#viewProvider div.title { margin-top: 20px; }
+div#viewProvider label { color: black; }
+div#viewProvider label.asInput { width: 400px; }
+div#viewProvider table th,td { text-align: left; padding-right: 10px; }
+
+.helpDiv table { font-size: 0.8em; }
+.helpDiv table td { vertical-align: top; }
+.helpDiv table td.bold { text-align: left; padding-right: 20px; }
+.helpDiv table td.text { text-align: justify; }
+
+div#settingsGeneral label { width: 350px; }
+div#settingsGeneral div.formButton { margin-left: 360px; }
+div#settingsGeneral input#fi_reservationCancelMessage { width: 450px; }
+div#settingsTemplate label { width: 300px; }
+div#settingsTemplate div.formButton { margin-left: 310px; }
+div#settingsTemplate textarea.template { width: 900px; height: 200px; Xmargin-left: 20px; }
+div#settingsGeneral span.help { font-style: italic; font-size: 0.8em; }
+Xdiv#settingsGeneral table { margin-left: 10px; }
+div#settingsGeneral td.left { padding-left: 10px; text-align: left; }
+
+div#providerUserUnique label { width: 360px; }
+div#providerUserUnique div.formButton { margin-left: 370px; }
+div#providerUserUnique input[type=checkbox] { width: auto; }
+div#providerUserUnique table th { min-width: 200px; }
+
+div#editTagDiv table tr .checkbox { width: 15px; }
+
+div#editTicket label { width: 300px; }
+div#editTicket .validity label { height: 60px; }
+div#editTicket .validity input[type=radio] { width: auto; }
+div#editTicket div.formButton { margin-left: 310px; }
+div#editTicket ul.token-input-list-facebook {  width: 280px; height: 50px !important; border: 1px solid #b4b4b4; }
+
+div#editVoucher label { width: 300px; }
+div#editVoucher .discount label { height: 60px; }
+div#editVoucher .discount input[type=radio] { width: auto; }
+div#editVoucher div.formButton { margin-left: 310px; }
+div#editVoucher ul.token-input-list-facebook {  width: 280px; height: 50px !important; border: 1px solid #b4b4b4; }
+
+div#editReservation label { width: 250px; }
+div#editReservation label.file { width: auto; }
+div#editReservation div.formButton { margin-left: 260px; }
+div#editReservation div.commodity { Xborder: 1px solid lightgray; padding: 10px 0; margin: 0 0 10px 0; }
+div#editReservation div.commodity div.description { font-style: italic; font-size: 0.8em; }
+div#editReservation div.formItem label.description { width: auto; text-align: left; }
+div#editReservation div.formItem div.eventPack { float: left; width: 700px; text-align: right; font-size: 0.9em; margin-bottom: 5px; }
+div#editReservation div.eventPackItem { float: left; width: 270px; height: 20px; margin-right: 40px; margin-bottom: 3px; }
+div#editReservation div.eventPackItemFailed div { color: red; text-decoration: line-through; }
+div#editReservation div.eventPackItem div { width: 110px; }
+div#editReservation textarea { width: 450px; }
+div#editReservation div.journal { float: left; }
+div#editReservation div.journal table td { vertical-align: top; }
+input#fi_reservationCancelNote { width: 450px; }
+
+table.attendee th { font-size: 0.8em; }
+table.attendee input { width: 190px; }
+
+div#editUser input.socialButton { width: 150px; }
+div#userCredit a.creditHistoryUrl { text-decoration: none; }
+div#userCredit table td { text-align: center; }
+div#userCredit table td.creditChange { width: 200px; }
+div#fi_creditHistoryItem { font-size: 0.8em; }
+div#fi_creditHistoryItem div.item { clear: left; margin-bottom: 3px; overflow: hidden; }
+div#fi_creditHistoryItem div.item div { float: left; margin-right: 5px; }
+div#fi_creditHistoryItem div.item div.download { width: 12px; }
+div#fi_creditHistoryItem div.item div.time { width: 100px; }
+div#fi_creditHistoryItem div.item div.type { width: 250px; }
+div#fi_creditHistoryItem div.item div.amount { width: 80px; text-align: right; }
+div#fi_creditHistoryItem div.item div.description { margin-left: 5px; width: 410px; }
+
+div#editCustomer table tr { vertical-align: top; }
+div#editCustomer div#tab-2 { overflow: hidden; }
+div#editCustomer div#tab-2 div.employee { float: left; width: 650px; }
+div#editCustomer div#tab-6 { overflow: hidden; }
+div#editCustomer div.attributeTitle { font-size: 1.1em; font-weight: bold; margin: 5px 0 10px 0; }
+div#editCustomer div#tab-9 div.formItem label { width: 300px; }
+div#editCustomer div#tab-9 div.formButton { margin-left: 20px; margin-top: 70px; }
+div#editCustomer div#tab-9 select { width: auto; margin-right: 10px; }
+
+div#editResource div#tab-2 textarea { width: 450px; }
+div#editResource textarea#fi_urlPhoto { height: 100px; }
+div#editResource .groupSaveCheck { float: left; display: none; }
+div#editResource .tagEdit { margin-left: 18px; }
+div#editResource ul.token-input-list-facebook { width: 280px; height: 50px !important; border: 1px solid #b4b4b4; }
+div#editResource div.attributeTitle { font-size: 1.1em; font-weight: bold; margin: 5px 0 10px 0; }
+div.listResourceForResourcePool div.formButton { margin-left: 0; }
+div#resourceCalendar div.flb_calendar { margin: 5px; }
+div#resourceCalendar div.flb_resource_name_label { display: none; }
+div#resourceCalendar div.flb_resource_name { font-size: 1.2em; font-weight: bold; margin:5px; }
+div.listEventCycle td.tdCycleTerm { max-width: 680px; }
+div.listEventCycle div.cycleItemStart { float: left; width: 120px; margin-right: 5px; text-align: right; }
+div.listEventCycle div.inactive { color: #aaaaaa; font-style: italic; }
+div#editEvent label { width: 270px; }
+div#editEvent div.formButton { margin-left: 25px; }
+div#editEvent select#fi_organiser { float: left; }
+div#editEvent div#fi_resource { float: left; border: 1px solid black; max-width: 600px; max-height: 500px; overflow: scroll; }
+div#editEvent div#fi_resource div { width: 600px; }
+div#editEvent div#fi_organiserDiv { float: left; }
+div#editEvent div#fi_repeatIndividual { position: absolute; }
+div#editEvent div#fi_repeatIndividual .ui-state-highlight { background: #33AAFF; box-shadow: #178FE5 0px 1px 3px 0px inset; color: #fff; }
+div#editEvent #fi_repeatIndividual_input { width: 600px; }
+div#editEvent div#tab-3 textarea { width: 450px; }
+div#editEvent textarea#fi_urlPhoto { height: 100px; }
+div#editEvent .groupSaveCheck { float: left; display: none; }
+div#editEvent .tagEdit { margin-left: 18px; }
+div#editEvent ul.token-input-list-facebook {  width: 280px; height: 50px !important; border: 1px solid #b4b4b4; }
+div#editEvent div.attributeTitle { font-size: 1.1em; font-weight: bold; margin: 5px 0 10px 0; }
+table#fi_eventGroup_exception { width: 500px; margin-left: 210px; }
+div.eventSummary_title { font-size: 1.2em; font-weight: bold; margin:5px; }
+div#eventSummary label.asInput { width: 400px; color: black; }
+div#eventSummary label { width: 220px; color: #9e9e9e; }
+div#eventSummary input.button { width: auto; }
+div#eventSummary div.gridTable { padding: 0 10px; }
+div#editEventSubstitute div.description { font-style: italic; font-size: 0.8em; }
+div#editEventSubstitute label.description { width: auto; text-align: left; }
+div#editEventSubstitute div#fi_eventDiv { margin-bottom: 20px; }
+
+div#editResourcePool ul.token-input-list-facebook { width: 280px; height: 50px !important; border: 1px solid #b4b4b4; }
+
+div#reservationReport ul.token-input-list-facebook { width: 280px; }
+
+div.reportContent a#fi_additionalHref { text-decoration: none; font-size: 0.9em; color: #008ac6; }
+div.reportContent div#fi_additionalDiv { border: 2px solid black; padding: 7px; background: white; position: absolute; top: 200px; left: 350px; overflow: hidden; }
+div.reportContent div#fi_additionalDiv div.title { font-weight: bold; margin-bottom: 10px; overflow: hidden; }
+div.reportContent div#fi_additionalDiv div.title div.first { float: left; margin-left: 15px; width: 280px; }
+div.reportContent div#fi_additionalDiv div.title div.second { float: left; }
+div.reportContent div#fi_additionalDiv div.title div.third { float: left; margin-left: 25px; }
+div.reportContent div#fi_additionalDiv input { width: 20px; }
+div.reportContent div#fi_additionalDiv div.add { width: 650px; height: 400px; overflow: scroll; }
+div.reportContent div#fi_additionalDiv div#fi_additionalCloser { float: right; border: 1px solid #008ac6; background: url('img/bg_grid_button.png'); color: white; width: 15px; text-align: center; }
+div.reportContent div#fi_additionalDiv ul { list-style-type: none; margin: 0; padding: 0; }
+div.reportContent div#fi_additionalDiv ul li { margin: 0 1px 1px 1px; font-size: 0.9em; background-color: white; overflow: hidden; }
+div.reportContent div#fi_additionalDiv ul li.ui-state-highlight { height: 20px; }
+div.reportContent div#fi_additionalDiv ul li div { float: left; }
+div.reportContent div#fi_additionalDiv ul li div.label { width: 290px; margin-top: 4px; }
+div.reportContent div#fi_additionalDiv ul li div.separator { width: 27px; }
+div.reportContent div#fi_additionalDiv ul li input { float: left; }
+div.reportContent div#fi_additionalDiv ul li input.label { width: 290px; }
+
+div.reportContent table td { vertical-align: top; }
+div.reportContent div.resultSummary { font-weight: bold; font-style: italic; margin-top: 10px; }
+div.reportContent div.result div.gridTable { overflow: scroll; max-height: 500px; }
+div.reportContent div.result div.gridTable table th { white-space: nowrap; padding: 7px 0 3px 5px; }
+div.reportContent div.result div.gridTable table td { white-space: nowrap; }
+
+div.ajaxForm { text-align: left; }
+div.ajaxForm label { display: block; }
+div.ajaxForm label.normal { display: inline; }
+div.ajaxForm input.asLabel { border: none; font-weight: bold; font-size: 0.9em; }
+div.ajaxForm div.line { clear: left; margin-bottom: 8px; }
+div.ajaxForm div.line_with_div div { float: left; margin-right: 5px; }
+div.ajaxForm div.line div.event_detail { margin-left: 50px; float: right; }
+div.ajaxForm div.line div.reservation_detail { margin-left: 50px; float: right; }
+div.ajaxForm div.line span.label { display: block; float: left; width: 150px; }
+div.ajaxForm div.border { overflow: hidden; border: 1px solid black; padding: 3px; clear: left; }
+div.ajaxForm label.groupTitle { font-weight: bold; font-size: 0.8em; }
+div.ajaxForm input#editReservation_userName { width: 180px; }
+div.ajaxForm input.button { width: auto; }
+div.ajaxForm .ajax-file-upload { font-size: 0.8em; padding: 0 5px; height: 22px; float: left; border-radius: 0; -webkit-border-radius: 0; background: url(img/bg_button.png); border: 1px solid #008ac6; }
+div.ajaxForm .ajax-file-upload-error { font-size: 0.8em; }
+div.ajaxForm .ajax-file-upload-container { font-size: 0.8em; margin: 10px 0 0 0; float: left; }
+div.ajaxForm .ajax-file-upload-statusbar { width: auto !important; padding:0; margin: 0; border-radius: 0; border: 1px solid black; }
+div.ajaxForm .ajax-file-upload-filename { width: auto; }
+.cancelButton { color: red; }
+
+body#body .ui-corner-all { border-radius: 0; }
+body#body div.ui-dialog { padding: 0; }
+body#body div.ui-dialog-titlebar { background-color: #212121; color: yellow; border: none; }
+body#body .ui-button { Xcolor: white; font-weight: bold; background: url('img/bg_grid_button.png'); border: none; }
+body#body button.ui-dialog-titlebar-close { background: url('img/button_jq_close.png') !important; border: none; }

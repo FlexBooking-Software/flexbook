@@ -1,0 +1,32 @@
+<div class="contentTitle">{title}</div>
+<div id="editTagDiv">
+  <form action="{%basefile%}" method="post">
+    <div id="editTag" class="inputForm ui-widget-content">
+      <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+      <input type="hidden" name="id" value="{id}" />
+      <input type="hidden" id="fi_event" name="event" value="" />
+      <input type="hidden" id="fi_resource" name="resource" value="" />
+      <input type="hidden" id="fi_resourcePool" name="resourcePool" value="" />
+      <input type="hidden" id="fi_deleteCopied" name="deleteCopied" value="" />
+      <input type="hidden" id="fi_targetTag" name="targetTag" value="" />
+      <div class="formItem">
+        <label for="fi_name" class="bold">{__label.editTag_name}:</label>
+        <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}"/>
+      </div>
+      <div class="formItem">
+        <label for="fi_portal">{__label.editTag_portal}:</label>
+        <input type="hidden" name="portal" value="" />
+        {fi_portal}
+      </div>
+      <div class="formButton">
+        <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+        <input class="fb_eSave" id="fb_eTagSave" type="submit" name="action_eTagSave" value="{__button.editTag_save}" />
+        {fb_delete}
+        <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+        <input class="fb_eHidden" id="fb_eTagCommodityCopyHidden" type="submit" name="action_eTagCommodityCopy" value="copyCommodity" />
+        <input class="fb_eHidden" id="fb_eTagCommodityDeleteHidden" type="submit" name="action_eTagCommodityDelete" value="deleteCommodity" />
+      </div>
+    </div>
+  </form>
+  {fi_tagAssociation}
+</div>

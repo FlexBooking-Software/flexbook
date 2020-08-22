@@ -1,0 +1,41 @@
+<div class="eventSummary_title">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <div id="eventSummary" class="inputForm Xui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" id="fi_id" name="id" value="{id}" />
+    <div class="formItem">
+      <label class="bold">{__label.editEvent_center}:</label>
+      <label class="asInput">{centerName}<label/>
+    </div>
+    <div class="formItem formItemSingle">
+      <label for="fi_start" class="bold">{__label.editEvent_start}:</label>
+      <label class="asInput">{start}<label/>
+    </div>
+    <div class="formItem formItemSingle">
+      <label for="fi_end" class="bold">{__label.editEvent_end}:</label>
+      <label class="asInput">{end}<label/>
+    </div>
+    <div class="formItem">
+      <label class="bold">{__label.editEvent_organiser}:</label>
+      <label class="asInput">{organiserName}<label/>
+    </div>
+    <div class="formItem">
+      <label class="bold">{__label.editEvent_description}:</label>
+      <label class="asInput">{description}<label/>
+    </div>
+    <div class="formItem">
+      <label for="fi_maxAttendees" class="bold">{__label.editEvent_maxAttendees}:</label>
+      <label class="asInput">{maxAttendees}<label/>
+    </div>
+    <div class="formItem">
+      <label for="fi_maxAttendees" class="bold">{__label.editEvent_free}:</label>
+      <label class="asInput">{freeAttendees}<label/>
+    </div>
+    {priceInfo}
+    <div class="formItem">
+      <label for="fi_attendee" class="bold">{__label.calendar_editEvent_attendee}:</label>
+      <input type="submit" class="button newButton" name="action_eEventReservation" value="{__button.eventSummary_new}"/>
+      {attendee}
+    </div>
+  </div>
+</form>

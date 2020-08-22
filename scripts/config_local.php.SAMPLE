@@ -1,0 +1,64 @@
+<?php
+
+$DEBUG = false;
+$HTTPS = true;
+$MOD_REWRITE = true;
+
+#$DOWN = 'Service is down until 2017/04/17 04:00am.';
+
+$NODE_ID = '<unique string>';
+$NODE_URL = 'https://www.flexbook.cz';
+
+$TMP_DIR = '/tmp/';
+
+// prihlasovaci udaje do databaze
+$DB = array(
+	'user' => '',
+	'password' => '',
+	'server'   => 'localhost',
+	'database' => 'flexbook',
+	'encoding' => 'utf8',
+);
+
+$NOTIFICATION_LOCK_FILE = '/tmp/flexbook_notification.lock';
+$NOTIFICATION_ERROR_COUNT_TO_NOTIFY = 5;
+$NOTIFICATION_DEBUG_EMAIL = null;
+$NOTIFICATION_ADMIN_EMAIL = 'petr.kos@flexbook.cz,david.pasek@flexbook.cz';
+$NOTIFICATION_SMTP_HOST = 'pro.eu.turbo-smtp.com';
+$NOTIFICATION_SMTP_PORT = '465';
+$NOTIFICATION_SMTP_SECURE = 'ssl';
+$NOTIFICATION_SMTP_USER = 'turboSMTP@flexbook.cz';
+$NOTIFICATION_SMTP_PASSWORD = 'eneckeyapser';
+
+$PAYMENT_GATEWAY = array(
+	'source' => array(
+		'csob' => array(
+			'logFile'     => dirname(__FILE__).'/../../log/csob.log',
+			'url'         => 'https://iapi.iplatebnibrana.csob.cz/api/v1.7',
+			'key'         => dirname(__FILE__).'/../keys/mips_iplatebnibrana.csob.cz.pub',
+		),
+		'gpwebpay' => array(
+			'logFile'     => dirname(__FILE__).'/../../log/gpwebpay.log',
+			'url'         => 'https://test.3dsecure.gpwebpay.com/pgw/order.do',
+			'urlWS'       => 'https://test.3dsecure.gpwebpay.com/pay-ws/v1/PaymentService',
+			'key'         => dirname(__FILE__).'/../keys/gpe.signing_test.pem',
+		),
+		'comgate' => array(
+			'logFile'       => dirname(__FILE__).'/../../log/comgate.log',
+			'url'           => 'https://payments.comgate.cz/v1.0',
+			'pushReferer'   => array('62.77.114.16','89.185.236.55','::1'),
+			'minimalAmount' => 100,
+		),
+		'deminimis' => array(
+			'logFile'       => dirname(__FILE__).'/../../log/deminimis.log',
+			'gwUrl'         => "$NODE_URL/deminimis_gw.php",
+			'attr_ic'				=> 'deminimis_ic',
+			'apiUrl'        => 'https://czt-deminimis-api.ys-beta.cz',
+			'apiKey'   			=> '3a46ff23-f214-4bc3-b2fc-ca9ed21c83b7',
+		),
+	),
+	'initUrl' => "$NODE_URL/payment.php?action=ePaymentGatewayInit&language=%s&sessid=%s&provider=%s",
+	'backUrl' => "$NODE_URL/payment.php?action=ePaymentGatewayFinish&sessid=%s",
+);
+
+?>

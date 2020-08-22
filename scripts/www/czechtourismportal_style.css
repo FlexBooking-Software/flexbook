@@ -1,0 +1,77 @@
+div#errorsList { position: absolute; width: 300px; left: 450px; top: 120px; text-align: center; background-color: #ff8a8a; border: 1px solid red; padding: 10px; }
+div#errorsList div.button { margin: 10px 0 0 0; }
+div#infosList { background-color: #aaffaa; border: solid green 1px; padding-left: 10px; margin: 0 10px 10px 0; }
+
+#body { float: center; background: url('img/ct_background.jpg'); padding: 0; margin: 0; }
+.page { width: 1100px; margin: 0 auto; background: white; padding: 20px; overflow: hidden; }
+.page .menu { float: left; background-color: #178fcf; margin: 10px 0 0 0; padding-left: 10px; }
+.page .menu div { border-right: 1px solid #3ba6df; width: 130px; height: 35px; float: left; text-align: center; }
+.page .menu div a { font-size: 16px; color: white; text-decoration: none; display: block; padding-left: 12px; padding-top: 10px; }
+.page .menu div.last { border: 0; }
+.titleBar { background-color: #e6001e; font-weight: bold; width: 400px; height: 36px; color: white; line-height: 36px; text-align: center; float: right;  margin: 10px 0; }
+.page .content { border: 1px solid black; width: 1070px; min-height: 300px; float: left; padding: 15px; }
+.page .content .static { font-size: 1.1em; }
+.page .content .static .title { font-size: 1.3em; font-weight: bold; color: red; }
+.page .content .static .subtitle { font-size: 1.2em; font-weight: bold; }
+.login { float: right; margin-top: 10px; }
+.login .name { font-weight: bold; font-size: 1.1em; }
+.description { margin-top: 5px; font-style: italic; }
+input { background: #fff2cc; height: 25px; }
+input.password { background: red; width: 250px; }
+input.radio { height: auto; margin-right: 20px; }
+input.button { background: #5b9bd5; color: white; font-weight: bold; width: 100px; height: 30px; border: 0; }
+table.eventList { border-spacing: 0; border-collapse: collapse; border: 2px solid black; }
+table.eventList tr.header { background: #d0d0d0; border: 1px solid black; }
+table.eventList th { text-align: left; vertical-align: bottom; font-weight: normal; padding: 8px; }
+table.eventList th.name { width: 750px; }
+table.eventList th.price { width: 100px; }
+table.eventList th.reserve { width: 200px; }
+table.eventList td { padding: 5px; }
+table.eventList td.name { width: 250px; font-size: 0.8em; }
+table.eventList td.slot { font-size: 0.8em; }
+table.eventList tr:hover { background: #e0e0e0; }
+table.reservation { width: 1100px; }
+table.reservation th.number { width: 200px; }
+table.reservation th.place { width: 200px; }
+table.reservation th.subject { width: 600px; }
+table.slot { border-spacing: 0; border-collapse: collapse; }
+table.slot td { padding: 0 2px; border: 1px solid black; }
+table.slot td.break { width: 10px; background: #bbbbbb; }
+table.slot td.free { background: #bbffbb; }
+table.slot td.free a { text-decoration: none; color: black; }
+table.slot td.occupied { background: #ffbbbb; }
+table.slot td.mine { background: green; }
+table.slot td.na { background: #bbbbbb; }
+div.slotInfo { font-weight: bold; color: red; margin-bottom: 20px; }
+.italic { font-style: italic; }
+.bold { font-weight: bold; }
+.legend_free { width: 50px; height: 20px; background: #bbffbb; }
+.legend_mine { width: 50px; height: 20px; background: green; }
+.legend_occupied { width: 50px; height: 20px; background: #ffbbbb; }
+.legend_na { width: 50px; height: 20px; background: #bbbbbb; }
+.confirmDialog { margin-bottom: 20px; }
+.confirmDialog .text { width: 220px; }
+.confirmDialog .title { font-weight: bold; }
+.confirmDialog .subject { font-weight: bold; font-size: 1.1em; margin: 15px 0; }
+.confirmDialog .info { font-size: 0.8em; font-weight: bold; font-style: italic; margin-bottom: 20px; }
+.confirmDialog .comment { font-weight: bold; margin-bottom: 10px; }
+.confirmDialog table td.bold { font-weight: bold; }
+.totalPrice { font-weight: bold; font-size: 1.2em; }
+
+xform.normal { margin: 20px 0 20px 0; }
+form.normal span.description { font-style: italic; }
+form.normal div.title { font-size: 1.3em; margin: 10px 0; }
+
+div.registrationFill label { width: 250px; float: left; }
+div.registrationFill input.text { width: 180px; }
+
+div.gridTable { clear: both; }
+div.gridTable div.gridNoData { text-align: left; font-size: 0.8em; font-weight: bold; }
+div.gridTable table th { border: 1px solid black; background: #7b7b7b; color: white; font-weight: normal; }
+div.gridTable table tr.cancelled td { color: gray; font-style: italic; }
+div.gridTable table tr.realised td { color: green; }
+div.gridTable table tr td.tdAction { color: black; font-style: normal; font-weight: normal; }
+div.gridTable table td { padding-right: 5px; padding-left: 3px; vertical-align: top; }
+div.gridTable table td.tdLeft { text-align: left; }
+div.gridTable table td.tdRight { text-align: right; }
+div.gridTable table td.tdCenter { text-align: center; }

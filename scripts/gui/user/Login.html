@@ -1,0 +1,19 @@
+<form action="{%basefile%}" method="post">
+  <div id="loginForm">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <div class="input">
+      <input type="hidden" name="login_facebook" value="" />
+      <input type="hidden" name="login_google" value="" />
+      <input type="hidden" name="login_twitter" value="" />
+      <div class="label">{__label.login_username}</div><input class="text" type="text" name="login_username" value="{login_username}" />
+      <div class="label">{__label.login_password}</div><input class="text" type="password" name="login_password" value="" />
+      {fi_provider}
+    </div>
+    <input class="button" type="submit" name="action_eLogin" value="{__button.login_login}" />
+    <div class="thirdParty">
+      <!--<a href="{%basefile%}?action=eFacebookCall&type=loginUser&sessid={%sessid%}"><img src="img/button_facebook_login.png"/></a>-->
+      <a href="{%basefile%}?action=eGoogleCall&type=loginUser&sessid={%sessid%}"><img src="img/button_google_login.png"/></a>
+      <a href="{%basefile%}?action=eTwitterCall&type=loginUser&sessid={%sessid%}"><img src="img/button_twitter_login.png"/></a>
+    </div>
+  </div>
+</form>

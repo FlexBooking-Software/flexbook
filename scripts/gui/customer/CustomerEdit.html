@@ -1,0 +1,419 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <div id="editCustomer" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div id="tab">
+      <ul>
+        <li><a href="#tab-1">{__label.editCustomer_general}</a></li>
+        <li><a href="#tab-2" {employeeHidden}>{__label.editCustomer_employee}</a></li>
+        <li><a href="#tab-3" {registrationHidden}>{__label.editCustomer_registration}</a></li>
+        <li><a href="#tab-4" {providerHidden}>{__label.editCustomer_provider}</a></li>
+        <li id="li-tab-5"><a href="#tab-5">{__label.editCustomer_externalService}</a></li>
+        <li id="li-tab-6"><a href="#tab-6">{__label.editCustomer_center}</a></li>
+        <li id="li-tab-7"><a href="#tab-7">{__label.editCustomer_coworker}</a></li>
+        <li id="li-tab-8"><a href="#tab-8">{__label.editCustomer_attribute}</a></li>
+        <li id="li-tab-9"><a href="#tab-9">{__label.editCustomer_file}</a></li>
+        <li id="li-tab-10"><a href="#tab-10">{__label.editCustomer_invoice}</a></li>
+      </ul>
+      <div id="tab-1">
+        <div class="formItem">
+          <label for="fi_email" class="bold">{__label.editCustomer_email}:</label>
+          <input class="longText" id="fi_email" type="text" name="email" value="{email}"  maxlength="255"/>
+          {fi_searchButton}
+        </div>
+        <br />
+        <div class="formItem">
+          <label for="fi_name" class="bold">{__label.editCustomer_name}:</label>
+          <input class="longText" id="fi_name" type="text" name="name" value="{name}"  maxlength="255"/>
+        </div>
+        <br/>
+        <div class="formItem">
+          <label class="bold">{__label.editCustomer_address}:</label>
+        </div>
+        <div class="formItem">
+          <label for="fi_street" class="bold">{__label.editCustomer_street}:</label>
+          <input class="longText" id="fi_street" type="text" name="street" value="{street}"  maxlength="255"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_city" class="bold">{__label.editCustomer_city}:</label>
+          <input class="longText" id="fi_city" type="text" name="city" value="{city}"  maxlength="255"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_postalCode" class="bold">{__label.editCustomer_postalCode}:</label>
+          <input id="fi_postalCode" type="text" name="postalCode" value="{postalCode}" maxlength="5"/>
+        </div>
+        <div class="formItem">
+          <label class="bold">{__label.editCustomer_state}:</label>
+          {fi_state}
+        </div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_phone" class="bold">{__label.editCustomer_phone}:</label>
+          <input class="longText" id="fi_phone" type="text" name="phone" value="{phone}"  maxlength="15"/>
+        </div>
+        <br/>
+        <div class="formItem">
+          <label for="fi_ic">{__label.editCustomer_ic}:</label>
+          <input class="mediumText" id="fi_ic" type="text" name="ic" value="{ic}"  maxlength="8"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_dic">{__label.editCustomer_dic}:</label>
+          <input class="mediumText" id="fi_dic" type="text" name="dic" value="{dic}"  maxlength="12"/>
+        </div>
+      </div>
+      <div id="tab-2" {employeeHidden}>  
+        {fi_employee}
+      </div>
+      <div id="tab-3" {registrationHidden}>
+        <div id="fi_registrationList">
+          {fi_registration}
+        </div>
+      </div>
+      <div id="tab-4" {providerHidden}>
+        <div class="formItem {providerCheckboxHidden}" id="providerCheckboxDiv">
+          <label>{__label.editCustomer_provider}:</label>
+          {fi_providerCheckbox}
+        </div>
+        <div id="fi_providerDiv">
+          <br/>
+          <div class="formItem">
+            <label>{__label.editCustomer_invoiceOther}:</label>
+            <input type="hidden" name="invoiceOther" value="N"/>
+            <input type="checkbox"  class="inputCheckbox" id="fi_providerInvoiceAddressCheck" name="invoiceOther" value="Y" {invoiceOtherChecked} />
+          </div>    
+          <div id="fi_providerInvoiceAddressDiv">
+            <!--<div class="formItem">
+              <label>{__label.editCustomer_invoiceAddress}:</label>
+            </div>-->
+            <div class="formItem">
+              <label for="fi_invoiceName">{__label.editCustomer_name}:</label>
+              <input class="longText" id="fi_invoiceName" type="text" name="invoiceName" value="{invoiceName}" maxlength="255"/>
+            </div>
+            <div class="formItem">
+              <label for="fi_invoiceAddress">{__label.editCustomer_address}:</label>
+            </div>
+            <div class="formItem">
+              <label for="fi_invoiceStreet">{__label.editCustomer_street}:</label>
+              <input class="longText" id="fi_invoiceStreet" type="text" name="invoiceStreet" value="{invoiceStreet}" maxlength="255"/>
+            </div>
+            <div class="formItem">
+              <label for="fi_invoiceCity">{__label.editCustomer_city}:</label>
+              <input class="longText" id="fi_invoiceCity" type="text" name="invoiceCity" value="{invoiceCity}" maxlength="255"/>
+            </div>
+            <div class="formItem">
+              <label for="fi_invoicePostalCode">{__label.editCustomer_postalCode}:</label>
+              <input id="fi_invoicePostalCode" type="text" name="invoicePostalCode" value="{invoicePostalCode}" maxlength="5"/>
+            </div>
+            <div class="formItem">
+              <label for="fi_state" class="bold">{__label.editCustomer_state}:</label>
+              {fi_invoiceState}
+            </div>
+          </div>
+          <br/>
+          <div class="formItem" id="fi_providerIdDiv">
+            <label for="fi_shortName" class="bold">{__label.editCustomer_providerId}:</label>
+            <input class="mediumText" id="fi_providerId" type="text" name="providerId" value="{providerId}" readonly="yes"/>
+          </div>
+          <div class="formItem">
+            <label for="fi_shortName" class="bold">{__label.editCustomer_shortName}:</label>
+            <input class="mediumText" id="fi_shortName" type="text" name="shortName" value="{shortName}"  maxlength="20" {readonlyShortName}/>
+          </div>   
+          <br/>
+          {fi_notificationTemplate}
+          <br/>
+          <div class="formItem">
+            <label for="fi_vat">{__label.editCustomer_vat}:</label>
+            {fi_vat}
+          </div>
+          <div class="formItem">
+            <label for="fi_vatRate">{__label.editCustomer_vatRate}:</label>
+            <input class="shortText" id="fi_vatRate" type="text" name="vatRate" value="{vatRate}"/>
+          </div>
+          <br/>
+          <div class="formItem">
+            <label for="fi_bankAccount">{__label.editCustomer_bankAccount}:</label>
+            <input class="mediumText" id="fi_bankAccount" type="text" name="bankAccount" value="{bankAccount}"  maxlength="16"/> / <input class="shortText" id="fi_bankAccountSuffix" type="text" name="bankAccountSuffix" value="{bankAccountSuffix}"  maxlength="4"/>
+          </div>
+          <div class="formItem">
+            <label for="fi_phone1">{__label.editCustomer_phone1}:</label>
+            <input class="mediumText" id="fi_phone1" type="text" name="phone1" value="{phone1}"  maxlength="15"/>
+          </div>
+          <div class="formItem">
+            <label for="fi_phone2">{__label.editCustomer_phone2}:</label>
+            <input class="mediumText" id="fi_phone2" type="text" name="phone2" value="{phone2}"  maxlength="15"/>
+          </div>
+          <div class="formItem">
+            <label for="fi_www">{__label.editCustomer_www}:</label>
+            <input class="longText" id="fi_www" type="text" name="www" value="{www}"  maxlength="255"/>
+          </div>
+        </div>
+      </div>
+      <div id="tab-5">
+        <div class="formItem bold">
+          <label>{__label.editCustomer_smtp}</label>
+        </div>
+          <div class="formItem">
+          <label for="fi_smtpHost">{__label.editCustomer_smtpHost}:</label>
+          <input class="longText" id="fi_smtpHost" type="text" name="smtpHost" value="{smtpHost}" maxlength="255"/>
+          <input class="button" type="submit" name="action_eCustomerSave?sendTestEmail=1" value="{__label.editCustomer_smtp_testEmail}" />
+        </div>
+        <div class="formItem">
+          <label for="fi_smtpPort">{__label.editCustomer_smtpPort}:</label>
+          <input class="longText" id="fi_smtpPort" type="text" name="smtpPort" value="{smtpPort}" maxlength="255"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_smtpUser">{__label.editCustomer_smtpUser}:</label>
+          <input class="longText" id="fi_smtpUser" type="text" name="smtpUser" value="{smtpUser}" maxlength="255"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_smtpPassword">{__label.editCustomer_smtpPassword}:</label>
+          <input class="longText" id="fi_smtpPassword" type="password" name="smtpPassword" value="{smtpPassword}" maxlength="255"/>
+        </div>
+        <div class="formItem">
+          <label for="fi_smtpSecure">{__label.editCustomer_smtpSecure}:</label>
+          {fi_smtpSecure}
+        </div>
+      </div>
+      <div id="tab-6">
+        <div id="fi_centerList">
+          {fi_center}
+        </div>
+      </div>
+      <div id="tab-7">
+        <div id="fi_coworkerList">
+          {fi_coworker}
+        </div>
+      </div>
+      <div id="tab-8">
+        <div id="fi_attribute">
+          {fi_attribute}
+        </div>
+      </div>
+      <div id="tab-9">
+        <div id="fi_file">
+          {fi_file}
+        </div>
+      </div>
+      <div id="tab-10" {providerHidden}>
+        <div class="formItem bold">
+          <label>{__label.editCustomer_invoiceSettings}:</label>
+        </div>
+        <br/>
+        <table><tr><td>
+          <div class="formItem">
+            <label for="fi_invoiceAccountFrom">{__label.editCustomer_invoiceAccountFrom}:</label>
+            <input class="mediumText" {invoiceAccountFrom_id} type="text" name="invoiceAccountFrom" value="{invoiceAccountFrom}" {invoiceReadonly}/>
+          </div>
+          <div class="formItem">
+            <label for="fi_invoiceMonthFee">{__label.editCustomer_invoiceMonthFee}:</label>
+            <input class="shortText" id="fi_invoiceMonthFee" type="text" name="invoiceMonthFee" value="{invoiceMonthFee}" {invoiceReadonly}/>
+            {__label.currency_CZK}
+          </div>
+          <div class="formItem">
+            <label for="fi_invoiceReservationFee">{__label.editCustomer_invoiceReservationFee}:</label>
+            <input class="shortText" id="fi_invoiceReservationFee" type="text" name="invoiceReservationFee" value="{invoiceReservationFee}" {invoiceReadonly}/>
+            {__label.currency_CZK}
+          </div>
+          <div class="formItem">
+            <label for="fi_invoiceReservationPriceFee">{__label.editCustomer_invoiceReservationPriceFee_1} {fi_invoiceReservationPricePaid} {__label.editCustomer_invoiceReservationPriceFee_2}:</label>
+            <input class="shortText" id="fi_invoiceReservationPriceFee" type="text" name="invoiceReservationPriceFee" value="{invoiceReservationPriceFee}" {invoiceReadonly}/>
+            {__label.editCustomer_invoiceReservationPriceFeeUnit}
+          </div>
+          <div class="formItem">
+            <label for="fi_invoiceDueLength">{__label.editCustomer_invoiceDueLength}:</label>
+            <input class="shortText" id="fi_invoiceDueLength" type="text" name="invoiceDueLength" value="{invoiceDueLength}" {invoiceReadonly}/>
+          </div>
+          <div class="formItem">
+            <label for="fi_invoiceEmail">{__label.editCustomer_invoiceEmail}:</label>
+            <input class="extraLongText" id="fi_invoiceEmail" type="text" name="invoiceEmail" value="{invoiceEmail}" {invoiceReadonly}/>
+          </div>
+        </td><td>
+          <div class="formButton">
+            {generateSelect}
+            {generateButton}
+          </div>
+        </td></tr></table>
+        <hr/>
+        <div class="formItem bold">
+          <label>{__label.editCustomer_invoiceList}:</label>
+        </div>
+        {invoiceList}
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_eCustomerSave" type="submit" name="action_eCustomerSave" value="{__button.editCustomer_save}" />
+      <input class="fb_eHidden" id="fb_eNewEmployeeUser" type="submit" name="action_eCustomerSave?newEmployeeUser=1" value="{__button.editCustomer_save}" />
+      <input class="fb_eHidden" id="fb_eNewCoworkerUser" type="submit" name="action_eCustomerSave?newCoworkerUser=1" value="{__button.editCustomer_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newCenter_form" class="ajaxForm" title="{__label.editCustomerCenter_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editCenter_id" name="id" value="" />
+      <input type="hidden" id="editCenter_index" name="index" value="" />
+      <label for="name">{__label.editCustomerCenter_name}</label>
+      <input type="text" name="name" id="editCenter_name" class="text ui-widget-content ui-corner-all" maxlength="255">
+      <label for="street">{__label.editCustomer_street}</label>
+      <input type="text" name="street" id="editCenter_street" class="text ui-widget-content ui-corner-all" maxlength="255">
+      <label for="city">{__label.editCustomer_city}</label>
+      <input type="text" name="city" id="editCenter_city" class="text ui-widget-content ui-corner-all" maxlength="255">
+      <label for="region">{__label.editCustomer_region}</label>
+      <input type="text" name="region" id="editCenter_region" class="text ui-widget-content ui-corner-all" maxlength="255">
+      <label for="postalCode">{__label.editCustomer_postalCode}</label>
+      <input type="text" name="postalCode" id="editCenter_postalCode" class="text ui-widget-content ui-corner-all" maxlength="5">
+      <label for="state">{__label.editCustomer_state}</label>
+      {fi_centerState}
+      <label>{__label.editCustomer_paymentInfo}</label>
+      <textarea name="paymentInfo" id="editCenter_paymentInfo" class="text ui-widget-content ui-corner-all"></textarea>
+    </fieldset>
+  </form>
+</div>
+<div id="fi_newRegistration_form" class="ajaxForm" title="{__label.editCustomerRegistration_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editRegistration_id" name="id" value="" />
+      <input type="hidden" id="editRegistration_index" name="index" value="" />
+      <input type="hidden" id="editRegistration_providerName" name="providerName" value="" />
+      <input type="hidden" id="editRegistration_timestamp" name="timestamp" value="" />
+      <input type="hidden" id="editRegistration_credit" name="credit" value="" />
+      <label for="provider">{__label.editCustomerRegistration_provider}</label>
+      {fi_provider}
+      <label for="advertising">{__label.editCustomerRegistration_advertising}</label>
+      <input type="checkbox" name="advertising" id="editRegistration_advertising" class="inputCheckbox text ui-widget-content ui-corner-all">
+   </fieldset>
+  </form>
+</div>
+<div id="fi_newEmployee_form" class="ajaxForm" title="{__label.editCustomerEmployee_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editEmployee_id" name="id" value="" />
+      <input type="hidden" id="editEmployee_index" name="index" value="" />
+      <label for="user">{__label.editCustomerEmployee_user}</label>
+      <input type="hidden" id="editEmployee_user" name="user" value="" />
+      <input class="extraLongText" id="editEmployee_userName" type="text" name="userName" value=""/>
+      <input type="hidden" id="editEmployee_userEmail" name="userEmail" value="" />
+      <input class="button" id="fb_eSave" type="button" onclick="document.getElementById('fb_eNewEmployeeUser').click();" name="none" value="{__button.editCustomer_newUser}" />
+      <label for="credit">{__label.editCustomerEmployee_credit}</label>
+      <input type="checkbox" name="credit" id="editEmployee_credit" class="inputCheckbox text ui-widget-content ui-corner-all">
+   </fieldset>
+  </form>
+</div>
+<div id="fi_newCoworker_form" class="ajaxForm" title="{__label.editCustomerCoworker_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editCoworker_id" name="id" value="" />
+      <input type="hidden" id="editCoworker_index" name="index" value="" />
+      <label for="user">{__label.editCustomerCoworker_user}</label>
+      <input type="hidden" id="editCoworker_user" name="user" value="" />
+      <input class="extraLongText" id="editCoworker_userName" type="text" name="userName" value=""/>
+      <input type="hidden" id="editCoworker_userEmail" name="userEmail" value="" />
+      <input class="button" id="fb_eSave" type="button" onclick="document.getElementById('fb_eNewCoworkerUser').click();" name="none" value="{__button.editCustomer_newUser}" />
+      <br/><br/>
+      <input type="checkbox" name="admin" id="editCoworker_admin" class="inputCheckbox text ui-widget-content ui-corner-all">
+      <label for="admin">{__label.editCustomerCoworker_admin}</label>
+      <hr/>
+      <table style="width: 100%;">
+        <tr><th>{__label.editCustomerCoworker_role}</th><th>{__label.editCustomerCoworker_center}</th></tr>
+        <tr valign="top"><td>
+          <input type="checkbox" name="supervisor" id="editCoworker_supervisor" class="inputCheckbox text ui-widget-content ui-corner-all">
+          <label for="supervisor">{__label.editCustomerCoworker_supervisor}</label>
+          <input type="checkbox" name="reception" id="editCoworker_reception" class="inputCheckbox text ui-widget-content ui-corner-all">
+          <label for="reception">{__label.editCustomerCoworker_reception}</label>
+          <input type="checkbox" name="powerOrganiser" id="editCoworker_powerOrganiser" class="inputCheckbox text ui-widget-content ui-corner-all">
+          <label for="powerOrganiser">{__label.editCustomerCoworker_powerOrganiser}</label>
+          <input type="checkbox" name="organiser" id="editCoworker_organiser" class="inputCheckbox text ui-widget-content ui-corner-all">
+          <label for="organiser">{__label.editCustomerCoworker_organiser}</label>
+        </td><td>
+          {fi_centerCheckboxes}
+        </td></tr>
+      </table>
+   </fieldset>
+  </form>
+</div>
+<div id="fi_newAttribute_form" class="ajaxForm" title="">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editAttribute_id" name="id" value="" />
+      <input type="hidden" id="editAttribute_index" name="index" value="" />
+      <input type="hidden" id="editAttribute_disabled" name="disabled" value="" />
+      <input type="hidden" id="editAttribute_applicable" name="applicable" value="" />
+      <label for="category">{__label.editCustomerAttribute_category}</label>
+      <input type="text" name="category" id="editAttribute_category" class="text ui-widget-content ui-corner-all" maxlength="255">
+      <label for="short">{__label.editCustomerAttribute_shortName}</label>
+      <input type="text" name="short" id="editAttribute_short" class="text ui-widget-content ui-corner-all" maxlength="50">
+      <label for="name">{__label.editCustomerAttribute_name}</label>
+      <input type="text" name="name" id="editAttribute_name" class="text ui-widget-content ui-corner-all" maxlength="1000">
+      <label for="name">{__label.editCustomerAttribute_url}</label>
+      <input type="text" name="url" id="editAttribute_url" class="text ui-widget-content ui-corner-all" maxlength="255"> <a class="help" id="fi_helpAttributeUrl" href="#"><img class="inline" src="img/button_grid_help.png"/></a>
+      <input type="hidden" id="editAttribute_sequence" name="sequence" value="" />
+      <label for="restricted">{__label.editCustomerAttribute_restricted}</label>
+      <select name="restricted" id="editAttribute_restricted" class="text ui-widget-content ui-corner-all">
+        <option value="">{__label.editCustomerAttribute_restrictedNORMAL}</option>
+        <option value="CREATEONLY">{__label.editCustomerAttribute_restrictedCREATEONLY}</option>
+        <option value="READONLY">{__label.editCustomerAttribute_restrictedREADONLY}</option>
+        <option value="INTERNAL">{__label.editCustomerAttribute_restrictedINTERNAL}</option>
+      </select>
+      <div id="editAttribute_applicableTypeField">
+        <label for="applicableType">{__label.editCustomerAttribute_applicableType}</label>
+        <select name="applicableType" id="editAttribute_applicableType" class="text ui-widget-content ui-corner-all">
+          <option value="">{__label.select_all}</option>
+          <option value="USER">{__label.editCustomerAttribute_applicableTypeUSER}</option>
+          <option value="SUBACCOUNT">{__label.editCustomerAttribute_applicableTypeSUBACCOUNT}</option>
+        </select>
+      </div>
+      <div id="editAttribute_mandatoryField">
+        <label for="mandatory">{__label.editCustomerAttribute_mandatory}</label>
+        <input type="checkbox" name="mandatory" id="editAttribute_mandatory" class="inputCheckbox text ui-widget-content ui-corner-all">
+      </div>
+      <label for="type">{__label.editCustomerAttribute_type}</label>
+      <select name="type" id="editAttribute_type" class="text ui-widget-content ui-corner-all">
+        <option value="">{__label.select_choose}</option>
+        <option value="TEXT">{__label.editCustomerAttribute_typeTEXT}</option>
+        <option value="TEXTAREA">{__label.editCustomerAttribute_typeTEXTAREA}</option>
+        <option value="NUMBER">{__label.editCustomerAttribute_typeNUMBER}</option>
+        <option value="DECIMALNUMBER">{__label.editCustomerAttribute_typeDECIMALNUMBER}</option>
+        <option value="DATE">{__label.editCustomerAttribute_typeDATE}</option>
+        <option value="TIME">{__label.editCustomerAttribute_typeTIME}</option>
+        <option value="DATETIME">{__label.editCustomerAttribute_typeDATETIME}</option>
+        <option value="LIST">{__label.editCustomerAttribute_typeLIST}</option>
+        <option value="FILE">{__label.editCustomerAttribute_typeFILE}</option>
+      </select>
+      <div id="editAttribute_allowedValues_div" style="display: none;">
+        <label for="allowedValues">{__label.editCustomerAttribute_allowedValues}</label>
+        <textarea name="allowedValues" id="editAttribute_allowedValues" class="text ui-widget-content ui-corner-all"></textarea>
+      </div>
+   </fieldset>
+  </form>
+</div>
+<div id="fi_newFile_form" class="ajaxForm" title="{__label.editCustomerFile_title}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editFile_id" name="id" value="" />
+      <input type="hidden" id="editFile_index" name="index" value="" />
+      <label for="short">{__label.editCustomerFile_short}</label>
+      <input class="extraLongText" id="editFile_short" type="text" name="short" value=""/>
+      <label for="name">{__label.editCustomerFile_name}</label>
+      <input class="extraLongText" id="editFile_name" type="text" name="name" value=""/>
+      <label for="source">{__label.editCustomerFile_source}</label>
+      <input class="extraLongText" id="editFile_sourceName" type="text"  name="sourceName" value="" readonly="yes"/>
+      <div id="editFile_source"></div>
+      <input type="hidden" id="editFile_length" name="length" value="" />
+      <input type="hidden" id="editFile_sourceId" name="sourceId" value="" />
+      <input type="hidden" id="editFile_newSource" name="newSource" value="" />
+      <input type="hidden" id="editFile_sourceLink" name="sourceLink" value="" />
+   </fieldset>
+  </form>
+</div>
+<div id="fi_helpAttributeUrlDiv" class="helpDiv">
+  {__label.editCustomerAttribute_url_help}
+</div>

@@ -1,0 +1,169 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editNotificationTemplate" class="inputForm  ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    {fi_provider}
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editNotificationTemplate_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    <div class="formItem">
+      <label for="fi_target" class="bold">{__label.editNotificationTemplate_target}:</label>
+      {fi_target}
+    </div>
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editNotificationTemplate_description}:</label>
+      <textarea name="description">{description}</textarea>
+    </div>
+    <div class="formItem">
+      <label class="bold" style="height: 40px;">{__label.editNotificationTemplate_item}:</label>
+      <div id="fi_item" style="float: left;">
+        <div class="gridTable">
+        <table id="fi_itemTable">
+          <tbody>{fi_item}</tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input id="fi_addItem" type="button" value="{__button.editNotificationTemplate_addItem}" />
+      <input class="fb_eSave" type="submit" name="action_eNotificationTemplateSave" value="{__button.editNotificationTemplate_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newItem_form" class="ajaxForm" title="{__label.editNotificationTemplate_itemTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editItem_id" name="id" value="" />
+      <input type="hidden" id="editItem_index" name="index" value="" />
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemName}:</label>
+      <input type="text" name="itemName" id="editItem_name" class="left text ui-widget-content ui-corner-all">
+      <div class="separator">&nbsp;</div>
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemType}:</label>
+      <span id="editItem_offset">
+        <input type="text" name="itemOffsetCount" id="editItem_offsetCount" class="left text ui-widget-content ui-corner-all indent">
+        <select class="left indent" name="itemOffsetUnit" id="editItem_offsetUnit">
+          <option value="min">{__label.minute}</option>
+          <option value="hour">{__label.hour}</option>
+          <option value="day">{__label.day}</option>
+        </select>
+      </span>
+      <select class="left" name="itemType" id="editItem_type">
+        <option value="">{__label.select_choose}</option>
+        <option value="U_CREATE" class="general">{__label.editNotificationTemplate_itemType_U_CREATE}</option>
+        <option value="U_CREATE_VALIDATION" class="general">{__label.editNotificationTemplate_itemType_U_CREATE_VALIDATION}</option>
+        <option value="U_PASSWORD" class="general">{__label.editNotificationTemplate_itemType_U_PASSWORD}</option>
+        <option value="U_CHARGE_CREDIT" class="general">{__label.editNotificationTemplate_itemType_U_CHARGE_CREDIT}</option>
+        <option value="U_RESERVATION_COND" class="general">{__label.editNotificationTemplate_itemType_U_RESERVATION_COND}</option>
+        <option value="R_CREATE">{__label.editNotificationTemplate_itemType_R_CREATE}</option>
+        <option value="R_CHANGE">{__label.editNotificationTemplate_itemType_R_CHANGE}</option>
+        <option value="R_BEFORE_START">{__label.editNotificationTemplate_itemType_R_BEFORE_START}</option>
+        <option value="R_BEFORE_START_NOTPAYED">{__label.editNotificationTemplate_itemType_R_BEFORE_START_NOTPAYED}</option>
+        <option value="R_AFTER_START">{__label.editNotificationTemplate_itemType_R_AFTER_START}</option>
+        <option value="R_BEFORE_END">{__label.editNotificationTemplate_itemType_R_BEFORE_END}</option>
+        <option value="R_AFTER_END">{__label.editNotificationTemplate_itemType_R_AFTER_END}</option>
+        <option value="R_PAY">{__label.editNotificationTemplate_itemType_R_PAY}</option>
+        <option value="R_CANCEL">{__label.editNotificationTemplate_itemType_R_CANCEL}</option>
+        <option value="R_CANCEL_PACK_ITEM">{__label.editNotificationTemplate_itemType_R_CANCEL_PACK_ITEM}</option>
+        <option value="R_FAIL">{__label.editNotificationTemplate_itemType_R_FAIL}</option>
+        <option value="R_FAIL_PACK_ITEM">{__label.editNotificationTemplate_itemType_R_FAIL_PACK_ITEM}</option>
+        <option value="R_DELETE">{__label.editNotificationTemplate_itemType_R_DELETE}</option>
+        <option value="S_CREATE">{__label.editNotificationTemplate_itemType_S_CREATE}</option>
+      </select>
+      <input class="clear left checkbox" type="checkbox" name="itemToProvider" id="editItem_toProvider" />
+      <label class="left">{__label.editNotificationTemplate_itemToProvider}</label>
+      <input class="clear left checkbox" type="checkbox" name="itemToOrganiser" id="editItem_toOrganiser" />
+      <label class="left">{__label.editNotificationTemplate_itemToOrganiser}</label>
+      <input class="clear left checkbox" type="checkbox" name="itemToUser" id="editItem_toUser" />
+      <label class="left">{__label.editNotificationTemplate_itemToUser}</label>
+      <input class="clear left checkbox" type="checkbox" name="itemToAttendee" id="editItem_toAttendee" />
+      <label class="left">{__label.editNotificationTemplate_itemToAttendee}</label>
+      <input class="clear left checkbox" type="checkbox" name="itemToSubstitute" id="editItem_toSubstitute" />
+      <label class="left">{__label.editNotificationTemplate_itemToSubstitute}</label>
+      <div class="separator">&nbsp;</div>
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemFromAddress}:</label>
+      <input class="left" type="text" name="itemFromAddress" id="editItem_fromAddress" class="left text ui-widget-content ui-corner-all">
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemCcAddress}:</label>
+      <input class="left" type="text" name="itemCcAddress" id="editItem_ccAddress" class="left text ui-widget-content ui-corner-all">
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemBccAddress}:</label>
+      <input class="left" type="text" name="itemBccAddress" id="editItem_bccAddress" class="left text ui-widget-content ui-corner-all">
+      <div class="separator">&nbsp;</div>
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemContentType}:</label>
+      <select class="left" name="itemContentType" id="editItem_contentType">
+        <option value="text/plain">{__label.editNotificationTemplate_itemContentType_text/plain}</option>
+        <option value="text/html">{__label.editNotificationTemplate_itemContentType_text/html}</option>
+      </select>
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemSubject}:&nbsp;<a class="help" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+      <input class="left" type="text" name="itemSubject" id="editItem_subject" class="left text ui-widget-content ui-corner-all">
+      <label class="clear left aligned">{__label.editNotificationTemplate_itemBody}:&nbsp;<a class="help" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+      <textarea class="left" id="editItem_body" name="itemBody"></textarea>
+    </fieldset>
+  </form>
+</div>
+<div id="fi_helpDiv" class="helpDiv">
+  <table>
+    <tr><td class="bold" colspan="2">{__label.settingsTemplate_tag_notificationTitle}:</td></tr>
+    <tr><td class="bold">@@USER_FIRSTNAME</td><td class="text">{__label.settingsTemplate_tag_user_firstname}</td></tr>
+    <tr><td class="bold">@@USER_LASTNAME</td><td class="text">{__label.settingsTemplate_tag_user_lastname}</td></tr>
+    <tr><td class="bold">@@USER_EMAIL</td><td class="text">{__label.settingsTemplate_tag_user_email}</td></tr>
+    <tr><td class="bold">@@USER_REGISTRATION_DATE</td><td class="text">{__label.settingsTemplate_tag_user_registration_date}</td></tr>
+    <tr><td class="bold">@@USER_REGISTRATION_TIME</td><td class="text">{__label.settingsTemplate_tag_user_registration_time}</td></tr>
+    <tr><td class="bold">@@USER_VALIDATION_URL</td><td class="text">{__label.settingsTemplate_tag_user_validation_url}</td></tr>
+    <tr><td class="bold">@@USER_LOGIN</td><td class="text">{__label.settingsTemplate_tag_user_loginname}</td></tr>
+    <tr><td class="bold">@@USER_PASSWORD</td><td class="text">{__label.settingsTemplate_tag_user_password}</td></tr>
+    <tr><td class="bold">@@PROVIDER_NAME</td><td class="text">{__label.settingsTemplate_tag_provider_name}</td></tr>
+    <tr><td class="bold">@@PROVIDER_IC</td><td class="text">{__label.settingsTemplate_tag_provider_ic}</td></tr>
+    <tr><td class="bold">@@PROVIDER_DIC</td><td class="text">{__label.settingsTemplate_tag_provider_dic}</td></tr>
+    <tr><td class="bold">@@PROVIDER_BANK_ACCOUNT</td><td class="text">{__label.settingsTemplate_tag_provider_bank_account}</td></tr>
+    <tr><td class="bold">@@PROVIDER_WWW</td><td class="text">{__label.settingsTemplate_tag_provider_www}</td></tr>
+    <tr><td class="bold">@@PROVIDER_EMAIL</td><td class="text">{__label.settingsTemplate_tag_provider_email}</td></tr>
+    <tr><td class="bold">@@PROVIDER_PHONE</td><td class="text">{__label.settingsTemplate_tag_provider_phone}</td></tr>
+    <tr><td class="bold">@@PROVIDER_STREET</td><td class="text">{__label.settingsTemplate_tag_provider_street}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CITY</td><td class="text">{__label.settingsTemplate_tag_provider_city}</td></tr>
+    <tr><td class="bold">@@PROVIDER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_provider_postal_code}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_NAME</td><td class="text">{__label.settingsTemplate_tag_center_name}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_STREET</td><td class="text">{__label.settingsTemplate_tag_center_street}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_CITY</td><td class="text">{__label.settingsTemplate_tag_center_city}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_center_postal_code}</td></tr>
+    <tr><td class="bold">@@RESERVATION_CONDITION_DESCRIPTION</td><td class="text">{__label.settingsTemplate_tag_reservation_condition}</td></tr>
+    <tr><td class="bold">@@COMMODITY_NAME</td><td class="text">{__label.settingsTemplate_tag_commodity_name}</td></tr>
+    <tr><td class="bold">@@COMMODITY_DESCRIPTION</td><td class="text">{__label.settingsTemplate_tag_commodity_description}</td></tr>
+    <tr><td class="bold">@@ORGANISER_NAME</td><td class="text">{__label.settingsTemplate_tag_event_organiser}</td></tr>
+    <tr><td class="bold">@@ORGANISER_EMAIL</td><td class="text">{__label.settingsTemplate_tag_event_organiser_email}</td></tr>
+    <tr><td class="bold">@@ORGANISER_PHONE</td><td class="text">{__label.settingsTemplate_tag_event_organiser_phone}</td></tr>
+    <tr><td class="bold">@@FREE_PLACES</td><td class="text">{__label.settingsTemplate_tag_event_free}</td></tr>
+    <tr><td class="bold">@@FREE_SUBSTITUTE_PLACES</td><td class="text">{__label.settingsTemplate_tag_event_free_substitute}</td></tr>
+    <tr><td class="bold">@@OCCUPIED_PLACES</td><td class="text">{__label.settingsTemplate_tag_event_occupied}</td></tr>
+    <tr><td class="bold">@@OCCUPIED_SUBSTITUTE_PLACES</td><td class="text">{__label.settingsTemplate_tag_event_occupied_substitute}</td></tr>
+    <tr><td class="bold">@@ATTENDEES</td><td class="text">{__label.settingsTemplate_tag_event_attendee}</td></tr>
+    <tr><td class="bold">@@EVENT_START_DATE</td><td class="text">{__label.settingsTemplate_tag_event_date_from}</td></tr>
+    <tr><td class="bold">@@EVENT_START_TIME</td><td class="text">{__label.settingsTemplate_tag_event_time_from}</td></tr>
+    <tr><td class="bold">@@NUMBER</td><td class="text">{__label.settingsTemplate_tag_reservation_number}</td></tr>
+    <tr><td class="bold">@@START_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_date_from}</td></tr>
+    <tr><td class="bold">@@START_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_time_from}</td></tr>
+    <tr><td class="bold">@@END_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_date_to}</td></tr>
+    <tr><td class="bold">@@END_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_time_to}</td></tr>
+    <tr><td class="bold">@@TOTAL_PRICE</td><td class="text">{__label.settingsTemplate_tag_reservation_price}</td></tr>
+    <tr><td class="bold">@@CREATE_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_create_date}</td></tr>
+    <tr><td class="bold">@@CREATE_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_create_time}</td></tr>
+    <tr><td class="bold">@@PAY_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_date}</td></tr>
+    <tr><td class="bold">@@PAY_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_time}</td></tr>
+    <tr><td class="bold">@@PAY_DESCRIPTION</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_description}</td></tr>
+    <tr><td class="bold">@@CANCEL_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_cancel_date}</td></tr>
+    <tr><td class="bold">@@CANCEL_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_cancel_time}</td></tr>
+    <tr><td class="bold">@@CANCEL_REASON</td><td class="text">{__label.settingsTemplate_tag_reservation_cancel_reason}</td></tr>
+    <tr><td class="bold">@@TICKET_HTML</td><td class="text">{__label.settingsTemplate_tag_ticket_inline}</td></tr>
+    <tr><td class="bold">@@TICKET_ATTACH</td><td class="text">{__label.settingsTemplate_tag_ticket_attach}</td></tr>
+    <tr><td class="bold">@@PREPAYMENTINVOICE_HTML</td><td class="text">{__label.settingsTemplate_tag_prepaymentinvoice_inline}</td></tr>
+    <tr><td class="bold">@@PREPAYMENTINVOICE_ATTACH</td><td class="text">{__label.settingsTemplate_tag_prepaymentinvoice_attach}</td></tr>
+    <tr><td class="bold">@@RECEIPT_HTML</td><td class="text">{__label.settingsTemplate_tag_receipt_inline}</td></tr>
+    <tr><td class="bold">@@RECEIPT_ATTACH</td><td class="text">{__label.settingsTemplate_tag_receipt_attach}</td></tr>
+    <tr><td class="bold">@@INVOICE_HTML</td><td class="text">{__label.settingsTemplate_tag_invoice_inline}</td></tr>
+    <tr><td class="bold">@@INVOICE_ATTACH</td><td class="text">{__label.settingsTemplate_tag_invoice_attach}</td></tr>
+    <tr><td class="bold">@@DOCUMENT_{ID}</td><td class="text">{__label.settingsTemplate_tag_document}</td></tr>
+  </table>
+</div>

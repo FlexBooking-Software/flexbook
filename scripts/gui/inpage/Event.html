@@ -1,0 +1,21 @@
+<form class="normal event" action="{%basefile%}" method="post">
+  <div>
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{event_id}" />
+    <div class="title"><label class="bold">{__label.inpage_event_name}:</label>
+    <label>{name}</label></div>
+    <label class="bold">{__label.inpage_event_center}:</label>
+    <label>{center_name}</label><br/>
+    <label class="bold">{__label.inpage_event_start}:</label>
+    <label>{start}</label><br/>
+    <label class="bold">{__label.inpage_event_end}:</label>
+    <label>{end}</label><br/>
+    <label class="bold">{__label.inpage_event_description}:</label>
+    <label>{description}</label><br/>
+    <div class="title"><label class="bold">{__label.inpage_event_price}:</label>
+    <label>{price} {__label.currency_CZK}</label></div>
+    <br/>
+    <input class="button" type="submit" name="action_eBack" value="{__button.back}" />
+    {reserveButton}
+  </div>
+</form>

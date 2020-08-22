@@ -1,0 +1,65 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="userCredit" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{user_id}" />
+    <div class="formItem">
+      <label for="fi_name">{__label.editUser_fullname}:</label>
+      <label class="asInput">{fullname}</label>
+    </div>
+    <div class="formItem">
+      <label>{__label.editUser_address}:</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_street">{__label.editUser_street}:</label>
+      <label class="asInput">{street}</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_city">{__label.editUser_city}:</label>
+      <label class="asInput">{city}</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_postalCode">{__label.editUser_postalCode}:</label>
+      <label class="asInput">{postal_code}</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_state">{__label.editUser_state}:</label>
+      <label class="asInput">{state}</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_email">{__label.editUser_email}:</label>
+      <label class="asInput">{email}</label>
+    </div>
+    <div class="formItem">
+      <label>{__label.editUserCredit_creditTitle}:</label>
+    </div>
+    {fi_credit}
+    <br/>
+    <div class="formItem">
+      <label>{__label.editUserCredit_ticketTitle}:</label>
+    </div>
+    {fi_ticket}
+    <br/>
+    <hr/>
+    <div class="formItem">
+      <label>{__label.editUserCredit_newTicket}:</label>
+      {fi_newTicket}
+      <input class="button" id="fb_eTicketBuy" type="submit" name="action_eUserTicketSave" value="{__button.editUserCredit_newTicket}" onclick="return confirm('{__label.editUserCredit_confirmNewTicket}');" />
+    </div>
+    <hr/>
+    <br/>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="button" id="fb_activity" type="button" value="{__button.editUserCredit_allActivity}" />
+      {fb_prepaymentInvoiceList}
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_creditHistory_form" class="ajaxForm" title="{__label.editUserCredit_historyTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <div id="fi_creditHistoryItem">
+    </div>
+  </form>
+</div>

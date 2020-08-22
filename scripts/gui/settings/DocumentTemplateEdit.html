@@ -1,0 +1,117 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editDocumentTemplate" class="inputForm  ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    {fi_provider}
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editDocumentTemplate_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    <div class="formItem">
+      <label for="fi_target" class="bold">{__label.editDocumentTemplate_target}:</label>
+      {fi_target}
+    </div>
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editDocumentTemplate_description}:</label>
+      <textarea name="description">{description}</textarea>
+    </div>
+    <div class="formItem">
+      <label class="bold" style="height: 40px;">{__label.editDocumentTemplate_item}:</label>
+      <div id="fi_item" style="float: left;">
+        <div class="gridTable">
+        <table id="fi_itemTable">
+          <tbody>{fi_item}</tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input id="fi_addItem" type="button" value="{__button.editDocumentTemplate_addItem}" />
+      <input class="fb_eSave" type="submit" name="action_eDocumentTemplateSave" value="{__button.editDocumentTemplate_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newItem_form" class="ajaxForm" title="{__label.editDocumentTemplate_itemTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editItem_id" name="id" value="" />
+      <input type="hidden" id="editItem_index" name="index" value="" />
+      <label class="clear left aligned">{__label.editDocumentTemplate_itemName}:</label>
+      <input type="text" name="itemName" id="editItem_name" class="left text ui-widget-content ui-corner-all" maxlength="255">
+      <label class="clear left aligned">{__label.editDocumentTemplate_itemCode}:</label>
+      <input type="text" name="itemCode" id="editItem_code" class="left text ui-widget-content ui-corner-all" maxlength="20">
+      <div class="separator">&nbsp;</div>
+      <label class="clear left aligned">{__label.editDocumentTemplate_itemType}:</label>
+      <select class="left" name="itemType" id="editItem_type">
+        <option value="">{__label.select_choose}</option>
+        <option value="U_CREATE" class="general">{__label.editDocumentTemplate_itemType_U_CREATE}</option>
+        <option value="R_CREATE">{__label.editDocumentTemplate_itemType_R_CREATE}</option>
+      </select>
+      <label class="clear left aligned">{__label.editDocumentTemplate_itemNumber}: <a class="numberHelp" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+      <input type="text" name="itemNumber" id="editItem_number" class="left text ui-widget-content ui-corner-all">
+      <div class="separator">&nbsp;</div>
+      <label class="clear left aligned">{__label.editDocumentTemplate_itemContent}:&nbsp;<a class="help" href="#"><img class="inline" src="img/button_grid_help.png"/></a></label>
+      <textarea class="left" id="editItem_content" name="itemContent"></textarea>
+    </fieldset>
+  </form>
+</div>
+<div id="fi_helpDiv" class="helpDiv">
+  <table>
+    <tr><td class="bold" colspan="2">{__label.settingsTemplate_tag_documentTitle}:</td></tr>
+    <tr><td class="bold">@@DOCUMENT_NUMBER</td><td class="text">{__label.settingsTemplate_tag_document_number}</td></tr>
+    <tr><td class="bold">@@USER_FIRSTNAME</td><td class="text">{__label.settingsTemplate_tag_user_firstname}</td></tr>
+    <tr><td class="bold">@@USER_LASTNAME</td><td class="text">{__label.settingsTemplate_tag_user_lastname}</td></tr>
+    <tr><td class="bold">@@USER_EMAIL</td><td class="text">{__label.settingsTemplate_tag_user_email}</td></tr>
+    <tr><td class="bold">@@USER_PHONE</td><td class="text">{__label.settingsTemplate_tag_user_phone}</td></tr>
+    <tr><td class="bold">@@USER_STREET</td><td class="text">{__label.settingsTemplate_tag_user_street}</td></tr>
+    <tr><td class="bold">@@USER_CITY</td><td class="text">{__label.settingsTemplate_tag_user_city}</td></tr>
+    <tr><td class="bold">@@USER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_user_postal_code}</td></tr>
+    <tr><td class="bold">@@USER_STATE</td><td class="text">{__label.settingsTemplate_tag_user_state}</td></tr>
+    <tr><td class="bold">@@USER_REGISTRATION_DATE</td><td class="text">{__label.settingsTemplate_tag_user_registration_date}</td></tr>
+    <tr><td class="bold">@@USER_REGISTRATION_TIME</td><td class="text">{__label.settingsTemplate_tag_user_registration_time}</td></tr>
+    <tr><td class="bold">@@USER_VALIDATION_URL</td><td class="text">{__label.settingsTemplate_tag_user_validation_url}</td></tr>
+    <tr><td class="bold">@@USER_LOGIN</td><td class="text">{__label.settingsTemplate_tag_user_loginname}</td></tr>
+    <tr><td class="bold">@@USER_ATTRIBUTE_{ID}</td><td class="text">{__label.settingsTemplate_tag_user_attribute}</td></tr>
+    <tr><td class="bold">@@PROVIDER_NAME</td><td class="text">{__label.settingsTemplate_tag_provider_name}</td></tr>
+    <tr><td class="bold">@@PROVIDER_IC</td><td class="text">{__label.settingsTemplate_tag_provider_ic}</td></tr>
+    <tr><td class="bold">@@PROVIDER_DIC</td><td class="text">{__label.settingsTemplate_tag_provider_dic}</td></tr>
+    <tr><td class="bold">@@PROVIDER_BANK_ACCOUNT</td><td class="text">{__label.settingsTemplate_tag_provider_bank_account}</td></tr>
+    <tr><td class="bold">@@PROVIDER_WWW</td><td class="text">{__label.settingsTemplate_tag_provider_www}</td></tr>
+    <tr><td class="bold">@@PROVIDER_EMAIL</td><td class="text">{__label.settingsTemplate_tag_provider_email}</td></tr>
+    <tr><td class="bold">@@PROVIDER_PHONE</td><td class="text">{__label.settingsTemplate_tag_provider_phone}</td></tr>
+    <tr><td class="bold">@@PROVIDER_STREET</td><td class="text">{__label.settingsTemplate_tag_provider_street}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CITY</td><td class="text">{__label.settingsTemplate_tag_provider_city}</td></tr>
+    <tr><td class="bold">@@PROVIDER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_provider_postal_code}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_NAME</td><td class="text">{__label.settingsTemplate_tag_center_name}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_STREET</td><td class="text">{__label.settingsTemplate_tag_center_street}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_CITY</td><td class="text">{__label.settingsTemplate_tag_center_city}</td></tr>
+    <tr><td class="bold">@@PROVIDER_CENTER_POSTAL_CODE</td><td class="text">{__label.settingsTemplate_tag_center_postal_code}</td></tr>
+    <tr><td class="bold">@@COMMODITY_NAME</td><td class="text">{__label.settingsTemplate_tag_commodity_name}</td></tr>
+    <tr><td class="bold">@@COMMODITY_DESCRIPTION</td><td class="text">{__label.settingsTemplate_tag_commodity_description}</td></tr>
+    <tr><td class="bold">@@NUMBER</td><td class="text">{__label.settingsTemplate_tag_reservation_number}</td></tr>
+    <tr><td class="bold">@@START_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_date_from}</td></tr>
+    <tr><td class="bold">@@START_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_time_from}</td></tr>
+    <tr><td class="bold">@@END_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_date_to}</td></tr>
+    <tr><td class="bold">@@END_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_time_to}</td></tr>
+    <tr><td class="bold">@@TOTAL_PRICE</td><td class="text">{__label.settingsTemplate_tag_reservation_price}</td></tr>
+    <tr><td class="bold">@@CREATE_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_create_date}</td></tr>
+    <tr><td class="bold">@@CREATE_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_create_time}</td></tr>
+    <tr><td class="bold">@@PAY_DATE</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_date}</td></tr>
+    <tr><td class="bold">@@PAY_TIME</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_time}</td></tr>
+    <tr><td class="bold">@@PAY_DESCRIPTION</td><td class="text">{__label.settingsTemplate_tag_reservation_pay_description}</td></tr>
+    <tr><td class="bold">@@RESERVATION_ATTRIBUTE_{ID}</td><td class="text">{__label.settingsTemplate_tag_reservation_attribute}</td></tr>
+  </table>
+</div>
+<div id="fi_numberHelpDiv" class="helpDiv">
+  <table>
+    <tr><td class="bold" colspan="2">{__label.settingsTemplate_tag_accountingNumberTitle}:</td></tr>
+    <tr><td class="bold">[ID]</td><td class="text">{__label.settingsTemplate_tag_document_id}</td></tr>
+    <tr><td class="bold">[YYYY]</td><td class="text">{__label.settingsTemplate_tag_receipt_number_year}</td></tr>
+    <tr><td class="bold">[CCCC]</td><td class="text">{__label.settingsTemplate_tag_document_number_counter}</td></tr>
+    <tr><td class="bold">[cccc]</td><td class="text">{__label.settingsTemplate_tag_document_number_code_counter}</td></tr>
+  </table>
+</div>

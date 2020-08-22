@@ -1,0 +1,130 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="customer.css" />
+  <script src="https://www.flexbook.cz/test/jq/jquery.js"></script>
+  <script src="https://www.flexbook.cz/test/jq/moment.min.js"></script>
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/jquery.form.js"></script>
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.flexbook.cz/test/jq/jquery-ui.css" />
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/jquery.datetimepicker.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.flexbook.cz/test/jq/jquery.datetimepicker.css" />
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/fullcalendar-2.6.0.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.flexbook.cz/test/jq/fullcalendar-2.6.0.css" />
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/lang-all.js"></script>
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/scheduler-1.2.0.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.flexbook.cz/test/jq/scheduler-1.2.0.css" />
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/jquery.cookie.js"></script>
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/jquery.uploadfile.js"></script>
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/intlTelInput.min.js"></script>
+  <script type="text/javascript" src="https://www.flexbook.cz/test/jq/intlTelInputUtils.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.flexbook.cz/test/jq/intlTelInput.css" />
+  <script src="https://www.flexbook.cz/test/flb.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://www.flexbook.cz/test/flb.css" />
+  <style>
+    span#f_4_attr_75_span { display: block; float: left; margin-left: 3px; }
+  </style>
+  <script type="text/javascript">
+    function countChar(textarea) {
+      var len = textarea.value.length;
+      $('#f_4_attr_75_span').html(len);
+    };
+
+    $(document).ready(function() {
+      $('#f_4').on('focus', '#f_4_attr_75', function(event) {
+        countChar(this);
+      });
+      $('#f_4').on('keyup', '#f_4_attr_75', function(event) {
+        countChar(this);
+      });
+
+      $('#f_4').on('click', '#f_4_flb_profile_save', function(event) {
+        var len = $('#f_4_attr_75').val().length;
+        if ((len<10)||(len>50)) {
+          alert('Spatna textarea!');
+          event.stopImmediatePropagation();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<input id="test_button" type="button" value="TEST"/>
+<div id="flexbook_1">
+  Seznam udalosti
+  <div id="f_1"></div>
+</div>
+<div id="flexbook_2">
+  Jiny seznam udalosti
+  <div id="f_2"></div>
+</div>
+<div id="flexbook_3">
+  Seznam zdroju
+  <div id="f_3"></div>
+</div>
+<div id="flexbook_6">
+  Mini Profil
+  <div id="f_6"></div>
+</div>
+<div id="flexbook_4">
+  Profil
+  <div id="f_4"></div>
+</div>
+<div id="flexbook_5">
+  Vice-zdrojovy kalendar
+  <div id="f_5"></div>
+</div>
+<script>
+  flbInit('https://www.flexbook.cz/test/ajax.php', 1, [
+    { type: 'flbEventList',
+      placeHolder: 'f_1',
+      params: { Xcount:5, XdateMin: '2016-03-01', XdateMax: '2017-03-31',
+        language: 'cz',
+        format: { datetime: 'l j.F H:i' },
+        XrenderText: ['name','center','description'],
+      },
+    },
+    { type: 'flbEventList',
+      placeHolder: 'f_2',
+      params: { renderText: ['name','center','description','organiser','start','end','price','attribute','attendees','reservation'],
+        eventTemplate: '@@EVENT_NAME',
+        XdateNowPlusXDays: 14,
+        language: 'en',
+        format: { Xdatetime: 'd/m/y H:i', Xdate: 'd/m/y' }},
+    },
+    { type: 'flbResourceList',
+      placeHolder: 'f_3',
+      params: { Xcount: 1, clickAction: 'Calendar',
+        render: ['reservation','event','occupied'],
+        renderText: ['name','description','price','attribute'],
+        XtimeMin: '07:30', XtimeMax: '17:00',
+        format: { datetime: 'd.m. H:i', time: 'H:i' } },
+    },
+    { type: 'flbProfile',
+      placeHolder: 'f_6',
+      params: { Xcenter: [2], format: { datetime: 'd.m. Y H:i', date: 'd.m. Y', time: 'H:i' }, extraDiv: 'all', language: 'cz', externalAccount: 1,
+        buttons: ['login','sendPassword','registration','reservation','profile','password','logout','credit'],
+        checkAttributeMandatory: '0',
+      },
+    },
+    { type: 'flbProfile',
+      placeHolder: 'f_4',
+      params: { format: { datetime: 'd.m. Y H:i', date: 'd.m. Y', time: 'H:i' }, extraDiv: 1, language: 'en', externalAccount: 1,
+        buttons: ['login','sendPassword','registration','reservation','profile','password','logout','credit'],
+        checkAttributeMandatory: '0',
+      },
+    },
+    { type: 'flbResourceCalendar',
+      placeHolder: 'f_5',
+      params: {
+        XresourceId: [162,163,164], XresourceAssetId: ['Z-1','Z-2'],
+        resourcePoolAssetId: 'PRVNI',
+        resourceLabel: 'Nemovitosti', ratio: 1.3,
+        timeSlot: '30', XtimeMin: '13:00', XtimeMax: '18:0', showToday: false,
+        render: ['reservation','occupied','event'], XdisableResourceReservation: true,
+        XdateStart: '2016-02-22', dateMin: '2016-03-01', XdateMax: '2016-06-30'
+      }
+    },
+  ]);
+</script>
+</body>

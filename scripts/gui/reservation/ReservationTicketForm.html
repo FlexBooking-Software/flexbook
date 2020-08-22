@@ -1,0 +1,52 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <div id="editReservation" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <div class="formItem">
+      <label for="fi_user" class="bold">{__label.editReservation_number}:</label>
+      <label class="asInput">{number}</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_user" class="bold">{__label.editReservation_user}:</label>
+      <label class="asInput">{userName}</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_provider" class="bold">{__label.editReservation_provider}:</label>
+      <label class="asInput">{providerName}</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_center" class="bold">{__label.editReservation_center}:</label>
+      <label class="asInput">{centerName}</label>
+    </div>
+    <br />
+    {ticket}
+    <br />
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="$('#form').attr('target','_self'); document.getElementById('fb_backHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eSave" id="fb_eTicketOne" type="submit" onclick="$('#form').attr('target','_blankTicket');" name="action_eReservationTicketForm" value="{__button.reservationTicketForm_one}" />
+    </div>
+    <br/>
+    <div class="formItem bold">
+      <label for="fi_from">{__label.reservationTicketForm_titleMulti}:</label>
+    </div>
+    <div class="formItem">
+      <label for="fi_from">{__label.reservationTicketForm_from}:</label>
+      <input class="mediumText" id="fi_from" type="text" name="from" value=""/>
+    </div>
+    <div class="formItem">
+      <label for="fi_to">{__label.reservationTicketForm_to}:</label>
+      <input class="mediumText" id="fi_to" type="text" name="to" value=""/>
+    </div>
+    <div class="formItem">
+      <label for="fi_to">{__label.reservationTicketForm_equal}:</label>
+      {fi_equalSelect}
+    </div>
+    <br />
+    <div class="formButton">
+      <input class="fb_eSave" id="fb_eTicketProvider" type="submit" onclick="$('#form').attr('target','_blankTicket');" name="action_eReservationTicketForm?group=provider" value="{__button.reservationTicketForm_provider}" />
+      <input class="fb_eSave" id="fb_eTicketCenter" type="submit" onclick="$('#form').attr('target','_blankTicket');" name="action_eReservationTicketForm?group=center" value="{__button.reservationTicketForm_center}" />
+      <input class="fb_eHidden" id="fb_backHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>

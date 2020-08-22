@@ -1,0 +1,47 @@
+<br/>
+<form class="normal" action="{%basefile%}" method="post">
+  <div class="registrationFill">
+    <span class="description">{__label.inpage_registration_fillValues}</span>
+    <br/><br/>
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <label class="bold">* {__label.inpage_registration_email}:</label>
+    <input class="text" type="text" name="email" value="{email}" />
+    <br/><br/>
+    <label class="bold">* {__label.inpage_registration_firstname}:</label>
+    <input class="text" type="text" name="firstname" value="{firstname}" />
+    <br/>
+    <label class="bold">* {__label.inpage_registration_lastname}:</label>
+    <input class="text" type="text" name="lastname" value="{lastname}" />
+    <br/>
+    <label class="bold">* {__label.inpage_registration_phone}:</label>
+    <input class="text" type="text" name="phone" value="{phone}" />
+    <br/>
+    <label class="bold">* {__label.inpage_registration_street}:</label>
+    <input class="text" type="text" name="street" value="{street}" />
+    <br/>
+    <label class="bold">* {__label.inpage_registration_city}:</label>
+    <input class="text" type="text" name="city" value="{city}" />
+    <br/>
+    <label class="bold">* {__label.inpage_registration_postalCode}:</label>
+    <input class="text" type="text" name="postalCode" value="{postalCode}" />
+    <br/>
+    <label class="bold">* {__label.inpage_registration_state}:</label>
+    {fi_state}
+    <br/>
+    {fi_attribute}
+    <br/>
+    <label>&nbsp; {__label.inpage_registration_password}:</label>
+    <input class="text" type="password" name="password" value="{password}" />
+    <br/>
+    <label>&nbsp; {__label.inpage_registration_retypePassword}:</label>
+    <input class="text" type="password" name="retypePassword" value="{retypePassword}" />
+    <br/><br/>
+    <label>&nbsp; {__label.inpage_registration_advertising}:</label>
+    <input type="hidden" name="advertising" value="N"/>
+    <input type="checkbox" name="advertising" value="Y" checked="YES"/>
+    <br/><br/>
+    <input class="button" type="submit" name="action_eInPageRegistrationSave?nextAction=goBack" value="{__button.back}" />
+    <input class="button" type="submit" name="action_eInPageRegistrationSave" value="{__button.inpage_registration_finish}" />
+  </div>
+</form>
+<br/>

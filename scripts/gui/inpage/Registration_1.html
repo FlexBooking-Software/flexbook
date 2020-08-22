@@ -1,0 +1,14 @@
+<br/>
+<form class="normal" action="{%basefile%}" method="post">
+  <div>
+    <span class="description">{__label.inpage_registration_validateEmail}</span>
+    <br/><br/>
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <label>{__label.inpage_registration_email}:</label>
+    <input class="mediumText" type="text" name="email" value="{email}" />
+    <br/><br/>
+    <input class="button" type="submit" name="action_eBack" value="{__button.back}" />
+    <input class="button" type="submit" name="action_eInPageRegistrationSave?nextAction=validateEmail" value="{__button.inpage_registration_next}" />
+  </div>
+</form>
+<br/>

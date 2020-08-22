@@ -1,0 +1,49 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editEventSubstitute" class="inputForm ajaxForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" id="fi_nextAction" name="nextAction" value="eEventSubstituteSave" />
+    <input type="hidden" name="eventAttendeeId" value="{eventAttendeeId}" />
+    <input type="hidden" id="fi_eventCoAttendees" name="eventCoAttendees" value="{eventCoAttendees}"/>
+    <input type="hidden" name="editEventSubstitute" value="1" />
+    <div class="formItem">
+      <label for="fi_user" class="bold">{__label.editEventSubstitute_user}:</label>
+      <input type="hidden" id="fi_userId" name="userId" value="{userId}" />
+      <input class="extraLongText" id="fi_user" type="text" name="userName" value="{userName}"/>
+      <input class="ui-button inputSubmit" id="fb_eSave" type="button" onclick="document.getElementById('fb_newUserHidden').click();" name="action_eEventSubstituteUser" value="{__button.editEventSubstitute_newUser}" />
+    </div>
+    {fi_mandatory}
+    <br />
+    <div id="fi_eventDiv">
+      <div class="formItem">
+        <input type="hidden" id="fi_eventId" name="eventId" value="{eventId}" />
+        <label for="fi_event" class="bold">{__label.editEventSubstitute_event}:</label>
+        <label class="asInput">{eventName}</label>
+      </div>
+      <div class="formItem description">
+        <label>{__label.editEventSubstitute_commodityDescription}:</label>
+        <label id="fi_eventDescription" class="description">{eventDescription}</label>
+      </div>
+      <div class="formItem description">
+        <label>{__label.editEventSubstitute_commodityPrice}:</label>
+        <label id="fi_eventPrice" class="description">{eventPrice} {__label.currency_CZK}</label>
+      </div>
+      <br/>
+      <div class="formItem">
+        <label for="fi_places" class="bold">{__label.editEventSubstitute_places}:</label>
+        <input class="shortText" id="fi_places" type="text" name="places" value="{places}" {readonlyPlaces}/>
+      </div>
+      <div class="formItem">
+        <label for="fi_eventAttendee" class="bold">{__label.editEventSubstitute_eventAttendee}:</label>
+        {eventAttendeeTable}
+      </div>
+    </div>
+    <div id="fi_attribute"></div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_backHidden').click();" name="action_eBack" value="{__button.back}" />
+      {fb_save}
+      <input class="fb_eHidden" id="fb_backHidden" type="submit" name="action_eBack" value="{__button.back}" />
+      <input class="fb_eHidden" id="fb_newUserHidden" type="submit" name="action_eEventSubstituteNewUser" onclick="return mySubmit('fb_eEventSubstituteSave','fi_nextAction','newUser');" value="button" />
+    </div>
+  </div>
+</form>

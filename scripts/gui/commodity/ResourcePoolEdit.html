@@ -1,0 +1,53 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post" id="form">
+  <div id="editResourcePool" class="inputForm ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    <input type="hidden" id="fi_nextAction" name="nextAction" value="eResourcePoolSave" />
+    <div id="tab">
+      <ul>
+        <li><a href="#tab-1">{__label.editResourcePool_general}</a></li>
+        <li><a href="#tab-2">{__label.editResourcePool_wwwInfo}</a></li>
+      </ul>
+      <div id="tab-1">
+        <div class="formItem">
+          <label for="fi_name" class="bold">{__label.editResourcePool_name}:</label>
+          <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.editResourcePool_description}:</label>
+          <textarea name="description">{description}</textarea>
+        </div>
+        <div class="formItem">
+          <label for="fi_externalId">{__label.editResourcePool_externalId}:</label>
+          <input class="extraLongText" id="fi_externalId" type="text" name="externalId" value="{externalId}"/>
+        </div>
+        <div class="formItem">
+          <label>{__label.editResourcePool_tag}:</label>
+          <div style="float:left;">
+            <input type="text" id="fi_tag" name="tag" />
+          </div>
+        </div>
+        <div class="formItem">
+          <label>{__label.editResourcePool_active}:</label>
+          {fi_active}
+        </div>
+        <div class="formItem">
+          <label>{__label.editResourcePool_resource}:</label>
+          <div style="float: left;">{fi_resource}</div>
+        </div>
+      </div>
+      <div id="tab-2">
+        <div class="formItem">
+          <label>{__label.editResourcePool_urlPhoto}:</label>
+          <textarea id="fi_urlPhoto" name="urlPhoto">{urlPhoto}</textarea>
+        </div>
+      </div>
+      <div class="formButton">
+        <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+        {fb_resourcePoolSave}
+        <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,561 @@
+/* general */
+.flb_clear { display: block; clear: both; }
+.flb_left { float: left; }
+.bold { font-weight: bold; }
+.flb_readonly { color: gray; }
+.flb_phone { margin-left: 2px !important; }
+
+/* calendar and dialog defaults corections */
+.ui-dialog-buttonset button[type=button],
+.fc-left button[type=button] {
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 1px solid #333333 !important;
+}
+.ui-button-text-only .ui-button-text {
+  padding: 0 !important;
+}
+.ui-dialog-buttonset button[type=button]:hover {
+  color: white !important;
+  background-color: #333333 !important;
+}
+.ui-dialog-titlebar-close { background: #eeeeee url('img/button_jq_close_gray.png') no-repeat center !important; }
+
+.ui-dialog {
+  font-family: Helvetica, Arial, Sans-Serif;
+  background-color: #FAFAFA !important;
+  border: 1px solid #9B9B9B !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: auto !important;
+}
+
+/* dialog header */
+.ui-dialog-titlebar {
+  background-color: transparent !important;
+  border: none !important;
+  margin-top: 20px;
+}
+
+.ui-dialog-title {
+  display: none;
+  padding-left: 0.75em;
+  font-size: 1.2em;
+}
+
+/* dialog hide borders */
+.ui-dialog fieldset {
+  border: none !important;
+  padding-bottom: 0;
+}
+
+.ui-dialog-buttonpane {
+  border: none !important;
+}
+
+.ui-dialog-buttonset {
+  float: left !important;
+  margin-left: 1.5em;
+  margin-bottom: 10px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  top: 0px !important;
+  right: 7px !important;
+  background-color: none !important;
+}
+
+.ui-dialog-content .line span:first-of-type {
+  display: inline-block;
+  min-width: 130px;
+}
+
+.combogrid {
+  width: 500px;
+  font-size: 1em !important;
+}
+
+.xdsoft_datetimepicker { z-index: 1000001 !important; }
+
+div.ajaxForm div.title {
+  font-size: 24px !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+div.reservationResourceForm div.title,
+div.reservationEventForm div.title {
+  padding-bottom: 15px;
+}
+div.ajaxForm .description {
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+/* controls */
+div#flb_core_not_logged { display: none; }
+.flb_output {
+  font-family: Helvetica, Arial, Sans-Serif;
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+#flb_core_alert { padding: 20px; text-align: center; width: 600px; top: calc(50% - 150px/2); }
+#flb_core_alert input { margin-top: 20px; }
+.flb_output input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.flb_output button {
+  font-size: 12px !important;
+  font-family: Helvetica, Arial, Sans-Serif !important;
+}
+.flb_output input[type=text], .flb_output input[type=password], .flb_output textarea {
+  font-family: Helvetica, Arial, Sans-Serif;
+  border: 1px solid #C6C6C6;
+  margin: 2px;
+  padding: 4px 6px;
+  border-radius: 3px;
+  width: 175px;
+}
+.flb_output input[type=checkbox] { appearance: checkbox; -webkit-appearance: checkbox; font-size: 26px; Xmargin-top: 8px; }
+.flb_output input[type=radio] { appearance: radio; -webkit-appearance: radio; font-size: 26px; Xmargin-top: 8px; }
+.flb_output select { font-size: 14px; margin: 2px; height: 26px; }
+
+/* buttons */
+/* buttons - secondary */
+.flb_output input, .flb_output textarea, .flb_button { font-size: 14px; line-height: 1em; }
+.flb_output input[type=button],
+.flb_button,
+.ui-dialog-buttonset button[type=button] {
+  padding: 6px 15px 5px 15px;
+  margin-top: 3px;
+  margin-right: 3px;
+  border: 1px solid #333333;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 400 !important;
+  color: #333333;
+}
+input[type=button]:hover,
+.flb_button:hover {
+  color: white;
+  background-color: #333333;
+}
+
+/* buttons - disabled */
+.flb_output .flb_disabledButton {
+  color: darkgray;
+  border-color: darkgray;
+}
+.flb_output .flb_disabledButton:hover {
+  background-color: white;
+}
+
+/* buttons - primary */
+.flb_output div.flb_primaryButton,
+.flb_output input.flb_primaryButton,
+.ui-dialog-buttonset button.flb_primaryButton {
+  color: white;
+  background-color: #42A861 !important;
+  border: 1px solid #333333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.flb_output div.flb_primaryButton:hover,
+.flb_output input.flb_primaryButton:hover,
+.ui-dialog-buttonset  button.flb_primaryButton:hover {
+  color: white;
+  background-color: #3CBD61 !important;
+  border-color: #3CBD61;
+  /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
+}
+
+/* lists */
+.flb_list {
+  max-width: auto;
+}
+.flb_list_item { clear: left; }
+.flb_list_item .photo { width: 150px; }
+.flb_list_item_title { font-weight: bold; margin-left: 24px; }
+.flb_event_list .flb_event_list_item { overflow: hidden; clear: left; }
+.flb_event_list .flb_event_list_next_page_button { width: fit-content; margin: 10px auto; }
+.flb_event_list_item,
+.flb_resource_list_item,
+.flb_profile_document_list_item,
+.flb_profile_subaccount_list_item {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 15px;
+}
+.flb_event_list_item_cycle {
+  width: 24px;
+  height: 22px;
+}
+.flb_event_list_item_desc,
+.flb_resource_list_item_desc,
+.flb_profile_document_list_item_desc,
+.flb_profile_subaccount_list_item_desc {
+  margin-top: 5px;
+  margin-right: 20px;
+  border-bottom: 1px solid #D7D7D7;
+  flex-grow: 1;
+}
+.flb_event_list_item_desc div,
+.flb_resource_list_item_desc div,
+.flb_profile_document_list_item_desc div,
+.flb_profile_subaccount_list_item_desc div { float: left; }
+
+.flb_event_week_list_header { margin-bottom: 10px; overflow: hidden; text-align: center; }
+.flb_event_week_list_header .flb_event_week_list_controls { margin: 0 auto; overflow: hidden; display: inline-block; }
+.flb_event_week_list_header .flb_event_week_list_controls div { float: left; }
+.flb_event_week_list_header .flb_button { width: 18px; }
+.flb_event_week_list_period { font-weight: bold; font-size: 1.2em; margin: 4px 10px 0 10px; }
+
+/* detail - hide labels*/
+.flb_event_detail .flb_event_name_label,
+.flb_resource_detail .flb_resource_name_label,
+.flb_resource_description_label,
+.flb_event_description_label,
+.flb_reservation_number_label,
+.flb_reservation_commodity_label {
+  display: none;
+}
+
+div.line div.ui-dialog-buttonset { margin: -7px 0 0 0; float: right !important; }
+button.anonymousReservation { float: right; margin-right: 5px; }
+div.attendeeLine { overflow: hidden; }
+div.attendeeFailed { color: red; text-decoration: line-through; }
+div.attendee { float: left; }
+div.attendeeSwap { float: right; margin: 0 5px 0 15px; }
+input.btn_small { cursor: pointer; width: auto; }
+div.flb_event_occupied { color: red; margin-top: 5px; font-size: 0.8em; }
+
+div.flb_output hr { clear: left; }
+div.flb_title { font-weight: bold; font-size: 1.2em; margin-bottom: 10px; }
+input.flb_time { width: 40px !important; }
+div.flb_inputTime { width: 66px; }
+.intl-tel-input { margin-top: 1px; float: left; }
+div.file { margin-left: 2px; margin-bottom: 2px; }
+div.photo img.noPhoto { max-width:100%; max-height:100%; }
+div.flb_registration_email_value { min-width: 0 !important; margin-right: 10px; margin-top: 3px; }
+
+div.ajaxForm div.line { clear: left; font-size: 16px; margin-bottom: 5px; }
+div.ajaxForm div.file .ajax-file-upload { border: 1px solid lightgray; padding: 0 5px; cursor: pointer !important; width: 120px; }
+div.ajaxForm .ajax-file-upload-container { float: left; }
+div.ajaxForm .ajax-file-upload-statusbar { width: auto !important; }
+
+table.attendee th { font-weight: 400; font-size: 1em; }
+table.attendee input { width: 135px; }
+table.attendee input.email { width: 180px; }
+
+div.flb_output div.group { overflow: hidden; float: left; clear: left; }
+
+div.flb_profile { Xoverflow: hidden; }
+div.flb_profile:after{ clear: both; content: ""; display: block; }
+div.flb_profile div.flb_profile_main { clear: left; Xoverflow: hidden; }
+div.flb_profile div.flb_profile_main:after{ clear: both; content: ""; display: block; }
+div.flb_profile div.flb_profile_attributecategory_name { clear: left; font-weight: bold; font-size: 0.8em; }
+div.flb_profile div.flb_profile_attributecategory { clear: left; float: none; border: 1px solid darkgray; margin: -5px 0 5px 0; padding: 5px; overflow: hidden; }
+div.flb_profile div.flb_profile_attributecategory { clear: left; overflow: hidden; }
+div.flb_profile div.flb_profile_fullname_label { min-width: auto !important; margin-right: 10px; }
+div.flb_profile div.flb_profile_fullname_clickable { cursor: pointer; padding-top: 5px; }
+div.flb_profile div.flb_profile_fullname_hint { display: none; border: 1px solid #333333; border-radius: 4px; position: fixed; z-index:1000000; min-width: 200px; background-color: #585858; padding: 5px; font-size: 12px; font-weight: bold; color: lightgrey; line-height: 1.3; opacity: 0.9; }
+div.flb_profile div.flb_profile_fullname_hint div { float: left; clear: left; }
+div.flb_profile div.flb_profile_fullname_hint div.title { font-size: 14px; color: white; clear: none; }
+div.flb_profile div.flb_profile_fullname_hint div.logo { margin: 0 10px 8px 0; }
+div.flb_profile div.flb_profile_fullname_hint div.logo img { width: 20px; }
+div.flb_profile div.flb_profile_fullname_hint div.link { margin-top: 10px; color: white; cursor: pointer; clear: none; padding: 0 12px; text-align: center; }
+div.flb_profile div.flb_profile_fullname_hint div.link_logout { float: right; padding: 0; margin-top: 0; }
+div.flb_profile div.flb_profile_fullname_hint div.link_notlast { border-right: 1px solid lightgrey; }
+div.flb_profile div.flb_profile_fullname_clickable:hover { text-shadow: 1px 1px lightgrey }
+div.flb_profile div.flb_profile_extra_all { clear: left; margin-top: -1px; float: none; }
+div.flb_profile div#flb_profile_account { overflow: hidden; float: left; }
+div.flb_profile div.flb_external_account { overflow: hidden; text-align: center; }
+div.flb_profile div.flb_external_account div { font-size: 13px; overflow: hidden; margin-bottom: 10px; text-align: center; }
+div.flb_profile div.flb_external_account div.button { margin-top: 0; margin-left: auto; margin-right: auto; float: none; width: 265px; }
+div.flb_profile div.flb_external_account div.button input { margin: 0 5px 15px 5px; }
+div.flb_profile div.flb_external_account div.flexbookAccount { text-align: center; overflow: hidden; white-space: nowrap; clear: left; }
+div.flb_profile div.flb_external_account div.flexbookAccount > span { position: relative; display: inline-block; }
+div.flb_profile div.flb_external_account div.flexbookAccount > span:before,
+div.flb_profile div.flb_external_account div.flexbookAccount > span:after { content: ""; position: absolute; top: 50%; width: 9999px; height: 1px; background: #c6c6c6; }
+div.flb_profile div.flb_external_account div.flexbookAccount > span:before { right: 100%; margin-right: 5px; }
+div.flb_profile div.flb_external_account div.flexbookAccount > span:after { left: 100%; margin-left: 5px; }
+div.flb_profile div.flb_notLoggedTitle { text-align: center; margin: 0 auto 30px auto; width:250px; }
+div.flb_profile .label { float: left; clear: left; min-width: 200px; }
+div.flb_profile .shortLabel { min-width: 100px !important; padding-top: 5px; }
+div.flb_profile label.file { float: left; font-style: normal; font-size: 0.8em; margin-right: 10px; }
+div.flb_profile div.file { float: left; font-style: normal; font-size: 0.8em; }
+div.flb_profile div.file .ajax-file-upload { border: 1px solid lightgray; padding: 0 5px; cursor: pointer !important; }
+div.flb_profile .ajax-file-upload-container { float: left; }
+div.flb_profile > input[type=button] { margin-top: 0px; }
+div.flb_profile input { float: left; }
+div.flb_profile input.text { width: 300px; }
+div.flb_profile select { width: 300px; }
+div.flb_profile textarea { float: left; }
+div.flb_profile textarea.textarea { width: 300px; height: 50px; }
+div.flb_profile input.flb_other_login { border: none; height: 27px; width: 78px; cursor: pointer; }
+div.flb_profile input.flb_facebook_login { background: url('img/button_facebook_login_small.png'); }
+div.flb_profile input.flb_google_login { background: url('img/button_google_login_small.png'); }
+div.flb_profile input.flb_twitter_login { background: url('img/button_twitter_login_small.png'); }
+div.flb_profile select { float: left; }
+div.flb_profile .flb_profile_toggleSendPassword { cursor: pointer; clear: both; float: left; margin-top: -5px; margin-left: 105px; font-size: 12px; }
+div.flb_profile .flb_profile_closebutton { float: right; margin: 0 -15px 0 0; width: 20px; height: 20px; }
+div.flb_profile .flb_profile_closebutton:hover { border: 1px solid slategray; }
+div.flb_profile .flb_profile_subaccount_data { margin-bottom: 20px; clear: left; }
+div.flb_profile div.button { clear: left; float: left; Xmargin-top: 10px; Xmin-width: 550px; Xwidth: 400px; }
+div.flb_profile_extra { position: fixed; width: auto; top: 100px; left:calc(50% - 650px/2); z-index:1000000; background-color: #FAFAFA; border: 1px solid #9B9B9B; padding: 5px 20px 20px 20px; max-height: 650px; overflow: scroll; box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
+div.flb_profile_extra div.button { Xmargin-top: 10px; float: none; overflow: hidden; }
+div.flb_profile_extra div.tab { min-width: 580px; }
+div.flb_profile_extra div.flb_title { padding-top: 5px; }
+div.flb_profile_extra input.tab { margin-right: 0; padding: 6px 10px 5px 10px; border-radius: 8px 8px 0 0; }
+div.flb_profile_extra input.tab_selected { border-bottom: 0; }
+div.flb_profile_extra input.button { float: right; margin-left: 20px; margin-top: -2px; }
+div.flb_profile_connected_account { float: left; clear: left; }
+div.flb_profile_connected_account div.flb_profile_connected_account_icon { margin-top: 5px; }
+div.flb_profile_connected_account div.flb_profile_connected_account_icon img { border: 1px solid black; }
+div.flb_profile_connected_account div.flb_profile_connected_account_icon button.flb_profile_closebutton { margin: -5px 5px 0 -10px; }
+div.flb_profile_connected_account div { float: left; margin-right: 10px; }
+div.flb_profile_credit { overflow: hidden; }
+div.flb_profile_credit hr { margin: 5px 0; }
+div.flb_profile_credit div.button { clear: left; float: left; margin-top: 10px; }
+div.flb_profile_credit div.flb_profile_credit_amount_label { width: 480px; font-weight: bold; }
+div.flb_profile_credit div.flb_profile_credit_ticket_label { margin-top: 10px; font-weight: bold; }
+div.flb_profile_credit div.flb_profile_credit_ticket { clear: left; }
+div.flb_profile_credit div.flb_profile_credit_ticket div { float: left; }
+div.flb_profile_credit div.flb_profile_credit_ticket div.description { padding-right: 15px; width: 465px; }
+div.flb_profile_credit .flb_profile_credit_amount { font-weight: bold; float: left; }
+div.flb_profile_credit div.flb_profile_credit_history { clear: left; float: left; font-size: 0.8em; width: 650px; }
+div.flb_profile_credit div.flb_profile_credit_history_data { margin-left: 0px; max-height: 400px; overflow-y: scroll; }
+div.flb_profile_credit div.flb_profile_credit_history div.item { clear: left; overflow: hidden; }
+div.flb_profile_credit div.flb_profile_credit_history div.item div { float: left; margin-right: 5px; }
+div.flb_profile_credit div.flb_profile_credit_history div.item div.download { padding-top: 3px; left: -10px; width: 10px; }
+div.flb_profile_credit div.flb_profile_credit_history div.item div.time { width: 100px; }
+div.flb_profile_credit div.flb_profile_credit_history div.item div.type { width: 180px; }
+div.flb_profile_credit div.flb_profile_credit_history div.item div.amount { width: 80px; text-align: right; font-weight: bold; }
+div.flb_profile_credit div.flb_profile_credit_history div.item div.description { margin-left: 5px; width: 250px; }
+div.flb_profile_credit div.flb_profile_credit_available_ticket { clear: left; float: left; width: 650px; }
+div.flb_profile_credit div.flb_profile_credit_available_ticket select { float: none; }
+div.flb_profile_credit div.flb_profile_credit_available_ticket input { float: none; }
+div.flb_profile_credit div.flb_profile_credit_available_tickets_button { margin-top: 5px; }
+div.flb_profile_credit div.flb_profile_credit_charge { clear: left; float: left; width: 650px; }
+div.flb_profile_credit div.flb_profile_credit_charge input { float: none; }
+div.flb_profile_credit div.flb_profile_credit_charge_button { clear: left; overflow: hidden; margin-top: 5px; }
+
+div.flb_password { overflow: hidden; }
+div.flb_password div { float: left; }
+div.flb_password input { float: left; }
+div.flb_password div.flb_event_reserved { margin-top: 10px; }
+div.flb_password div.button { clear: left; float: left; margin-top: 10px; }
+
+div.flb_event_detail { overflow: hidden; }
+div.flb_event_detail div { float: left; }
+div.flb_event_detail .checkboxMandatory { float: left; }
+div.flb_event_detail .input { margin-top: 15px !important; padding: 10px 0 10px 15px; border-left: 6px solid #42A861; }
+Xdiv.flb_event_detail .input > div.label { min-width: 154px !important; }
+div.flb_event_detail div.photo { clear: left; width: 150px; }
+div.flb_event_detail div.label { clear: left; font-weight: bold; min-width: 175px !important; }
+div.flb_event_detail div.flb_event_attribute { clear: left; float: none; }
+div.flb_event_detail div.flb_event_name { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+div.flb_event_detail div.flb_event_description { padding-bottom: 15px; clear: both; }
+div.flb_event_detail div.flb_event_reserved { margin-top: 10px; color: #42A861; }
+div.flb_event_detail div.flb_event_attendees { clear: left; width: 95%; }
+div.flb_event_detail div.flb_event_substitutes { width: 100%; }
+div.flb_event_detail div.flb_event_attendee { clear: left; }
+div.flb_event_detail div.flb_event_attendee_failed { color: red; text-decoration: line-through; }
+div.flb_event_detail div.flb_event_attendee_payed { color: green; }
+div.flb_event_detail div.flb_event_url_item { clear: left; }
+div.flb_event_detail div.flb_event_repeat_item { font-weight: normal; clear: left; }
+div.flb_event_detail div.flb_event_attendee_reservation { Xpadding: 3px; clear: left; width: 100%; }
+div.flb_event_detail div.flb_event_attendee_reservation div.flb_event_attendee_action { float: right; }
+div.flb_event_detail div.flb_event_attendee_reservation div.flb_event_attendee { font-weight: normal; }
+div.flb_event_detail div.flb_event_attendee_reservation div.flb_event_attendee_action input[type=button] { padding: 0 3px; }
+div.flb_event_detail div.flb_event_organiser span { margin-right: 10px; }
+div.flb_event_detail div.flb_event_organiser span.phone { display: none; }
+div.flb_event_detail div.flb_event_center span { margin-right: 10px; }
+div.flb_event_detail div.flb_event_center span.street { display: none; }
+div.flb_event_detail div.flb_event_center span.city { display: none; }
+div.flb_event_detail div.flb_event_center span.postal_code { display: none; }
+div.flb_event_detail input.flb_event_places { width: 20px; float: left; }
+div.flb_event_detail .flb_event_voucher_remove { font-size: 0.8em; cursor: pointer; }
+div.flb_event_detail select { float: left; }
+div.flb_event_detail div.input { clear: left; float: left; width: 100%; margin-top: 10px; }
+div.flb_event_detail div.button { clear: left; float: left; margin-top: 10px; }
+div.flb_event_detail div.button input { float: left; }
+div.flb_event_detail table.attendee { float: left; clear: left; text-align: left; padding-bottom: 10px; }
+div.flb_event_detail div.flb_event_occupied { color: red; }
+div.flb_event_detail label.file { float: left; font-style: normal; font-size: 0.8em; margin-right: 10px; }
+div.flb_event_detail div.file { float: left; font-style: normal; font-size: 0.8em; }
+div.flb_event_detail div.file .ajax-file-upload { border: 1px solid lightgray; padding: 0 5px; cursor: pointer !important; }
+div.flb_event_detail .ajax-file-upload-container { float: left; }
+div.flb_event_detail .ajax-file-upload-statusbar { width: auto !important; }
+div.flb_event_detail .flb_event_reserve_attendee_label { padding-top: 10px; }
+div.flb_event_detail .flb_event_reserve_attendee { clear: left; }
+div.flb_event_detail .flb_event_reserve_price { clear: left; }
+
+div.flb_resource_detail div { float: left; }
+div.flb_resource_detail div.label { clear: left; font-weight: bold; min-width: 150px; }
+div.flb_resource_detail div.flb_resource_name { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+div.flb_resource_detail div.flb_resource_description { float: none; clear: both; padding-bottom: 10px; }
+div.flb_resource_detail div.flb_resource_label_price { padding-bottom: 10px; }
+div.flb_resource_detail > input[type=button] { display: block; clear: both; }
+
+div.flb_commodity_attributes { clear: left; width: 100%; }
+div.flb_commodity_attributes div.flb_commodity_attributecategory_name { clear: left; font-weight: bold; }
+div.flb_commodity_attributes div.flb_commodity_attributecategory { clear: left; float: none; border: 1px solid black; margin: 5px 0; padding: 5px; overflow: hidden; }
+div.flb_commodity_attributes div.flb_commodity_attribute { clear: left; }
+div.flb_commodity_attributes div.label { font-weight: 400 !important; }
+
+div.flb_reserve_attribute div.flb_attributecategory { clear: left; float: none; border: 1px solid black; margin: 5px 0; padding: 5px; overflow: hidden; }
+div.flb_reserve_attribute div.flb_attributecategory_name { clear: left; }
+div.flb_reserve_attribute div.flb_reserve_attributecategory { clear: left; float: none; border: 1px solid black; margin: 5px 0; padding: 5px; overflow: hidden; }
+
+div.flb_resource_availability div.filterItem { float: left; margin-right: 10px; }
+div.flb_resource_availability div.inactiveFilterItem { display: none; }
+div.flb_resource_availability input.flb_resource_availability_period_withtime { width: 250px; }
+div.flb_resource_availability input.filterButton { margin-top: 23px; }
+div.flb_resource_availability_list div.label { clear: left; font-weight: bold; min-width: 150px; }
+div.flb_resource_availability_list div.flb_resource_availability_item { border: 1px solid black; overflow: hidden; Xheight: 210px; margin-bottom: 3px; padding: 10px 5px; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.photo { float: left; width: 25%; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.photo div { float: none; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.photo div.fotorama { Xwidth: 200px; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.info { padding-left: 10px; float: left; width: 35%; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.info div.basic div { clear: left; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.info div.basic div.center { font-size: 1.2em ; font-weight: bold; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.info div.basic div.name { font-size: 1.4em ; font-weight: bold; margin-top: 10px; margin-bottom: 5px; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.info div.basic div.description { font-style: italic; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.info div.attribute { clear: left; float: left; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.info div.flb_resource_attribute div { float: left; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.reservation { padding-left: 10px; float: left; width: 30%; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.reservation div.price { font-size: 1.4em ; font-weight: bold; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.reservation div.button { clear: left; margin-top: 20px; }
+div.flb_resource_availability_list div.flb_resource_availability_item div.reservation input.flb_time { min-width: 55px !important; }
+
+div.flb_resource_availability_reservation div { float: left; }
+div.flb_resource_availability_reservation div.label { clear: left; font-weight: bold; min-width: 150px; }
+div.flb_resource_availability_reservation div.flb_resource_availability_reservation_from_label,
+div.flb_resource_availability_reservation div.flb_resource_availability_reservation_to_label { padding-top: 4px; min-width: 50px; }
+div.flb_resource_availability_reservation div.flb_resource_attribute { clear: left; }
+
+div.flb_reservation_list div.flb_reservation_list_past { clear: left; }
+div.flb_reservation_list input[type=checkbox] { margin-top: 3px; }
+div.flb_reservation_list div.button { clear: left; }
+div.flb_reservation_list table.flb_reservation_list_table { border-collapse: collapse; clear: left; }
+div.flb_reservation_list table.flb_reservation_list_table tr { Xvertical-align: top; }
+div.flb_reservation_list table.flb_reservation_list_table th { text-align: left; min-width: 100px; padding: 15px 0 5px 0; }
+div.flb_reservation_list table.flb_reservation_list_table th.flb_reservation_list_item_price_label div { text-align: center; }
+div.flb_reservation_list table.flb_reservation_list_table td { border-bottom: 1px solid #E3E3E3; padding-right: 10px; }
+div.flb_reservation_list table.flb_reservation_list_table td.flb_reservation_list_item_substitute { color: #aaaaaa; }
+div.flb_reservation_list table.flb_reservation_list_table tr.flb_reservation_list_item_cancelled td { color: #aaaaaa; }
+div.flb_reservation_list .flb_reservation_list_item_start { width: 105px; }
+div.flb_reservation_list .flb_reservation_list_item_price { text-align: right; }
+div.flb_reservation_list .flb_button { font-weight: bold; padding: 3px 10px 3px 10px; font-size: 0.8em; }
+div.flb_reservation_list .flb_button:hover { cursor: pointer; }
+div.flb_reserbation_list .flb_reservation_list_item { font-size: 0.8em; }
+
+div.flb_substitute_list .flb_reservation_number_label, div.flb_substitute_list .flb_reservation_number { display: none; }
+div.flb_substitute_list .flb_substitute_detail {
+  clear: left;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #E3E3E3;
+}
+div.flb_substitute_list div.flb_substitute_list_label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+div.flb_reservation_detail { overflow: hidden; }
+div.flb_reservation_detail div { float: left; }
+div.flb_reservation_detail div.flb_reservation_number,
+div.flb_substitute_detail div.flb_reservation_number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+div.flb_reservation_detail div.flb_reservation_commodity,
+div.flb_substitute_detail div.flb_reservation_commodity {
+  clear: both;
+  padding-bottom: 15px;
+}
+div.flb_reservation_detail span.failed { color: red; text-decoration: line-through; }
+div.flb_reservation_detail div.label { clear: left; font-weight: bold; min-width: 120px; }
+div.flb_reservation_detail div.button { clear: left; float: left; margin-top: 10px; width: 100%; }
+div.flb_reservation_detail div.button input { float: left; }
+div.flb_reservation_detail select { float: left; }
+div.flb_reservation_detail .flb_reservation_detail_voucher { float: left; }
+div.flb_reservation_detail .flb_reservation_detail_voucher_remove { float: left; font-size: 0.8em; cursor: pointer; }
+div.flb_reservation_detail .flb_reservation_detail_voucher_apply { float: left; }
+
+/* calendar */
+div.flb_calendar { clear: left; }
+div.flb_calendar_legend { margin: 5px 0; overflow: hidden; }
+div.flb_calendar_legend div { border: 1px solid gray; height: 15px; float: left; margin-right: 10px; font-size: 0.7em; padding: 4px 8px; }
+div.flb_calendar_legend > div { line-height: 1.3; margin-bottom: 3px; margin-top: 10px; padding: 5px; }
+
+.fc-left h2 { font-weight: 400; font-size: 1.2em; }
+.fc-head { background-color: #EEEEEE; }
+.fc-widget-header .fc-today { background-color: #EEEEEE !important; }
+.fc-widget-header th { padding-top: 0.5em !important; padding-bottom: 0.5em !important; }
+.fc-bgevent, .fc-event { padding: 5px; border: 1px solid gray !important; }
+
+/* calendar events */
+div.flb_calendar .fc-bgevent { background-color: #FEAFA6; opacity: 1; display: flex; align-items: center; }
+div.flb_calendar .event_reservation { background-color: MediumPurple; }
+div.flb_calendar .event_providerEvent { background-color: LightGreen; color: black; }
+div.flb_calendar .event_providerEvent_occupied { background-color : #eeaaaa; }
+div.flb_calendar .event_providerEvent_reserved { background-color : #fffcad; }
+div.flb_calendar .event_reservation_failed { border: 1px solid darkgrey; background-color: lightgrey; color: darkgrey; }
+div.flb_calendar .poolCapacity_unavailable { background-color : gray; }
+div.flb_calendar .poolCapacity_occupied { background-color : #eeaaaa; border: 1px solid black; }
+div.flb_calendar .poolCapacity_available { background-color : #aaeeaa; border: 1px solid black; }
+div.flb_calendar td.poolCapacity { height: 99%; }
+div.flb_calendar .poolCapacity div.title { display: block; top: 50%; width: 100%; text-align: center; font-weight: bold; font-size: 1.2em; }
+div.flb_calendar div.poolCapacity div.title { position: absolute; margin-top: -10px; }
+
+/* mobile
+############################################ */
+/* popup */
+@media (max-width: 650px) {
+  div.flb_profile_extra {
+    top: -1px !important;
+    left: -1px !important;
+    width: 100% !important;
+    height: 95% !important;
+  }
+  div.flb_profile div.button {
+    min-width: 340px;
+  }
+  .div.flb_profile div.label {
+    float: none;
+  }
+  .flb_output input[type=text],
+  .flb_output input[type=password] {
+    min-width: 300px;
+  }
+}
+
+/* lists */
+@media (max-width: 650px) {
+  .flb_event_list_item, .flb_resource_list_item {
+    display: inline-block;
+    width: 100%;
+  }
+  .flb_event_list_item .flb_button,
+  .flb_resource_list_item .flb_button {
+    float: left;
+  }
+  .flb_event_list_item .flb_event_list_item_desc,
+  .flb_resource_list_item .flb_resource_list_item_desc {
+    border-bottom: none;
+  }
+  .div.flb_reservation_list .flb_reservation_list_item_start {
+    width: 90px !important;
+  }
+  .flb_reservation_list_item_button_cancel {
+    display: inline-block;
+    margin-top: 5px;
+  }
+}

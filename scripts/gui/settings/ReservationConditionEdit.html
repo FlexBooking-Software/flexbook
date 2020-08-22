@@ -1,0 +1,266 @@
+<div class="contentTitle">{title}</div>
+<form action="{%basefile%}" method="post">
+  <div id="editReservationCondition" class="inputForm  ui-widget-content">
+    <input type="hidden" name="{%sessname%}" value="{%sessid%}" />
+    <input type="hidden" name="id" value="{id}" />
+    {fi_provider}
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editReservationCondition_name}:</label>
+      <input class="extraLongText" id="fi_name" type="text" name="name" value="{name}" />
+    </div>
+    {fi_evaluation}
+    <div class="formItem">
+      <label for="fi_name" class="bold">{__label.editReservationCondition_description}:</label>
+      <textarea name="description">{description}</textarea>
+    </div>
+    <div class="formItem">
+      <label class="bold" style="height: 40px;">{__label.editReservationCondition_condition}:</label>
+      <div id="fi_condition" style="float: left;">
+        <div class="gridTable">
+        <table id="fi_conditionTable">
+          <tbody>{fi_condition}</tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="formButton">
+      <input class="button" id="fb_eBack" type="button" onclick="document.getElementById('fb_eBackHidden').click();" name="action_eBack" value="{__button.back}" />
+      <input id="fi_addCondition" type="button" value="{__button.editReservationCondition_addCondition}" />
+      <input class="fb_eSave" type="submit" name="action_eReservationConditionSave" value="{__button.editReservationCondition_save}" />
+      <input class="fb_eHidden" id="fb_eBackHidden" type="submit" name="action_eBack" value="{__button.back}" />
+    </div>
+  </div>
+</form>
+<div id="fi_newCondition_form" class="ajaxForm" title="{__label.editReservationCondition_conditionTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editCondition_id" name="id" value="" />
+      <input type="hidden" id="editCondition_index" name="index" value="" />
+      <label class="clear left aligned">{__label.editReservationCondition_conditionName}:</label>
+      <input type="text" name="conditionName" id="editCondition_name" class="left text ui-widget-content ui-corner-all">
+      <label class="clear left aligned">{__label.editReservationCondition_conditionTerm1}:</label>
+      <input type="text" name="conditionTimeFrom" id="editCondition_from" class="left text ui-widget-content ui-corner-all">
+      <label id="editCondition_to_label" class="left">{__label.editReservationCondition_conditionTerm2}:</label>
+      <input type="text" name="conditionTimeTo" id="editCondition_to" class="left text ui-widget-content ui-corner-all">
+      <div class="separator">&nbsp;</div>
+      <label class="clear groupTitle">{__label.editReservationCondition_newReservation}:</label>
+      <div class="border">
+        <div class="cond">
+          <input type="hidden" id="editCondition_centerMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionCenter}</label>
+          {fi_center}
+          <img class="messageIcon" target="editCondition_centerMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="separator">&nbsp;</div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_firstTimeBeforeMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionFirstTime}</label>
+          <input class="left" type="text" name="conditionFirstTimeBeforeCount" id="editCondition_firstTimeBeforeCount" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" name="conditionFirstTimeBeforeUnit" id="editCondition_firstTimeBeforeUnit">
+            <option value="min">{__label.minute}</option>
+            <option value="hour">{__label.hour}</option>
+            <option value="day">{__label.day}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionBefore}</label>
+          <img class="messageIcon" target="editCondition_firstTimeBeforeMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_lastTimeBeforeMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionLastTime}</label>
+          <input class="left" type="text" name="conditionLastTimeBeforeCount" id="editCondition_lastTimeBeforeCount" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" name="conditionLastTimeBeforeUnit" id="editCondition_lastTimeBeforeUnit">
+            <option value="min">{__label.minute}</option>
+            <option value="hour">{__label.hour}</option>
+            <option value="day">{__label.day}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionBefore}</label>
+          <img class="messageIcon" target="editCondition_lastTimeBeforeMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_anonymousBeforeMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionAnonymous}</label>
+          <input class="left" type="text" name="conditionAnonymousBeforeCount" id="editCondition_anonymousBeforeCount" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" name="conditionAnonymousBeforeUnit" id="editCondition_anonymousBeforeUnit">
+            <option value="min">{__label.minute}</option>
+            <option value="hour">{__label.hour}</option>
+            <option value="day">{__label.day}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionBefore}</label>
+          <img class="messageIcon" target="editCondition_anonymousBeforeMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_afterStartEventMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionAfterStartEvent}</label>
+          <select class="left middle" name="conditionAfterStartEvent" id="editCondition_afterStartEvent">
+            <option value="Y">{__label.no}</option>
+            <option value="N">{__label.yes}</option>
+          </select>
+          <img class="messageIcon" target="editCondition_afterStartEventMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_advancePaymentMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionAdvancePayment}</label>
+          <input class="left" type="text" name="conditionAdvancePaymendCount" id="editCondition_advancePaymentCount" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" name="conditionAdvancePaymentUnit" id="editCondition_advancePaymentUnit">
+            <option value="min">{__label.minute}</option>
+            <option value="hour">{__label.hour}</option>
+            <option value="day">{__label.day}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionBefore}</label>
+          <img class="messageIcon" target="editCondition_advancePaymentMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="separator">&nbsp;</div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_cancelBeforeMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionCancelBefore}</label>
+          <input class="left" type="text" name="conditionCancelBeforeCount" id="editCondition_cancelBeforeCount" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" name="conditionCancelBeforeUnit" id="editCondition_cancelBeforeUnit">
+            <option value="min">{__label.minute}</option>
+            <option value="hour">{__label.hour}</option>
+            <option value="day">{__label.day}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionBefore}</label>
+          <img class="messageIcon" target="editCondition_cancelBeforeMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_cancelPayedBeforeMessage" value=""/>
+          <label class="clear left aligned">{__label.editReservationCondition_conditionCancelPayedBefore}</label>
+          <input class="left" type="text" name="conditionCancelPayedBeforeCount" id="editCondition_cancelPayedBeforeCount" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" name="conditionCancelPayedBeforeUnit" id="editCondition_cancelPayedBeforeUnit">
+            <option value="min">{__label.minute}</option>
+            <option value="hour">{__label.hour}</option>
+            <option value="day">{__label.day}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionBefore}</label>
+          <img class="messageIcon" target="editCondition_cancelPayedBeforeMessage" src ="img/icon_message.png"/>
+        </div>
+        <div class="separator">&nbsp;</div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_quantityMessage" value=""/>
+          <label class="clear left">{__label.editReservationCondition_conditionQuantity1}</label>
+          <select class="left middle" id="editCondition_type" name="conditionType">
+            <option value="ALL">{__label.editReservationCondition_conditionType_ALL}</option>
+            <option value="MANDATORY">{__label.editReservationCondition_conditionType_MANDATORY}</option>
+            <option value="NON_MANDATORY">{__label.editReservationCondition_conditionType_NON_MANDATORY}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionQuantity2}:</label>
+          <input class="left" type="text" name="conditionQuantity" id="editCondition_quantity" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" id="editCondition_period" name="conditionPeriod">
+            <option value="">{__label.editReservationCondition_conditionPeriod_NONE}</option>
+            <option value="DAY_1">{__label.editReservationCondition_conditionPeriod_DAY_1}</option>
+            <option value="WEEK_1">{__label.editReservationCondition_conditionPeriod_WEEK_1}</option>
+            <option value="WEEK_2">{__label.editReservationCondition_conditionPeriod_WEEK_2}</option>
+            <option value="WEEK_3">{__label.editReservationCondition_conditionPeriod_WEEK_3}</option>
+            <option value="MONTH_1">{__label.editReservationCondition_conditionPeriod_MONTH_1}</option>
+            <option value="MONTH_2">{__label.editReservationCondition_conditionPeriod_MONTH_2}</option>
+            <option value="YEAR_1">{__label.editReservationCondition_conditionPeriod_YEAR_1}</option>
+          </select>
+          <select class="left middle" id="editCondition_scope" name="conditionScope">
+            <option value="USER">{__label.editReservationCondition_conditionScope_USER}</option>
+            <option value="ALL_USERS">{__label.editReservationCondition_conditionScope_ALL_USERS}</option>
+            {selectOption_attendee}
+          </select>
+          <img class="messageIcon" target="editCondition_quantityMessage" src ="img/icon_message.png"/>
+        </div>
+      </div>
+      <div class="separator">&nbsp;</div>
+      <label class="clear left groupTitle">{__label.editReservationCondition_existingReservation}</label>
+      <select class="left middle" id="editCondition_otherScope" name="otherScope">
+        <option value="USER">{__label.editReservationCondition_conditionScope_USER}</option>
+        {selectOption_attendee}
+      </select>
+      <div class="border">
+        <div class="cond">
+          <input type="hidden" id="editCondition_resourceMessage" value=""/>
+          <select class="clear left middle" id="editCondition_resourceExists" name="resourceExists">
+            <option value="Y">{__label.editReservationCondition_conditionRequiredExists_Y}</option>
+            <option value="N">{__label.editReservationCondition_conditionRequiredExists_N}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionRequired1}</label>
+          <select class="left middle" id="editCondition_resourcePayed" name="resourcePayed">
+            <option value="N">{__label.editReservationCondition_conditionRequiredPayed_N}</option>
+            <option value="Y">{__label.editReservationCondition_conditionRequiredPayed_Y}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionRequired2}</label>
+          <select class="left middle" id="editCondition_resourceAll" name="resourceAll">
+            <option value="N">{__label.editReservationCondition_conditionRequiredResourceAll_N}</option>
+            <option value="Y">{__label.editReservationCondition_conditionRequiredAll_Y}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionRequiredResource}:</label>
+          <img class="messageIcon" target="editCondition_resourceMessage" src ="img/icon_message.png"/>
+          <input type="text" name="conditionResource" id="editCondition_resource" class="text ui-widget-content ui-corner-all">
+        </div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_eventMessage" value=""/>
+          <select class="clear left middle" id="editCondition_eventExists" name="eventExists">
+            <option value="Y">{__label.editReservationCondition_conditionRequiredExists_Y}</option>
+            <option value="N">{__label.editReservationCondition_conditionRequiredExists_N}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionRequired1}</label>
+          <select class="left middle" id="editCondition_eventPayed" name="eventPayed">
+            <option value="N">{__label.editReservationCondition_conditionRequiredPayed_N}</option>
+            <option value="Y">{__label.editReservationCondition_conditionRequiredPayed_Y}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionRequired2}:</label>
+          <select class="left middle" id="editCondition_eventAll" name="eventAll">
+            <option value="N">{__label.editReservationCondition_conditionRequiredEventAll_N}</option>
+            <option value="Y">{__label.editReservationCondition_conditionRequiredAll_Y}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionRequiredEvent}:</label>
+          <img class="messageIcon" target="editCondition_eventMessage" src ="img/icon_message.png"/>
+          <input type="text" name="conditionEvent" id="editCondition_event" class="text ui-widget-content ui-corner-all">
+        </div>
+        <div class="separator">&nbsp;</div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_totalQuantityMessage" value=""/>
+          <label class="clear left">{__label.editReservationCondition_conditionTotalQuantity1}</label>
+          <select class="left middle" id="editCondition_totalQuantityType" name="conditionTotalQuantityType">
+            <option value="ALL">{__label.editReservationCondition_conditionType_ALL}</option>
+            <option value="MANDATORY">{__label.editReservationCondition_conditionType_MANDATORY}</option>
+            <option value="NON_MANDATORY">{__label.editReservationCondition_conditionType_NON_MANDATORY}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionTotalQuantity2}</label>
+          <input class="left" type="text" name="conditionTotalQuantity" id="editCondition_totalQuantity" class="left text ui-widget-content ui-corner-all">
+          <select class="left middle" id="editCondition_totalQuantityPeriod" name="conditionTotalQuantityPeriod">
+            <option value="">{__label.editReservationCondition_conditionPeriod_NONE}</option>
+            <option value="DAY_1">{__label.editReservationCondition_conditionPeriod_DAY_1}</option>
+            <option value="WEEK_1">{__label.editReservationCondition_conditionPeriod_WEEK_1}</option>
+            <option value="WEEK_2">{__label.editReservationCondition_conditionPeriod_WEEK_2}</option>
+            <option value="WEEK_3">{__label.editReservationCondition_conditionPeriod_WEEK_3}</option>
+            <option value="MONTH_1">{__label.editReservationCondition_conditionPeriod_MONTH_1}</option>
+            <option value="MONTH_2">{__label.editReservationCondition_conditionPeriod_MONTH_2}</option>
+            <option value="YEAR_1">{__label.editReservationCondition_conditionPeriod_YEAR_1}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionTotalQuantityTag}:</label>
+          <img class="messageIcon" target="editCondition_totalQuantityMessage" src ="img/icon_message.png"/>
+          <input type="text" name="conditionTotalQuantityTag" id="editCondition_totalQuantityTag" class="text ui-widget-content ui-corner-all">
+        </div>
+        <div class="separator">&nbsp;</div>
+        <div class="cond">
+          <input type="hidden" id="editCondition_overlapQuantityMessage" value=""/>
+          <label class="clear left">{__label.editReservationCondition_conditionOverlapQuantity}</label>
+          <input class="left" type="text" name="conditionOverlapQuantity" id="editCondition_overlapQuantity" class="left text ui-widget-content ui-corner-all">
+          <label class="left">{__label.editReservationCondition_conditionOverlapQuantityScope}:</label>
+          <select class="left middle" id="editCondition_overlapQuantityScope" name="conditionOverlapQuantityScope">
+            <option value="PROVIDER">{__label.editReservationCondition_conditionScope_PROVIDER}</option>
+            <option value="CENTER">{__label.editReservationCondition_conditionScope_CENTER}</option>
+          </select>
+          <label class="left">{__label.editReservationCondition_conditionOverlapQuantityTag}:</label>
+          <img class="messageIcon" target="editCondition_overlapQuantityMessage" src ="img/icon_message.png"/>
+          <input type="text" name="conditionOverlapQuantityTag" id="editCondition_overlapQuantityTag" class="text ui-widget-content ui-corner-all">
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div id="fi_newConditionMessage_form" class="ajaxForm" title="{__label.editReservationCondition_conditionMessageTitle}">
+  <p class="validateTips"></p>
+  <form>
+    <fieldset>
+      <input type="hidden" id="editConditionMessage_target" value="" />
+      <label>{__label.editReservationCondition_conditionMessage}:</label>
+      <textarea name="conditionMessage" id="editConditionMessage_text"></textarea>
+    </fieldset>
+  </form>
+</div>
