@@ -98,9 +98,9 @@ $NOTIFICATION = array(
   'smtpUser'              => $NOTIFICATION_SMTP_USER,
   'smtpPassword'          => $NOTIFICATION_SMTP_PASSWORD,
 	'backupSmtp' => array(
-		'smtpHost'              => 'mail.nvl.cz',
-		'smtpUser'              => 'boss@nvl.cz',
-		'smtpPassword'          => 'EmilkA!',
+		'smtpHost'              => '',
+		'smtpUser'              => '',
+		'smtpPassword'          => '',
 		'smtpSecure'            => 'tls',
 	),
   'defaultAddressFrom'    => 'no-reply@flexbook.cz',
